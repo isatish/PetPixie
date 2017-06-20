@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MasterDetailPage 	xmlns="http://xamarin.com/schemas/2014/forms" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+	xmlns:res="clr-namespace:Merial.PetPixie.Core.Resources;assembly=Merial.PetPixie.Core"
+	xmlns:views="clr-namespace:Merial.PetPixie.Core.Views;assembly=Merial.PetPixie.Core"
+	xmlns:viewmodels="clr-namespace:Merial.PetPixie.Core.ViewModels;assembly=Merial.PetPixie.Core"
+	xmlns:cv="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.CarouselView"
+	xmlns:local="clr-namespace:Merial.PetPixie.Core.Views;assembly=Merial.PetPixie.Core"
+	xmlns:controls="clr-namespace:Merial.PetPixie.Core.Controls;assembly=Merial.PetPixie.Core"
+	xmlns:imageCircle="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
+	xmlns:b="clr-namespace:Merial.PetPixie.Core.Behaviors;assembly=Merial.PetPixie.Core" 
+	xmlns:c="clr-namespace:Merial.PetPixie.Core.Converters;assembly=Merial.PetPixie.Core" 
+	x:Class="Merial.PetPixie.Core.Views.FindFriendsTabsPage" >
+
+	<ContentPage.Resources>
+		<ResourceDictionary>
+
+
+			
+			<c:ActiveTextColorValueConverter x:Key="ActiveTextColorValueConverter" />
+			<c:ActiveBackgroundColorValueConverter x:Key="ActiveBackgroundColorValueConverter" />
+			<c:ItemTappedEventArgsConverter x:Key="ItemTappedConverter" />
+
+
+			<!-- Contacts Template -->
+			<DataTemplate x:Key="OpeningTemplate" >
+	            <StackLayout Orientation="Vertical" >
+
+					<StackLayout  Orientation="Vertical" VerticalOptions="Start"  Margin="0,20,0,0"  >
+						<Label HorizontalOptions="Center" HorizontalTextAlignment="Center" WidthRequest="200" Text="Access to contacts has been denied.  To use this feature, please go to system preferences and allow Pet+Pixie to use contacts." TextColor="Black" FontSize="10" />
+						<Image Source="FindFriendsContactsBackground.png" WidthRequest="150" HeightRequest="150" Aspect="AspectFit" VerticalOptions="Start" HorizontalOptions="Center" />
+					
+
+
+							<ListView 
+								Margin="0,20,0,0"
+								SeparatorVisibility="Default" 
+								ItemsSource="{Binding ProfilesUsing, Mode=TwoWay}"
+								RowHeight="60"
+								BackgroundColor="White"
+								SeparatorColor="White"
+								VerticalOptions="Start"
+								HasUnevenRows="false">
+						
+							    <ListView.Behaviors>
+								      <b:EventToCommandBehavior EventName="ItemTapped" Command="{Binding FriendSelectedCommand}" EventArgsConverter="{StaticResource ItemTappedConverter}" />
+				    			</ListView.Behaviors>
+						
+								<ListView.ItemTemplate>
+									<DataTemplate>
+										<ViewCell>
+
+											<Grid BackgroundColor="White" Padding="10,0,10,0" VerticalOptions="Center" >
+												<Grid.RowDefinitions>
+													<RowDefinition Height="40" />
+												</Grid.RowDefinitions>
+												<Grid.ColumnDefinitions>
+													<ColumnDefinition Width="35" />
+													<ColumnDefinition Width="*" />
+													<ColumnDefinition Width="120" />
+												</Grid.ColumnDefinitions>
+
+											
+												<imageCircle:CircleImage Source="{ Binding Profile.ImageSrc }" Grid.Column="0"  BorderColor="Gray" BorderThickness="1" Aspect="AspectFill" VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="35" HeightRequest="35"  />
+				
+										
+												<StackLayout Orientation="Vertical" Grid.Column="1">
+													<Label HorizontalOptions="Start" HorizontalTextAlignment="Start" HeightRequest="20" Font="MuseoSans-300"  VerticalOptions="End" VerticalTextAlignment="End"  TextColor="{StaticResource AccentColor} " Text="{ Binding Profile.UserName }" FontSize="12"  />
+													<Label HorizontalOptions="Start" HorizontalTextAlignment="Start" HeightRequest="20"  Font="MuseoSans-300"  VerticalOptions="Start" VerticalTextAlignment="Start"  TextColor="Black" Text="{ Binding Profile.UserFullName }" FontSize="12"  />
+												</StackLayout>
+												<Button  Grid.Column="2" Text="Unfollow" BackgroundColor="#abc2bb" TextColor="White" HorizontalOptions="End" Font="MuseoSans-300" FontSize="12" WidthRequest="100" HeightRequest="25" VerticalOptions="Center" />
+
+											</Grid>
+										
+										</ViewCell>
+									</DataTemplate>
+								</ListView.ItemTemplate>
+							
+						</ListView>
+	 
+	 			</StackLayout>
+					
+                </StackLayout>
+
+			</DataTemplate>
+			
+			<!-- Facebook Template -->
+			<DataTemplate x:Key="JoinTemplate">
+				<StackLayout  Orientation="Vertical" VerticalOptions="Start" Margin="0,20,0,0" >
+					<Label  HorizontalOptions="Center"  HorizontalTextAlignment="Center" WidthRequest="200" Text="Access to contacts has been denied.  To use this feature, please go to system preferences and allow Pet+Pixie to use contacts." TextColor="Black" FontSize="10" />
+					<Image Source="FindFriendsContactsBackground.png" WidthRequest="150" HeightRequest="150" Aspect="AspectFit" VerticalOptions="Start" HorizontalOptions="Center" />
+					<Button Text="refresh"  Margin="0,50,0,0"  WidthRequest="100" HeightRequest="25" TextColor="White" HorizontalOptions="Center" BackgroundColor="{StaticResource AccentColor}" />
+				</StackLayout>
+
+			</DataTemplate>
+
+			<local:FriendTemplateSelector x:Key="friendTemplateSelector" OpeningTemplate="{StaticResource OpeningTemplate}" JoinTemplate="{StaticResource JoinTemplate}"     />
+
+
+		</ResourceDictionary>
+	</ContentPage.Resources>
+
+
+	
+
+	<MasterDetailPage.Master>
+    	<ContentPage Title="Settings"  />		
+  	</MasterDetailPage.Master>
+
+	<MasterDetailPage.Detail >
+
+		<ContentPage x:Name="ContentContainer" >
+
+			<StackLayout Orientation="Vertical" >
+				<views:TopNavBar x:Name="navBar" HeightRequest="50"  />
+
+				<StackLayout x:Name="stackCarousel">
+
+				
+					
+					<!--NAVIGATION BUTTONS-->
+					<Frame  VerticalOptions="Start"  HeightRequest="30" OutlineColor="#aac2bb" CornerRadius="2"  Padding="0" HasShadow="false" Margin="10,0,10,0" HorizontalOptions="FillAndExpand"  >
+							<Grid WidthRequest="500" HeightRequest="30">
+								<Grid.ColumnDefinitions>
+									<ColumnDefinition Width="*" />
+									<ColumnDefinition Width="*" />
+								</Grid.ColumnDefinitions>
+
+								<Grid  Grid.Column="0" >
+									<Button 
+										Style="{StaticResource ToggleButtonStyle}"
+										BackgroundColor="{Binding ShowContacts, Converter={StaticResource ActiveBackgroundColorValueConverter}}"
+										TextColor="{Binding ShowContacts, Converter={StaticResource ActiveTextColorValueConverter}}"	
+										Text="Contacts"  
+										Command="{Binding  ShowFriendsFromContactsCommand}"  />
+								</Grid>		
+
+								<Grid  Grid.Column="1" >
+									<Button 
+										Style="{StaticResource ToggleButtonStyle}"
+										BackgroundColor="{Binding ShowFacebook, Converter={StaticResource ActiveBackgroundColorValueConverter}}"
+										TextColor="{Binding ShowFacebook, Converter={StaticResource ActiveTextColorValueConverter}}"	
+										Text="Facebook"  
+										Command="{Binding ShowFriendsFromFacebookCommand}"  />
+								</Grid>		
+
+							</Grid>
+					</Frame>
+
+							<StackLayout IsVisible="{Binding ShowContacts}" Orientation="Vertical" VerticalOptions="Start"  Margin="0,20,0,0"  >
+								<Label HorizontalOptions="Center" HorizontalTextAlignment="Center" WidthRequest="200" Text="Access to contacts has been denied.  To use this feature, please go to system preferences and allow Pet+Pixie to use contacts." TextColor="Black" FontSize="10" />
+								<Image Source="FindFriendsContactsBackground.png" WidthRequest="150" HeightRequest="150" Aspect="AspectFit" VerticalOptions="Start" HorizontalOptions="Center" />
+							</StackLayout>
+
+
+							<StackLayout IsVisible="{Binding ShowFacebook}" Orientation="Vertical" VerticalOptions="Start" Margin="0,20,0,0" >
+								<Label  HorizontalOptions="Center"  HorizontalTextAlignment="Center" WidthRequest="200" Text="None of your friends are using Pet+Pixie." TextColor="Black" FontSize="10" />
+								<Image Source="FindFriendsContactsBackground.png" WidthRequest="150" HeightRequest="150" Aspect="AspectFit" VerticalOptions="Start" HorizontalOptions="Center" />
+								<Button Text="refresh"  Margin="0,50,0,0"  WidthRequest="100" HeightRequest="25" TextColor="White" HorizontalOptions="Center" BackgroundColor="{StaticResource AccentColor}" />
+							</StackLayout>
+
+
+							<ListView 
+								IsVisible="false"
+								Margin="0,20,0,0"
+								SeparatorVisibility="Default" 
+								ItemsSource="{Binding AllProfilesShown, Mode=TwoWay}"
+								RowHeight="60"
+								BackgroundColor="White"
+								SeparatorColor="White"
+								VerticalOptions="Start"
+								HasUnevenRows="false">
+						
+							    <ListView.Behaviors>
+								      <b:EventToCommandBehavior EventName="ItemTapped" Command="{Binding FriendSelectedCommand}" EventArgsConverter="{StaticResource ItemTappedConverter}" />
+				    			</ListView.Behaviors>
+						
+								<ListView.ItemTemplate>
+									<DataTemplate>
+										<ViewCell>
+
+											<Grid BackgroundColor="White" Padding="10,0,10,0" VerticalOptions="Center" >
+												<Grid.RowDefinitions>
+													<RowDefinition Height="40" />
+												</Grid.RowDefinitions>
+												<Grid.ColumnDefinitions>
+													<ColumnDefinition Width="35" />
+													<ColumnDefinition Width="*" />
+													<ColumnDefinition Width="120" />
+												</Grid.ColumnDefinitions>
+
+											
+												<imageCircle:CircleImage Source="{ Binding Profile.ImageSrc }" Grid.Column="0"  BorderColor="Gray" BorderThickness="1" Aspect="AspectFill" VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="35" HeightRequest="35"  />
+				
+										
+												<StackLayout Orientation="Vertical" Grid.Column="1">
+													<Label HorizontalOptions="Start" HorizontalTextAlignment="Start" HeightRequest="20" Font="MuseoSans-300"  VerticalOptions="End" VerticalTextAlignment="End"  TextColor="{StaticResource AccentColor} " Text="{Binding UserName}" FontSize="12"  />
+													<Label HorizontalOptions="Start" HorizontalTextAlignment="Start" HeightRequest="20"  Font="MuseoSans-300"  VerticalOptions="Start" VerticalTextAlignment="Start"  TextColor="Black" Text="{Binding PartTitle}" FontSize="12"  />
+												</StackLayout>
+												<Button  Grid.Column="2" Text="Unfollow" BackgroundColor="#abc2bb" TextColor="White" HorizontalOptions="End" Font="MuseoSans-300" FontSize="12" WidthRequest="100" HeightRequest="25" VerticalOptions="Center" />
+
+											</Grid>
+										
+										</ViewCell>
+									</DataTemplate>
+								</ListView.ItemTemplate>
+							
+						</ListView>
+	 
+				  
+				    <!--Carousel View-->
+				    <cv:CarouselView 
+				        x:Name="MyCarouselView" 
+						IsVisible="false"
+						BackgroundColor="Gray"
+				        HorizontalOptions="FillAndExpand" 
+				        VerticalOptions="FillAndExpand" 
+				        ItemTemplate="{StaticResource friendTemplateSelector}"   />
+
+				</StackLayout>
+
+			</StackLayout>
+
+	
+		</ContentPage>
+
+	</MasterDetailPage.Detail>
+
+
+
+	
+
+
+</MasterDetailPage>

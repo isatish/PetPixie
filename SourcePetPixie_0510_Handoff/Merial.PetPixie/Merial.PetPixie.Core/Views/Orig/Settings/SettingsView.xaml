@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+	xmlns="http://xamarin.com/schemas/2014/forms" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+	x:Class="Merial.PetPixie.Core.SettingsView"
+	Title="Settings Menu" 
+	Style="{ StaticResource MainMenuStyle }"
+	xmlns:artina="clr-namespace:UXDivers.Artina.Shared;assembly=UXDivers.Artina.Shared"
+	xmlns:templates="clr-namespace:Merial.PetPixie.Core;assembly=Merial.PetPixie.Core"
+	xmlns:commonViews="clr-namespace:Merial.PetPixie.Core;assembly=Merial.PetPixie.Core" 	
+	xmlns:views="clr-namespace:Merial.PetPixie.Core;assembly=Merial.PetPixie.Core"
+	Icon="{ StaticResource HamburguerIcon }">
+
+
+	<Grid
+		BackgroundColor="#536a63"
+		VerticalOptions="FillAndExpand" 
+		Padding="0,20,0,10">
+
+		<Grid.RowDefinitions>
+			<RowDefinition Height="100" />
+			<RowDefinition Height="Auto" />
+		</Grid.RowDefinitions>
+
+		<Grid
+
+			Grid.Row="0"
+			HorizontalOptions="Start" 
+			VerticalOptions="End">
+
+			<!-- LOGO -->
+			<commonViews:BrandBlock IsVisible="false" />
+			
+			<!-- SCREENS COUNTER -->
+			<commonViews:Badge 
+				IsVisible="false"
+				Scale=".9"
+				BadgeText="{ Binding AllSamples.Count }" 
+				BadgeTextColor="#FFF" 
+				BadgeBackgroundColor="#F00"
+				HorizontalOptions="End"
+				VerticalOptions="Start"
+			/>
+			<StackLayout Orientation="Vertical" VerticalOptions="End" >
+				<Label x:Name="MenuLoginName" Text="Carol" Style="{DynamicResource MainMenu_HeaderLabel_Style }" />
+				<Label x:Name="MenuLoginEmail" Text="chicksabcs@gmail.com" Style="{DynamicResource MainMenu_HeaderLabel_Style }" />
+			</StackLayout>
+
+		</Grid>
+
+		<ListView 
+			
+		    Grid.Row="1"
+			BackgroundColor="Blue"
+			x:Name="sampleListView" 
+			ItemSelected="OnItemSelected"
+			ItemsSource="{ Binding SettingsGroupedByCategory }"
+			IsGroupingEnabled="true"
+			GroupDisplayBinding="{ Binding Name }"
+			SeparatorVisibility="None"
+			VerticalOptions="FillAndExpand"
+			Style="{ DynamicResource MainMenuListViewStyle }"
+			 >
+				<ListView.GroupHeaderTemplate> 
+					<DataTemplate> 
+						<ViewCell> 
+							<views:MainMenuGroupHeaderTemplate />
+						</ViewCell> 
+					</DataTemplate> 
+				</ListView.GroupHeaderTemplate> 
+
+				<ListView.ItemTemplate>
+					<DataTemplate>
+						<ViewCell>
+							<views:MainMenuItemTemplate />
+						</ViewCell>
+					</DataTemplate>
+				</ListView.ItemTemplate>
+		</ListView>
+	</Grid>
+</ContentPage>

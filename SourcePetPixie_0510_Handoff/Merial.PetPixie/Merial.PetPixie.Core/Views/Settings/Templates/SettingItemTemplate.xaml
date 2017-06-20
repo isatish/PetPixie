@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView 
+		xmlns="http://xamarin.com/schemas/2014/forms" 
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		x:Class="Merial.PetPixie.Core.Views.SettingItemTemplate">
+	<ContentView.Content>
+
+		<StackLayout Orientation="Horizontal" HeightRequest="40" Margin="20,0,0,0" >
+			<Image Source="{Binding IconPath}" WidthRequest="24" HeightRequest="24" VerticalOptions="Center" />
+			<Label Margin="20,0,0,0" Text="{ Binding Title }" Font="AdelleSans" FontSize="12" VerticalOptions="Center" VerticalTextAlignment="Center"	/>
+		</StackLayout>
+
+
+	</ContentView.Content>
+</ContentView>
+

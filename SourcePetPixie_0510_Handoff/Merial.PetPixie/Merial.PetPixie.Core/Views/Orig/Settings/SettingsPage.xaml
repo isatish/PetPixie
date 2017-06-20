@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+	xmlns="http://xamarin.com/schemas/2014/forms" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+	x:Class="Merial.PetPixie.Core.SettingsPage" 
+	xmlns:artina="clr-namespace:UXDivers.Artina.Shared;assembly=UXDivers.Artina.Shared"
+	xmlns:views="clr-namespace:Merial.PetPixie.Core;assembly=Merial.PetPixie.Core"
+	BackgroundColor="White"
+	Title="Settings"
+	xmlns:grial="clr-namespace:UXDivers.Artina.Grial;assembly=UXDivers.Artina.Grial">
+		
+		<StackLayout 
+			Padding="20" 
+			VerticalOptions="FillAndExpand">
+
+
+		<ListView 
+			
+			x:Name="settingsListView" 
+			ItemSelected="OnItemSelected"
+			ItemsSource="{ Binding SettingsGroupedByCategory }"
+			IsGroupingEnabled="true"
+			GroupDisplayBinding="{ Binding Name }"
+			SeparatorVisibility="None"
+			VerticalOptions="FillAndExpand"
+			Style="{ DynamicResource SettingsListViewStyle }"
+			 >
+				<ListView.GroupHeaderTemplate> 
+					<DataTemplate> 
+						<ViewCell> 
+							<views:SettingsListGroupHeaderTemplate/>
+						</ViewCell> 
+					</DataTemplate> 
+				</ListView.GroupHeaderTemplate> 
+
+				<ListView.ItemTemplate>
+					<DataTemplate>
+						<ViewCell>
+							<views:SettingsListItemTemplate />
+						</ViewCell>
+					</DataTemplate>
+				</ListView.ItemTemplate>
+		</ListView>
+
+
+		</StackLayout>
+</ContentPage>

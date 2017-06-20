@@ -1,0 +1,92 @@
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:views="clr-namespace:Merial.PetPixie.Core;assembly=Merial.PetPixie.Core"
+	xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
+	xmlns:res="clr-namespace:Merial.PetPixie.Core.Resources;assembly=Merial.PetPixie.Core"
+	xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
+	Icon="ic-logo.png"
+	x:Class="Merial.PetPixie.Core.Views.LeftNavBar"
+	WidthRequest="250"
+	HeightRequest="1500"
+	Padding="0"
+	BackgroundColor="White" >
+
+	
+	 <ContentView.Content>
+		<Grid
+			HorizontalOptions="FillAndExpand"
+			VerticalOptions="FillAndExpand" 
+			Padding="0,0,0,10">
+
+			<Grid.RowDefinitions>
+				<RowDefinition Height="200" />
+				<RowDefinition Height="*" />
+			</Grid.RowDefinitions>
+
+		<StackLayout   BackgroundColor="Fuchsia" x:Name="navBackground" HorizontalOptions="Start" VerticalOptions="StartAndExpand" />			
+
+			<Grid HeightRequest="200"
+				BackgroundColor="#536a63"
+				Padding="20"
+				Grid.Row="0"
+				HorizontalOptions="FillAndExpand" 
+				VerticalOptions="FillAndExpand">
+
+				<!-- USER -->
+				<controls:CircleImage Margin="0,20,0,0" Source="{Binding ProfilePictureUrl}" WidthRequest="75" HeightRequest="75" BorderColor="Transparent" BorderThickness="0" Aspect="AspectFill" VerticalOptions="Start" HorizontalOptions="Start" >
+					<controls:CircleImage.GestureRecognizers>
+						<TapGestureRecognizer  Command="{Binding EditProfileCommand}" NumberOfTapsRequired="1"   />
+					</controls:CircleImage.GestureRecognizers>
+				</controls:CircleImage> 
+				
+
+				<StackLayout Orientation="Vertical" VerticalOptions="End" HorizontalOptions="Start" >
+					<Label   Text="{Binding UserFullName}" Style="{DynamicResource MainMenu_HeaderLabel_Style }" FontSize="Medium"  Margin="0"  VerticalTextAlignment="End" />
+					<Label   Text="{Binding UserEmail}" Style="{DynamicResource MainMenu_HeaderLabel_Style }" Margin="0" VerticalTextAlignment="Start" />
+					<Label   Text="{Binding Biography}" Style="{DynamicResource MainMenu_HeaderLabel_Style }" Margin="0" VerticalTextAlignment="Start" />
+				
+				</StackLayout>
+
+			</Grid>
+
+
+
+			<StackLayout Orientation="Vertical" VerticalOptions="Start" HorizontalOptions="Start"   BackgroundColor="White" Grid.Row="1" >
+			 
+				<StackLayout Orientation="Horizontal" HeightRequest="30" Margin="20,0,0,0" >
+					<Button Image="MainTourFeed.png" WidthRequest="15" HeightRequest="15" VerticalOptions="Center"  Command="{Binding ShowFeedCommand}"   />
+					<Button Margin="20,0,0,0" Text="Feed" Font="AdelleSans" FontSize="12" VerticalOptions="Center" TextColor="Gray"  Command="{Binding ShowFeedCommand}"   	/>
+				</StackLayout>
+							
+				<StackLayout Orientation="Horizontal" HeightRequest="30" Margin="20,0,0,0" >
+					<Button Image="MainTourDiscover.png" WidthRequest="15" HeightRequest="15" VerticalOptions="Center"  Command="{Binding ShowDiscoverCommand}"   />
+					<Button Margin="20,0,0,0" Text="Discover" Font="AdelleSans" FontSize="12" VerticalOptions="Center" TextColor="Gray"  Command="{Binding ShowDiscoverCommand}"   	/>
+				</StackLayout>
+
+				<StackLayout Orientation="Horizontal" HeightRequest="30" Margin="20,0,0,0" >
+					<Button Image="MainTourRemind.png" WidthRequest="15" HeightRequest="15" VerticalOptions="Center"  Command="{Binding ShowRemindersCommand}"   />
+					<Button Margin="20,0,0,0" Text="Reminders" Font="AdelleSans" FontSize="12" VerticalOptions="Center" TextColor="Gray"  Command="{Binding ShowRemindersCommand}"   	/>
+				</StackLayout>
+						<StackLayout Orientation="Horizontal" HeightRequest="30" Margin="20,0,0,0" >
+					<Button Image="MainTourPack.png" WidthRequest="15" HeightRequest="15" VerticalOptions="Center"  Command="{Binding ShowMyPackCommand}"   />
+					<Button Margin="20,0,0,0" Text="My Pack" Font="AdelleSans" FontSize="12" VerticalOptions="Center" TextColor="Gray"  Command="{Binding ShowMyPackCommand}"   	/>
+				</StackLayout>
+
+				<StackLayout Orientation="Horizontal" HeightRequest="30" Margin="20,0,0,0" >
+					<Button Image="MainTourVets.png" WidthRequest="15" HeightRequest="15" VerticalOptions="Center"  Command="{Binding ShowMyVetsCommand}"   />
+					<Button Margin="20,0,0,0" Text="My Vets" Font="AdelleSans" FontSize="12" VerticalOptions="Center" TextColor="Gray"  Command="{Binding ShowMyVetsCommand}"   	/>
+				</StackLayout>
+
+
+				<StackLayout Orientation="Horizontal" HeightRequest="30" Margin="20,0,0,0" >
+					<Button Image="MainTourSettings.png" WidthRequest="15" HeightRequest="15" VerticalOptions="Center"  Command="{Binding ShowSettingsCommand}"   />
+					<Button Margin="20,0,0,0" Text="Settings" Font="AdelleSans" FontSize="12" VerticalOptions="Center" TextColor="Gray"  Command="{Binding ShowSettingsCommand}"   	/>
+				</StackLayout>
+
+			</StackLayout>
+
+		</Grid>
+
+
+	</ContentView.Content>
+</ContentPage>

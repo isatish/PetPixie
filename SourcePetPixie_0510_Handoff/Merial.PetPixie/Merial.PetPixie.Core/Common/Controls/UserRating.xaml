@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	x:Class="Merial.PetPixie.Core.Views.UserRating"
+	BackgroundColor="Transparent">
+
+	<StackLayout x:Name="stackContents" Orientation="Horizontal" WidthRequest="84" HeightRequest="30" >
+		<Image x:Name="imageRating" Source="rating_4.png" WidthRequest="84" HeightRequest="17"  VerticalOptions="Center" HorizontalOptions="Center"     />
+		<Label Text="(1) Rating" HeightRequest="30" WidthRequest="100" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalOptions="Center" VerticalTextAlignment="Center" />
+	</StackLayout>
+
+</ContentView>

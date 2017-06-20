@@ -1,0 +1,5 @@
+/Developer/Merial/PetPixie/SourcePetPixie_0510_Handoff/Merial.PetPixie/MasterDetail/MvvmCross.Forms.Presenter.Core/obj/Debug/.NETPortable,Version=v4.5,Profile=Profile7.AssemblyAttribute.cs
+/Developer/Merial/PetPixie/SourcePetPixie_0510_Handoff/Merial.PetPixie/bin/Debug/Mvx/Portable/MvvmCross.Forms.Presenter.Core.dll.mdb
+/Developer/Merial/PetPixie/SourcePetPixie_0510_Handoff/Merial.PetPixie/bin/Debug/Mvx/Portable/MvvmCross.Forms.Presenter.Core.dll
+/Developer/Merial/PetPixie/SourcePetPixie_0510_Handoff/Merial.PetPixie/MasterDetail/MvvmCross.Forms.Presenter.Core/obj/Debug/MvvmCross.Forms.Presenter.Core.dll
+/Developer/Merial/PetPixie/SourcePetPixie_0510_Handoff/Merial.PetPixie/MasterDetail/MvvmCross.Forms.Presenter.Core/obj/Debug/MvvmCross.Forms.Presenter.Core.dll.mdb

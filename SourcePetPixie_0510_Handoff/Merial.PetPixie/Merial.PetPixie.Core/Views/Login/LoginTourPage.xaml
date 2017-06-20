@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+	xmlns:cv="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.CarouselView"
+	xmlns:local="clr-namespace:Merial.PetPixie.Core.Views;assembly=Merial.PetPixie.Core"
+	xmlns:testCarouselView="clr-namespace:Merial.PetPixie.Core.Views;assembly=Merial.PetPixie.Core"
+	BackgroundImage="loginBg.png"
+	x:Class="Merial.PetPixie.Core.Views.LoginTourPage">
+
+
+	 <ContentPage.Resources>
+	 	<ResourceDictionary>
+
+			<!-- Opening Template -->
+			<DataTemplate x:Key="OpeningTemplate">
+	            <StackLayout BackgroundColor="Transparent"  Orientation="Vertical" >
+
+					<Image Source="PetPixieLogin.png"  Margin="0,50,0,0" VerticalOptions="Start"  HorizontalOptions="Center"   WidthRequest="100" Aspect="AspectFit" />
+
+					<StackLayout Orientation="Horizontal" HorizontalOptions="Center" >
+						<Image Source="JoinIconTour.png"   HorizontalOptions="Center" Margin="0" WidthRequest="30" HeightRequest="30" />
+						<Image Source="RemindIconTour.png"   HorizontalOptions="Center" Margin="0" WidthRequest="30" HeightRequest="30" />
+						<Image Source="VetIconTour.png"   HorizontalOptions="Center" Margin="0" WidthRequest="30" HeightRequest="30" />
+					</StackLayout>
+
+
+					<Label TextColor="White" FontSize="Medium" Margin="0"  Text="A community for pets and their parents" HorizontalOptions="Center" HorizontalTextAlignment="Center"  WidthRequest="400" />
+					<Label TextColor="White" FontSize="Medium"  Margin="0"  Text="Connect - Get Reminders - Find a Vet"  HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalOptions="End"  WidthRequest="400" />
+
+                </StackLayout>
+
+			</DataTemplate>
+			
+			<!-- Join Template -->
+			<DataTemplate x:Key="JoinTemplate">
+	            <StackLayout BackgroundColor="Transparent"  Orientation="Vertical" Margin="0">
+
+					<Grid >
+						<Image Source="Join1Tour.png" VerticalOptions="Start" HorizontalOptions="Start" Margin="40,40,0,0" WidthRequest="155" HeightRequest="155" />
+						<Image Source="Join2Tour.png" VerticalOptions="Start" HorizontalOptions="Start" Margin="160,110,0,0" WidthRequest="200" HeightRequest="200" />
+						<Image Source="Join3Tour.png" VerticalOptions="Start" HorizontalOptions="Start" Margin="30,180,0,0" WidthRequest="155" HeightRequest="155" />
+					</Grid>
+					<Image Source="JoinIconTour.png"   HorizontalOptions="Center" Margin="0" WidthRequest="30" HeightRequest="30" />
+					<Label TextColor="White" FontSize="Medium" Margin="0"  Text="Join the Community" HorizontalOptions="Center" HorizontalTextAlignment="Center"  WidthRequest="400" />
+					<Label TextColor="White" FontSize="Small"  Margin="0"  Text="See and post pets pics and connect"  HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalOptions="End"  WidthRequest="400" />
+					<Label TextColor="White" FontSize="Small"  Margin="0,0,0,20"  Text="with other owners and experts."  HorizontalOptions="Center" HorizontalTextAlignment="Center"  VerticalOptions="Start" WidthRequest="400" />
+
+                </StackLayout>
+
+			</DataTemplate>
+
+
+
+
+			<!-- Find a Vet Template -->
+			<DataTemplate x:Key="ReminderTemplate">
+	            <StackLayout BackgroundColor="Transparent"  Orientation="Vertical" Margin="0">
+
+					<Grid >
+						<Image Source="Remind1Tour.png" VerticalOptions="Start" HorizontalOptions="End" Margin="0,40,20,0" WidthRequest="155" HeightRequest="155" />
+						<Image Source="Remind2Tour.png" VerticalOptions="Start" HorizontalOptions="End" Margin="0,110,140,0" WidthRequest="200" HeightRequest="200" />
+						<Image Source="Remind3Tour.png" VerticalOptions="Start" HorizontalOptions="End" Margin="0,180,10,0" WidthRequest="155" HeightRequest="155" />
+					</Grid>
+					<Image Source="RemindIconTour.png"   HorizontalOptions="Center" Margin="0" WidthRequest="30" HeightRequest="30" />
+					<Label TextColor="White" FontSize="Medium" Margin="0"  Text="Get Reminders" HorizontalOptions="Center" HorizontalTextAlignment="Center"  WidthRequest="400" />
+					<Label TextColor="White" FontSize="Small"  Margin="0"  Text="Set reminders for product administration,"  HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalOptions="End"  WidthRequest="400" />
+					<Label TextColor="White" FontSize="Small"  Margin="0,0,0,20"  Text="vet appointments and more."  HorizontalOptions="Center" HorizontalTextAlignment="Center"  VerticalOptions="Start" WidthRequest="400" />
+
+                </StackLayout>
+
+			</DataTemplate>
+
+			<!-- Find a Vet Template -->
+			<DataTemplate x:Key="VetTemplate">
+	            <StackLayout BackgroundColor="Transparent"  Orientation="Vertical" Margin="0">
+
+					<Grid >
+						<Image Source="Vet1Tour.png" VerticalOptions="Start" HorizontalOptions="Start" Margin="40,40,0,0" WidthRequest="155" HeightRequest="155" />
+						<Image Source="Vet2Tour.png" VerticalOptions="Start" HorizontalOptions="Start" Margin="160,110,0,0" WidthRequest="200" HeightRequest="200" />
+						<Image Source="Vet3Tour.png" VerticalOptions="Start" HorizontalOptions="Start" Margin="30,180,0,0" WidthRequest="155" HeightRequest="155" />
+					</Grid>
+					<Image Source="VetIconTour.png"   HorizontalOptions="Center" Margin="0" WidthRequest="30" HeightRequest="30" />
+					<Label TextColor="White" FontSize="Medium" Margin="0"  Text="Find a Vet" HorizontalOptions="Center" HorizontalTextAlignment="Center"  WidthRequest="400" />
+					<Label TextColor="White" FontSize="Small"  Margin="0"  Text="Quickly locate a vet near you..."  HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalOptions="End"  WidthRequest="400" />
+					<Label TextColor="White" FontSize="Small"  Margin="0,0,0,20"  Text="wherever you are."  HorizontalOptions="Center" HorizontalTextAlignment="Center"  VerticalOptions="Start" WidthRequest="400" />
+
+                </StackLayout>
+
+			</DataTemplate>
+			
+			 <local:CarouselTemplateSelector x:Key="carouselDataTemplateSelector" OpeningTemplate="{StaticResource OpeningTemplate}" JoinTemplate="{StaticResource JoinTemplate}"     ReminderTemplate="{StaticResource ReminderTemplate}" VetTemplate="{StaticResource VetTemplate}" />
+
+
+		</ResourceDictionary>
+
+    </ContentPage.Resources>
+
+
+    <Grid >
+    	<Grid.RowDefinitions>
+    		<RowDefinition Height="*"/>
+			<RowDefinition Height="140" />
+		</Grid.RowDefinitions>
+	
+	 
+
+	    <!--Carousel View-->
+	    <cv:CarouselView 
+			Grid.Row="0"
+	        x:Name="MyCarouselView" 
+
+			BackgroundColor="Gray"
+	        HorizontalOptions="FillAndExpand" 
+	        VerticalOptions="FillAndExpand" 
+	        ItemTemplate="{StaticResource carouselDataTemplateSelector}"   />
+
+		<!-- FOOTER -->
+		<StackLayout BackgroundColor="Transparent"
+			HorizontalOptions="Fill"
+			VerticalOptions="EndAndExpand" 
+			Padding="20"
+			Grid.Row="1" >
+
+			<Button  Command="{Binding SignupCommand}" TextColor="White" BackgroundColor="{StaticResource AccentColor}" VerticalOptions="Center" HorizontalOptions="Center" Text="Join the community" WidthRequest="300" BorderRadius="2"  />
+		
+			<Button Command="{Binding LoginCommand}" TextColor="White" FontSize="Small"  Margin="0"  Text="Already a member? Login"  HorizontalOptions="Center"  WidthRequest="400" />
+			<Label TextColor="Silver" FontSize="8"  Margin="0,20,0,10"  Text="Free for personal use"  HorizontalOptions="Start" HorizontalTextAlignment="Start"  WidthRequest="100" />
+
+		</StackLayout>
+		
+
+		
+	</Grid>
+
+		
+	
+</ContentPage>

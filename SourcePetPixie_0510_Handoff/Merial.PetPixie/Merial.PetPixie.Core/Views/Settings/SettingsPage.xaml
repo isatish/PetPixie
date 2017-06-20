@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:top="clr-namespace:Merial.PetPixie.Core.Views;assembly=Merial.PetPixie.Core"
+	xmlns:views="clr-namespace:Merial.PetPixie.Core.Views;assembly=Merial.PetPixie.Core"
+	x:Class="Merial.PetPixie.Core.Views.SettingsPage"  		
+	xmlns:effects="clr-namespace:Merial.PetPixie.Core.Effects;assembly=Merial.PetPixie.Core" 
+	xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
+	xmlns:res="clr-namespace:Merial.PetPixie.Core.Resources;assembly=Merial.PetPixie.Core"
+	Title="Settings" 
+	Padding="0, 0, 0, 0">
+
+
+	<MasterDetailPage.Master>
+    	<ContentPage Title="Settings"  />		
+  	</MasterDetailPage.Master>
+
+	<MasterDetailPage.Detail >
+
+		<ContentPage x:Name="ContentContainer" >
+
+			<StackLayout Orientation="Vertical"  >
+
+				<top:TopNavBar x:Name="navBar" HeightRequest="50" TranslationY="20"  />
+
+				<StackLayout x:Name="MainContentsStack" Orientation="Vertical"  >
+
+					<!--General-->
+					<Label Margin="30,30,0,0" Text="General" Font="AdelleSans-Bold"  FontSize="16" FontAttributes="Bold" HorizontalOptions="Start" HorizontalTextAlignment="Start"   VerticalOptions="Start" VerticalTextAlignment="Start"  TextColor="{StaticResource AccentColor}" />
+
+					<StackLayout Orientation="Horizontal" HeightRequest="30" Margin="20,0,0,0" >
+						<Button Image="ic_not.png" WidthRequest="15" HeightRequest="15" VerticalOptions="Center"  Command="{Binding ShowNotificationSettingsCommand}"   />
+						<Button Margin="20,0,0,0" Text="Notifications" Font="AdelleSans" FontSize="12" VerticalOptions="Center" TextColor="Gray"  Command="{Binding ShowNotificationSettingsCommand}"   	/>
+					</StackLayout>
+
+					<Image Source="DividerShadow.png" HorizontalOptions="FillAndExpand" />
+
+
+					<!--Support-->
+					<Label Margin="30,0,0,0" Text="Support" Font="AdelleSans-Bold"  FontSize="14" FontAttributes="Bold" HorizontalOptions="Start" HorizontalTextAlignment="Start"   VerticalOptions="Start" VerticalTextAlignment="Start"  TextColor="{StaticResource AccentColor}" />
+
+					<StackLayout Orientation="Horizontal" HeightRequest="30" Margin="20,0,0,0" >
+						<Button  Image="ic_about.png" WidthRequest="15" HeightRequest="15" VerticalOptions="Center" Command="{Binding ShowAboutCommand}"  />
+						<Button Margin="20,0,0,0" Text="About" Font="AdelleSans" FontSize="12" VerticalOptions="Center"  TextColor="Gray" Command="{Binding ShowAboutCommand}"  	/>
+					</StackLayout>
+
+					<StackLayout Orientation="Horizontal" HeightRequest="30" Margin="20,0,0,0" >
+						<Button Image="ic_tou.png" WidthRequest="15" HeightRequest="15" VerticalOptions="Center" Command="{Binding ShowTermsOfUseCommand}" />
+						<Button Margin="20,0,0,0" Text="Terms Of Use" Font="AdelleSans" FontSize="12" VerticalOptions="Center"  TextColor="Gray"  Command="{Binding ShowTermsOfUseCommand}"   	/>
+					</StackLayout>
+						
+					<StackLayout Orientation="Horizontal" HeightRequest="30" Margin="20,0,0,0" >
+						<Button Image="ic_privacy.png" WidthRequest="15" HeightRequest="15" VerticalOptions="Center"  Command="{Binding ShowPrivacyCommand}"  />
+						<Button Margin="20,0,0,0" Text="Privacy" Font="AdelleSans" FontSize="12" VerticalOptions="Center"  TextColor="Gray"  Command="{Binding ShowPrivacyCommand}"   	/>
+					</StackLayout>
+
+					<StackLayout Orientation="Horizontal" HeightRequest="30" Margin="20,0,0,0" >
+						<Button Image="ic_guidelines.png" WidthRequest="20" HeightRequest="20" VerticalOptions="Center"   Command="{Binding ShowGuideLinesCommand}" />
+						<Button Margin="20,0,0,0" Text="Guidelines" Font="AdelleSans" FontSize="12" VerticalOptions="Center"   TextColor="Gray"  Command="{Binding ShowGuideLinesCommand}" 	/>
+					</StackLayout>
+						
+
+					<Image Source="DividerShadow.png" HorizontalOptions="FillAndExpand" />
+
+
+					<!--Users-->
+					<Label  Margin="30,0,0,0" Text="Users" Font="AdelleSans-Bold"  FontSize="14" FontAttributes="Bold" HorizontalOptions="Start" HorizontalTextAlignment="Start"   VerticalOptions="Start" VerticalTextAlignment="Start"  TextColor="{StaticResource AccentColor}" />
+
+					<StackLayout Orientation="Horizontal" HeightRequest="30" Margin="20,0,0,0" >
+						<Button Image="ic_logout.png" WidthRequest="20" HeightRequest="20" VerticalOptions="Center"   Command="{Binding ShowLogoutCommand}" />
+						<Button Margin="20,0,0,0" Text="Logout" Font="AdelleSans" FontSize="12" VerticalOptions="Center"   TextColor="Gray"  Command="{Binding ShowLogoutCommand}" 	/>
+					</StackLayout>
+
+					<Image Source="DividerShadow.png" HorizontalOptions="FillAndExpand" />
+
+
+					<!--Feedback-->
+					<Label  Margin="30,0,0,0" Text="Feedback" Font="AdelleSans-Bold"  FontSize="14" FontAttributes="Bold" HorizontalOptions="Start" HorizontalTextAlignment="Start"   VerticalOptions="Start" VerticalTextAlignment="Start"  TextColor="{StaticResource AccentColor}" />
+
+					<StackLayout Orientation="Horizontal" HeightRequest="30" Margin="20,0,0,0" >
+						<Button Image="ic_feedback.png" WidthRequest="20" HeightRequest="20" VerticalOptions="Center"   Command="{Binding ShowLogoutCommand}" />
+						<Button Margin="20,0,0,0" Text="Feedbacks" Font="AdelleSans" FontSize="12" VerticalOptions="Center"   TextColor="Gray"  Command="{Binding ShowLogoutCommand}" 	/>
+					</StackLayout>
+		 
+			</StackLayout>	
+
+			</StackLayout>
+
+		</ContentPage>
+
+	</MasterDetailPage.Detail>
+
+
+
+	
+
+
+</MasterDetailPage>

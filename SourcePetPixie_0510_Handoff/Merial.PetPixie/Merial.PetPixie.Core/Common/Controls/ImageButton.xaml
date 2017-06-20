@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	x:Class="Merial.PetPixie.Core.Views.ImageButton"
+	xmlns:local="clr-namespace:Merial.PetPixie.Core.Shared"
+	BackgroundColor="Transparent">
+
+	<Grid BackgroundColor="White">
+
+			<StackLayout x:Name="stackContents" Orientation="Vertical" WidthRequest="200" HeightRequest="200" />
+
+
+			<Grid x:Name="GridLikes"  VerticalOptions="Start" HorizontalOptions="End" >
+				<Image x:Name="imageLike" Source="likered.png" WidthRequest="30" HeightRequest="30"  VerticalOptions="Center" HorizontalOptions="Center"     />
+				<Label x:Name="labelLike" TextColor="White" FontSize="12"  WidthRequest="30" HeightRequest="30"  VerticalOptions="Center" HorizontalOptions="Center" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"  />
+			</Grid>
+	
+
+	</Grid>
+
+</ContentView>

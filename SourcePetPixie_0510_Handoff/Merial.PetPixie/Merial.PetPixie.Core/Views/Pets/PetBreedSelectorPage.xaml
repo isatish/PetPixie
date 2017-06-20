@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+	xmlns:res="clr-namespace:Merial.PetPixie.Core.Resources;assembly=Merial.PetPixie.Core"
+	xmlns:views="clr-namespace:Merial.PetPixie.Core.Views;assembly=Merial.PetPixie.Core"
+	xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+	xmlns:fab="clr-namespace:FAB.Forms;assembly=FAB.Forms"
+	xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
+	xmlns:b="clr-namespace:Merial.PetPixie.Core.Behaviors;assembly=Merial.PetPixie.Core" 
+	xmlns:c="clr-namespace:Merial.PetPixie.Core.Converters;assembly=Merial.PetPixie.Core" 
+	x:Class="Merial.PetPixie.Core.Views.PetBreedSelectorPage" 
+	BackgroundColor="White" >
+	
+	<ContentPage.Resources>
+		<ResourceDictionary>
+			<c:ItemTappedEventArgsConverter x:Key="ItemTappedConverter" />
+		</ResourceDictionary>
+	</ContentPage.Resources>
+
+	<ContentPage.Content >
+
+		<Grid  TranslationY="20"  >
+			<Grid.RowDefinitions>
+				<RowDefinition Height="40" />
+				<RowDefinition Height="25" />
+				<RowDefinition Height="40" />
+				<RowDefinition Height="50" />
+				<RowDefinition Height="*" />
+			</Grid.RowDefinitions>
+
+			<views:TopNavBar Grid.Row="0" x:Name="navBar" HeightRequest="40" />
+
+			<Label Grid.Row="1" Text="Your Breed: (Tap to Remove)" FontSize="14" TextColor="Black" VerticalOptions="End" BackgroundColor="White" HeightRequest="25" />
+
+			<ScrollView Grid.Row="2" VerticalOptions="Center" Orientation="Horizontal" BackgroundColor="White" Padding="20,0,20,0" >
+
+			<StackLayout  x:Name="StackBreeds" Orientation="Horizontal" HeightRequest="30" Spacing="10"   />
+			</ScrollView>
+
+<!--
+			<RelativeLayout HeightRequest="30" BackgroundColor="Yellow" Grid.Row="2" VerticalOptions="End" TranslationY="-50" >
+				<ListView  Rotation="270" ItemsSource="{Binding SelectedBreeds}" RowHeight="150" 
+	 				RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5, Constant=-75}"
+					RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=-0.5, Constant=75}"
+				 	RelativeLayout.WidthConstraint="{ConstraintExpression Type=Constant, Constant=150}"
+					RelativeLayout.HeightConstraint="{ConstraintExpression Type=Constant, Constant=40}"
+				 	>
+					<ListView.ItemTemplate>
+						<DataTemplate>
+							<ViewCell>
+							     <ContentView Rotation="90" Padding="1" TranslationX="148">
+									<StackLayout Orientation="Horizontal" BackgroundColor="Silver" HeightRequest="150" WidthRequest="148" >
+									 	<Button Text="{Binding Name}" TextColor="Black"  FontSize="10" HeightRequest="98" WidthRequest="98" />
+							    
+							      	</StackLayout>
+								</ContentView>
+								
+
+							</ViewCell>
+						</DataTemplate>
+					</ListView.ItemTemplate>
+			
+				</ListView>
+			</RelativeLayout>
+
+-->
+
+			
+
+			<Label Grid.Row="3" Text="Select Your Breed" FontSize="14" TextColor="Black" VerticalOptions="End" BackgroundColor="White" HeightRequest="50" VerticalTextAlignment="End" />
+
+
+			<ListView 
+				Grid.Row="4"
+				x:Name="listItems"
+				SeparatorVisibility="Default" 
+				SeparatorColor="Silver"
+				ItemsSource="{Binding KBreeds}"
+				RowHeight="30"
+				BackgroundColor="White"
+				VerticalOptions="Start"
+				HasUnevenRows="false">
+		
+			    <ListView.Behaviors>
+				      <b:EventToCommandBehavior EventName="ItemTapped" Command="{Binding OnBreedClickCommand}" EventArgsConverter="{StaticResource ItemTappedConverter}" />
+    			</ListView.Behaviors>
+		
+				<ListView.ItemTemplate>
+					<DataTemplate>
+						<ViewCell>
+
+							<Grid Grid.Row="1" BackgroundColor="Transparent" Padding="00,0,0,0" VerticalOptions="Center" >
+								<Grid.RowDefinitions>
+									<RowDefinition Height="30" />
+								</Grid.RowDefinitions>
+								<Grid.ColumnDefinitions>
+									<ColumnDefinition Width="*" />
+								</Grid.ColumnDefinitions>
+								
+<!--								<StackLayout Grid.Column="0" IsVisible="{Binding IsSelected, Mode=TwoWay}"  HeightRequest="30" WidthRequest="400" Orientation="Horizontal" BackgroundColor="#536a63" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
+							-->
+								<Label Margin="20,0,0,0" Grid.Column="0"    HorizontalOptions="Start" HorizontalTextAlignment="Start" Font="MuseoSans-300"  VerticalOptions="Center" VerticalTextAlignment="Center"  TextColor="{StaticResource AccentColor} " Text="{Binding Name}" FontSize="14"  />
+
+							</Grid>
+							
+						
+						</ViewCell>
+					</DataTemplate>
+				</ListView.ItemTemplate>
+			
+			</ListView>
+
+
+		</Grid>   
+
+		
+	</ContentPage.Content>
+</ContentPage>

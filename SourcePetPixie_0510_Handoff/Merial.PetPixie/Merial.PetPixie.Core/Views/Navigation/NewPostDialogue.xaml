@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView 
+		xmlns="http://xamarin.com/schemas/2014/forms" 
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		x:Class="Merial.PetPixie.Core.Views.NewPostDialog"
+
+		>
+	<ContentView.Content>
+
+		<Frame Margin="20" Padding="0" HasShadow="true" WidthRequest="200" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="{StaticResource AccentColor}" OutlineColor="Black" Grid.Row="2" >
+
+			<StackLayout Orientation="Vertical" BackgroundColor="Transparent">
+				<Label Text="New Post" BackgroundColor="##536a63" TextColor="White" HeightRequest="30" WidthRequest="200" HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalOptions="Center" VerticalTextAlignment="Center"  />
+				<BoxView WidthRequest="200" TranslationY="-7" HeightRequest="1" BackgroundColor="Black" />
+				<Button Text="Take a Picture" x:Name="takePhoto" TextColor="White"   HeightRequest="30"  WidthRequest="200" VerticalOptions="Center" Command="{Binding TakeFunPictureCommand}"  />
+				<Button Text="Record a Video" TextColor="White"  HeightRequest="30" WidthRequest="200"  VerticalOptions="Center" Command="{Binding TakeFunVideoCommand}"    />
+				<Button Text="Select one of your pics" TextColor="White"   HeightRequest="30"  WidthRequest="200" VerticalOptions="Center"   Command="{Binding SelectFunPictureCommand}"    />
+				<Button Text="Select one of your videos" TextColor="White"   HeightRequest="30"  WidthRequest="200" VerticalOptions="Center"   Command="{Binding SelectFunVideoCommand}"    />
+				<Button Text="Close"  HeightRequest="30"  TextColor="White"  WidthRequest="200"  VerticalOptions="Center"  Clicked="Handle_CloseClicked"    />
+
+			</StackLayout>
+		</Frame>
+	</ContentView.Content>
+</ContentView>

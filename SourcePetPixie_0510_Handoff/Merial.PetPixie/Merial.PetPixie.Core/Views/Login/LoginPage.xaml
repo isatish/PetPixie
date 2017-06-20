@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 	xmlns="http://xamarin.com/schemas/2014/forms" 
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		xmlns:res="clr-namespace:Merial.PetPixie.Core.Resources;assembly=Merial.PetPixie.Core"
+		xmlns:views="clr-namespace:Merial.PetPixie.Core.Views;assembly=Merial.PetPixie.Core"
+		 
+		x:Class="Merial.PetPixie.Core.Views.LoginPage" >
+	<ContentPage.Content>
+
+		<Grid TranslationY="20">
+			
+			<StackLayout Orientation="Vertical" >
+				<views:TopNavBar IsVisible="false" x:Name="navBar" HeightRequest="30"  />
+				<Button Image="ArrowBack17.png" Margin="20,0,0,0" Command="{Binding BackCommand}"   WidthRequest="17" HeightRequest="17" HorizontalOptions="Start"   />
+
+				<Image HorizontalOptions="Center" Source="PetPixieLogin.png"  Aspect="AspectFill" HeightRequest="75" Margin="0,10,0,40" />
+
+				<Entry x:Name="entryEmail" Text="{Binding Email}" Keyboard="Email"  WidthRequest="300" Placeholder="Email" PlaceholderColor="Silver" HeightRequest="30" HorizontalOptions="Center"   Completed="Handle_CredentialsCompleted"   />
+				<Entry x:Name="entryPassword"  Text="{Binding Password}" Keyboard="Chat"   IsPassword="true"   WidthRequest="300" Placeholder="Password" PlaceholderColor="Silver" HeightRequest="30"  HorizontalOptions="Center"   Completed="Handle_CredentialsCompleted"   />
+	
+				<Button x:Name="buttonForgotPassword" FontSize="10"   Command="{Binding ForgetPasswordCommand}" TextColor="Black" FontAttributes="Bold" Text="Forgot Password?" Margin="0,20,0,0" WidthRequest="300" HeightRequest="50"   HorizontalOptions="Center" />
+			
+				<Button x:Name="buttonLogin" Command="{Binding LoginCommand}" TextColor="White" Text="Login" WidthRequest="300" HeightRequest="35" BackgroundColor="{StaticResource AccentColor}" HorizontalOptions="Center" />
+
+				<Label Text="Or Login With" TextColor="Black" FontSize="10" WidthRequest="150" HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
+
+				<StackLayout WidthRequest="300" Spacing="5" Orientation="Horizontal"  Margin="0,5,0,20" HorizontalOptions="Center" >
+
+					<Grid>
+						<views:FacebookLoginButton IsVisible="true" BackgroundColor="#3b5998"  WidthRequest="145" HeightRequest="35" Text="Facebook"  TextColor="White"  HorizontalOptions="Center" />
+				    	       <Image Source="fb_icon.png" IsVisible="true"    WidthRequest="25" HeightRequest="25"  HorizontalOptions="Start" VerticalOptions="Center" Margin="10,0,0,0" />
+			
+					</Grid> 
+
+
+					<Grid>
+				    	<Button x:Name="buttonTwitterLogin" Command="{Binding SignupWithTwitterCommand}" TextColor="White" Text="Twitter" WidthRequest="145" HeightRequest="35" BackgroundColor="#00aced" HorizontalOptions="Center" />
+				    	<Image Source="tw_icon.png" IsVisible="true"    WidthRequest="25" HeightRequest="25"  HorizontalOptions="Start" VerticalOptions="Center" Margin="10,0,0,0" />
+					</Grid> 
+
+				</StackLayout>
+				
+				<Label Text="New to Pet Pixie?" TextColor="Black" FontSize="10"  WidthRequest="150" HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
+				<Button x:Name="buttonCreate" Command="{Binding SignUpCommand}" TextColor="Black" Text="Create Account" BorderColor="Black" BorderWidth="2" BackgroundColor="White"  WidthRequest="300" HeightRequest="35" HorizontalOptions="Center" />
+
+				<Label Text="Registered on GetMeHome.com, NexGardForDogs.com, frontline.com or heartgard.com? You can use your login." TextColor="Black" FontSize="10" WidthRequest="300" HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
+	
+
+			</StackLayout>
+	  </Grid>
+
+		
+	</ContentPage.Content>
+</ContentPage>

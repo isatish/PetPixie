@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+	xmlns:res="clr-namespace:Merial.PetPixie.Core.Resources;assembly=Merial.PetPixie.Core"
+	xmlns:views="clr-namespace:Merial.PetPixie.Core.Views;assembly=Merial.PetPixie.Core"
+	xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+	xmlns:fab="clr-namespace:FAB.Forms;assembly=FAB.Forms"
+	xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
+	xmlns:b="clr-namespace:Merial.PetPixie.Core.Behaviors;assembly=Merial.PetPixie.Core" 
+	xmlns:c="clr-namespace:Merial.PetPixie.Core.Converters;assembly=Merial.PetPixie.Core" 
+	x:Class="Merial.PetPixie.Core.Views.MyVetsPage" 
+	BackgroundColor="#f0f0f0" >
+
+	<MasterDetailPage.Resources>
+		<ResourceDictionary>
+			<c:ItemTappedEventArgsConverter x:Key="ItemTappedConverter" />
+		</ResourceDictionary>
+	</MasterDetailPage.Resources>
+
+
+	<MasterDetailPage.Master>
+		<ContentPage Title="My Vets"  />		
+	</MasterDetailPage.Master>
+
+	<MasterDetailPage.Detail >
+
+		<ContentPage x:Name="ContentContainer" >
+
+			<StackLayout Orientation="Vertical" Padding="0" Margin="0" >
+
+				<views:TopNavBar x:Name="navBar" HeightRequest="50" Margin="0,0,0,0" />
+				
+				<Grid  TranslationY="20" x:Name="GridContent"  >
+					<Grid.RowDefinitions>
+						<RowDefinition Height="0" />
+						<RowDefinition Height="40" />
+						<RowDefinition Height="*" />
+						<RowDefinition Height="120" />
+					</Grid.RowDefinitions>
+
+					<Grid Grid.Row="1" BackgroundColor="White" Padding="20,0,10,0" >
+						<Grid.RowDefinitions>
+							<RowDefinition Height="40" />
+						</Grid.RowDefinitions>
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="200" />
+							<ColumnDefinition Width="*" />
+							<ColumnDefinition Width="40" />
+						</Grid.ColumnDefinitions>
+
+						<Label BackgroundColor="White" Text="Find a new vet" HeightRequest="40" VerticalOptions="Center" VerticalTextAlignment="Center" HorizontalOptions="Start" Font="MuseoSans-300" TextColor="Black" FontSize="12"   />
+						<Button BackgroundColor="Transparent" HeightRequest="40" Grid.ColumnSpan="3" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"   Grid.Row="0" Text="" Font="MuseoSans-300" TextColor="Black" FontSize="10" Command="{Binding FindVetsCommand }"   />
+						<Button BackgroundColor="White" Image="ArrowNextDark.png" WidthRequest="17" HeightRequest="17" VerticalOptions="Center" HorizontalOptions="End"   Grid.Column="2"   Command="{Binding FindVetsCommand }"   />
+
+					</Grid>
+
+					<views:CustomMap IsVisible="false" Grid.Row="2" x:Name="mapVets" MapType="Street" WidthRequest="400" HeightRequest="500" />
+					<ContentView IsVisible="false" Grid.Row="2" x:Name="ContentMap" WidthRequest="300" HeightRequest="400" />
+
+					<ScrollView Orientation="Vertical" HeightRequest="240" Grid.Row="2" VerticalOptions="Start" Margin="0,20,0,0" >
+				
+						<ListView 
+							x:Name="listItems"
+							SeparatorVisibility="Default" 
+							SeparatorColor="Silver"
+							ItemsSource="{Binding Vets}"
+							RowHeight="60"
+							BackgroundColor="White"
+							VerticalOptions="Start"
+							HasUnevenRows="false">
+			
+					    <ListView.Behaviors>
+						      <b:EventToCommandBehavior EventName="ItemTapped" Command="{Binding VetSelectedCommand}" EventArgsConverter="{StaticResource ItemTappedConverter}" />
+		    			</ListView.Behaviors>
+				
+						<ListView.ItemTemplate>
+							<DataTemplate>
+								<ViewCell>
+
+									<Grid BackgroundColor="White" Padding="0,0,10,0" VerticalOptions="Center" >
+										<Grid.RowDefinitions>
+											<RowDefinition Height="40" />
+										</Grid.RowDefinitions>
+										<Grid.ColumnDefinitions>
+											<ColumnDefinition Width="40" />
+											<ColumnDefinition Width="*" />
+											<ColumnDefinition Width="40" />
+										</Grid.ColumnDefinitions>
+									
+										<controls:CircleImage Grid.Column="0" Source="VetProfileImage.png"  WidthRequest="35" HeightRequest="35" BorderColor="Gray" BorderThickness="2" Aspect="AspectFill" VerticalOptions="Center" HorizontalOptions="Center" />
+										<Label  Grid.Column="1"     HorizontalOptions="Start" HorizontalTextAlignment="Start" Font="MuseoSans-300"  VerticalOptions="Center" VerticalTextAlignment="Center"  TextColor="{StaticResource AccentColor} " Text="{ Binding Name }" FontSize="12"  />
+										<Button BackgroundColor="Transparent" Image="ArrowNextDark.png" WidthRequest="17" HeightRequest="17" VerticalOptions="Center" HorizontalOptions="End"   Grid.Column="2"   Command="{Binding VetSelectedCommand }"   />
+
+									</Grid>
+								
+								</ViewCell>
+							</DataTemplate>
+						</ListView.ItemTemplate>
+					
+					</ListView>
+
+					</ScrollView>
+
+
+
+
+				</Grid>   
+
+			</StackLayout>
+			
+		</ContentPage>
+
+	</MasterDetailPage.Detail>
+
+</MasterDetailPage>
+

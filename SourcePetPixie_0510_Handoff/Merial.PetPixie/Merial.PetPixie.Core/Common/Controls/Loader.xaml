@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentView 
+	xmlns="http://xamarin.com/schemas/2014/forms" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+	x:Class="Merial.PetPixie.Core.Shared.Loader" 
+	WidthRequest="600" HeightRequest="1200" 
+	>
+	<ContentView.Content>
+		<Grid WidthRequest="600" HeightRequest="1200" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
+
+			<!--Background Opacity-->
+			<StackLayout WidthRequest="400" HeightRequest="500" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="Red" Opacity="0" />
+
+			<Frame HasShadow="true" BackgroundColor="White" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="130" HeightRequest="65" >
+				<StackLayout Orientation="Vertical" VerticalOptions="Start" HeightRequest="40" >
+
+					<Grid WidthRequest="100" HeightRequest="40" BackgroundColor="Transparent" HorizontalOptions="Center" VerticalOptions="Start" >
+						<Grid.RowDefinitions>
+							<RowDefinition Height="36" />
+						</Grid.RowDefinitions>
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="96" />
+						</Grid.ColumnDefinitions>
+
+						<Image x:Name="Image0"   Grid.Row="0" Grid.Column="0" WidthRequest="96" HeightRequest="36"  Source="small_green_loader_0.png" IsVisible="false" />
+						<Image x:Name="Image1"   Grid.Row="0" Grid.Column="0" WidthRequest="96" HeightRequest="36"   Source="small_green_loader_1.png" IsVisible="false" />
+						<Image x:Name="Image2"   Grid.Row="0" Grid.Column="0" WidthRequest="96" HeightRequest="36"   Source="small_green_loader_2.png" IsVisible="false" />
+						<Image x:Name="Image3"   Grid.Row="0" Grid.Column="0" WidthRequest="96" HeightRequest="36"   Source="small_green_loader_3.png" IsVisible="false" />
+						<Image x:Name="Image4"   Grid.Row="0" Grid.Column="0" WidthRequest="96" HeightRequest="36"   Source="small_green_loader_4.png" IsVisible="false" />
+						<Image x:Name="Image5"   Grid.Row="0" Grid.Column="0" WidthRequest="96" HeightRequest="36"   Source="small_green_loader_5.png" IsVisible="false" />
+						<Image x:Name="Image6"   Grid.Row="0" Grid.Column="0" WidthRequest="96" HeightRequest="36"   Source="small_green_loader_6.png" IsVisible="false" />
+						<Image x:Name="Image7"   Grid.Row="0" Grid.Column="0" WidthRequest="96" HeightRequest="36"   Source="small_green_loader_7.png" IsVisible="false" />
+						<Image x:Name="Image8"   Grid.Row="0" Grid.Column="0" WidthRequest="96" HeightRequest="36"   Source="small_green_loader_8.png" IsVisible="false" />
+						<Image x:Name="Image9"   Grid.Row="0" Grid.Column="0" WidthRequest="96" HeightRequest="36"   Source="small_green_loader_9.png" IsVisible="false" />
+						<Image x:Name="Image10"  Grid.Row="0" Grid.Column="0" WidthRequest="96" HeightRequest="36" Source="small_green_loader_10.png" IsVisible="false" />
+						<Image x:Name="Image11"  Grid.Row="0" Grid.Column="0" WidthRequest="96" HeightRequest="36" Source="small_green_loader_11.png" IsVisible="false" />
+						<Image x:Name="Image12"  Grid.Row="0" Grid.Column="0" WidthRequest="96" HeightRequest="36" Source="small_green_loader_12.png" IsVisible="false" />
+						<Image x:Name="Image13"  Grid.Row="0" Grid.Column="0" WidthRequest="96" HeightRequest="36" Source="small_green_loader_13.png" IsVisible="false" />
+						<Image x:Name="Image14"  Grid.Row="0" Grid.Column="0" WidthRequest="96" HeightRequest="36"  Source="small_green_loader_14.png" IsVisible="false" />
+						<Image x:Name="Image15"  Grid.Row="0" Grid.Column="0" WidthRequest="96" HeightRequest="36" Source="small_green_loader_15.png" IsVisible="false" />
+						<Image x:Name="Image16"  Grid.Row="0" Grid.Column="0" WidthRequest="96" HeightRequest="36"  Source="small_green_loader_16.png" IsVisible="false" />
+						<Image x:Name="Image17"  Grid.Row="0" Grid.Column="0" WidthRequest="96" HeightRequest="36" Source="small_green_loader_17.png" IsVisible="false" />
+						<Image x:Name="Image18"  Grid.Row="0" Grid.Column="0" WidthRequest="96" HeightRequest="36" Source="small_green_loader_18.png" IsVisible="false" />
+						<Image x:Name="Image19"  Grid.Row="0" Grid.Column="0" WidthRequest="96" HeightRequest="36" Source="small_green_loader_19.png" IsVisible="false" />
+						<Image x:Name="Image20"  Grid.Row="0" Grid.Column="0" WidthRequest="96" HeightRequest="36" Source="small_green_loader_20.png" IsVisible="false" />
+						<Image x:Name="Image21"  Grid.Row="0" Grid.Column="0" WidthRequest="96" HeightRequest="36" Source="small_green_loader_21.png" IsVisible="false" />
+						<Image x:Name="Image22"  Grid.Row="0" Grid.Column="0" WidthRequest="96" HeightRequest="36" Source="small_green_loader_22.png" IsVisible="false" />
+						<Image x:Name="Image23"  Grid.Row="0" Grid.Column="0" WidthRequest="96" HeightRequest="36" Source="small_green_loader_23.png" IsVisible="false" />
+						<Image x:Name="Image24"  Grid.Row="0" Grid.Column="0" WidthRequest="96" HeightRequest="36"  Source="small_green_loader_24.png" IsVisible="false" />
+						<Image x:Name="Image25"  Grid.Row="0" Grid.Column="0" WidthRequest="96" HeightRequest="36" Source="small_green_loader_25.png" IsVisible="false" />
+						<Image x:Name="Image26"  Grid.Row="0" Grid.Column="0" WidthRequest="96" HeightRequest="36"  Source="small_green_loader_26.png" IsVisible="false" />
+						<Image x:Name="Image27"  Grid.Row="0" Grid.Column="0" WidthRequest="96" HeightRequest="36" Source="small_green_loader_27.png" IsVisible="false" />
+						<Image x:Name="Image28"  Grid.Row="0" Grid.Column="0" WidthRequest="96" HeightRequest="36" Source="small_green_loader_28.png" IsVisible="false" />
+						<Image x:Name="Image29"  Grid.Row="0" Grid.Column="0" WidthRequest="96" HeightRequest="36" Source="small_green_loader_29.png" IsVisible="false" />
+
+					</Grid>
+					<Label x:Name="LoadingMessage" Text="Loading....." TextColor="Black" VerticalOptions="Start" VerticalTextAlignment="Start" FontSize="10" HeightRequest="20" HorizontalOptions="Center" HorizontalTextAlignment="Center" />
+			</StackLayout>
+
+		</Frame>
+	</Grid>
+
+
+	</ContentView.Content>
+</ContentView>

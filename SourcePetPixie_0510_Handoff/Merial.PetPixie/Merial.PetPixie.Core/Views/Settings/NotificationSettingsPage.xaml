@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:top="clr-namespace:Merial.PetPixie.Core.Views;assembly=Merial.PetPixie.Core"
+	xmlns:views="clr-namespace:Merial.PetPixie.Core.Views;assembly=Merial.PetPixie.Core"
+	xmlns:effects="clr-namespace:Merial.PetPixie.Core.Effects;assembly=Merial.PetPixie.Core" 
+	xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
+	xmlns:res="clr-namespace:Merial.PetPixie.Core.Resources;assembly=Merial.PetPixie.Core"
+	Title="Notifications" 
+			x:Class="Merial.PetPixie.Core.Views.NotificationSettingsPage"  	
+	Padding="0, 0, 0, 0">
+
+
+	<StackLayout Orientation="Vertical"  >
+
+		<top:TopNavBar x:Name="navBar" HeightRequest="50" TranslationY="20"  />
+
+
+		<Grid  x:Name="MainContents" Margin="20,40,20,20">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="70" />
+				<RowDefinition Height="70" />
+				<RowDefinition Height="70" />
+				<RowDefinition Height="70" />
+				<RowDefinition Height="70" />
+				<RowDefinition Height="70" />
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="*" />
+				<ColumnDefinition Width="60" />
+			</Grid.ColumnDefinitions>
+		
+		
+			<!--Likes-->
+			<StackLayout Grid.Row="0" Grid.Column="0"  Orientation="Vertical">
+				<Label  Text="Likes" Font="AdelleSans"  FontSize="20" HorizontalOptions="Start" HorizontalTextAlignment="Start"   VerticalOptions="Center" VerticalTextAlignment="Center"  TextColor="Black" />
+				<Label  Text="Pet+ user likes your photo" Font="AdelleSans" FontAttributes="Italic"   FontSize="14"  HorizontalOptions="Start" HorizontalTextAlignment="Start"   VerticalOptions="Start" VerticalTextAlignment="Center"  TextColor="Gray" />
+			</StackLayout>
+			
+			<Switch Grid.Row="0" Grid.Column="1"  WidthRequest="60"    />
+
+
+
+			<!--Comments-->
+			<StackLayout Grid.Row="1" Grid.Column="0"  Orientation="Vertical">
+				<Label  Text="Comments" Font="AdelleSans"  FontSize="20" HorizontalOptions="Start" HorizontalTextAlignment="Start"   VerticalOptions="Center" VerticalTextAlignment="Center"  TextColor="Black" />
+				<Label  Text="Pet+ user commented on your photo" Font="AdelleSans" FontAttributes="Italic"   FontSize="14"  HorizontalOptions="Start" HorizontalTextAlignment="Start"   VerticalOptions="Start" VerticalTextAlignment="Center"  TextColor="Gray" />
+			</StackLayout>
+
+			<Switch Grid.Row="1" Grid.Column="1"  WidthRequest="60"    />
+
+
+
+			<!--Mentions -->
+			<StackLayout Grid.Row="2" Grid.Column="0"  Orientation="Vertical">
+				<Label  Text="Mentions of you" Font="AdelleSans"  FontSize="20" HorizontalOptions="Start" HorizontalTextAlignment="Start"   VerticalOptions="Center" VerticalTextAlignment="Center"  TextColor="Black" />
+				<Label  Text="Pet+ user mentioned you in a  photo" Font="AdelleSans" FontAttributes="Italic"   FontSize="14"  HorizontalOptions="Start" HorizontalTextAlignment="Start"   VerticalOptions="Start" VerticalTextAlignment="Center"  TextColor="Gray" />
+			</StackLayout>
+
+			<Switch Grid.Row="2" Grid.Column="1"  WidthRequest="60"    />
+
+
+			<!--Follows you -->
+			<StackLayout Grid.Row="3" Grid.Column="0"  Orientation="Vertical">
+				<Label  Text="Follows you" Font="AdelleSans"  FontSize="20" HorizontalOptions="Start" HorizontalTextAlignment="Start"   VerticalOptions="Center" VerticalTextAlignment="Center"  TextColor="Black" />
+				<Label  Text="Pet+ user started following you" Font="AdelleSans" FontAttributes="Italic"   FontSize="14"  HorizontalOptions="Start" HorizontalTextAlignment="Start"   VerticalOptions="Start" VerticalTextAlignment="Center"  TextColor="Gray" />
+			</StackLayout>
+
+			<Switch Grid.Row="3" Grid.Column="1"  WidthRequest="60"    />
+
+			<!--New Friends -->
+			<StackLayout Grid.Row="4" Grid.Column="0"  Orientation="Vertical">
+				<Label  Text="New Friends join Pet" Font="AdelleSans"  FontSize="20" HorizontalOptions="Start" HorizontalTextAlignment="Start"   VerticalOptions="Center" VerticalTextAlignment="Center"  TextColor="Black" />
+				<Label  Text="One of your friends joined Pet+" Font="AdelleSans" FontAttributes="Italic"   FontSize="14"  HorizontalOptions="Start" HorizontalTextAlignment="Start"   VerticalOptions="Start" VerticalTextAlignment="Center"  TextColor="Gray" />
+			</StackLayout>
+
+			<Switch Grid.Row="4" Grid.Column="1"  WidthRequest="60"    />
+
+			<!--Health Alert -->
+			<StackLayout Grid.Row="5" Grid.Column="0"  Orientation="Vertical">
+				<Label  Text="Health Alert" Font="AdelleSans"  FontSize="20" HorizontalOptions="Start" HorizontalTextAlignment="Start"   VerticalOptions="Center" VerticalTextAlignment="Center"  TextColor="Black" />
+				<Label  Text="Health alerts customized for your pet and your location" Font="AdelleSans" FontAttributes="Italic"   FontSize="14"  HorizontalOptions="Start" HorizontalTextAlignment="Start"   VerticalOptions="Start" VerticalTextAlignment="Center"  TextColor="Gray" />
+			</StackLayout>
+
+			<Switch Grid.Row="5" Grid.Column="1"  WidthRequest="60"    />
+
+
+			
+			
+		</Grid>
+			
+
+	</StackLayout>
+</ContentPage>

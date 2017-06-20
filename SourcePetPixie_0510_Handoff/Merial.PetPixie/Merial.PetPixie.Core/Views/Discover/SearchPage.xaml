@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 	xmlns="http://xamarin.com/schemas/2014/forms" 
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		xmlns:res="clr-namespace:Merial.PetPixie.Core.Resources;assembly=Merial.PetPixie.Core"
+		xmlns:views="clr-namespace:Merial.PetPixie.Core.Views;assembly=Merial.PetPixie.Core"
+		xmlns:controls="clr-namespace:Merial.PetPixie.Core.Controls;assembly=Merial.PetPixie.Core"
+		xmlns:imageCircle="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
+		xmlns:b="clr-namespace:Merial.PetPixie.Core.Behaviors;assembly=Merial.PetPixie.Core" 
+		xmlns:c="clr-namespace:Merial.PetPixie.Core.Converters;assembly=Merial.PetPixie.Core" 
+		x:Class="Merial.PetPixie.Core.Views.SearchPage" >
+
+
+	
+	<ContentPage.Resources>
+		<ResourceDictionary>
+			<c:TextChangedEventArgsConverter x:Key="TextChangedEventArgsConverter" />
+			<c:FocusedEventArgsConverter x:Key="FocusedEventArgsConverter" />
+			<c:ItemTappedEventArgsConverter x:Key="ItemTappedConverter" />
+			<c:ActiveTextColorValueConverter x:Key="ActiveTextColorValueConverter" />
+			<c:ActiveBackgroundColorValueConverter x:Key="ActiveBackgroundColorValueConverter" />
+
+		</ResourceDictionary>
+	</ContentPage.Resources>
+
+	<ContentPage.Content>
+
+		<ScrollView Orientation="Vertical"  BackgroundColor="White" >
+
+
+			<StackLayout Orientation="Vertical" >
+				<views:TopNavBar x:Name="navBar" HeightRequest="50"  />
+				
+				<!-- Search Text Entry -->
+				<Grid  BackgroundColor="#abc2bb" Margin="0" VerticalOptions="Start"   >
+					<Grid.RowDefinitions>
+						<RowDefinition Height="40" />
+					</Grid.RowDefinitions>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="*" />
+						<ColumnDefinition Width="60" />
+					</Grid.ColumnDefinitions>
+
+					<Entry Text="{Binding SearchTxt, Mode=TwoWay}"   Grid.Column="0" PlaceholderColor="Silver"  Placeholder="Search for hashtags or users" FontSize="10"  Margin="10,5,0,5">
+					    <Entry.Behaviors>
+				      		<b:EventToCommandBehavior EventName="Focused" 	Command="{Binding ShowSearchAreaCommand}" EventArgsConverter="{StaticResource FocusedEventArgsConverter}" />
+						</Entry.Behaviors>				
+					</Entry>
+					<Button Grid.Column="1" Text="Search"  BackgroundColor="{StaticResource ComplementColor}" FontSize="10" TextColor="White" WidthRequest="60" HeightRequest="20" Margin="10" VerticalOptions="Start" HorizontalOptions="Start" Command="{Binding ShowSearchAreaCommand}" />
+				</Grid>
+
+
+
+
+				<!-- Search Mode Toggle Buttons -->
+				<Frame  VerticalOptions="Start" HeightRequest="30" OutlineColor="#aac2bb" CornerRadius="2"  Padding="0" HasShadow="false" Margin="10,0,10,0" HorizontalOptions="FillAndExpand"  >
+					<Grid WidthRequest="500" HeightRequest="30">
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="*" />
+							<ColumnDefinition Width="*" />
+						</Grid.ColumnDefinitions>
+
+						<Grid  Grid.Column="0" >
+							<Button 
+								BackgroundColor="{Binding ShowHashTagSearch, Converter={StaticResource ActiveBackgroundColorValueConverter}}"
+								TextColor="{Binding ShowHashTagSearch, Converter={StaticResource ActiveTextColorValueConverter}}"	
+								FontSize="10" 
+								Text="HashTags"  
+								Margin="0" HorizontalOptions="FillAndExpand" VerticalOptions="Start"   
+								WidthRequest="200" 
+								HeightRequest="30" 
+								Command="{Binding ToggleSearchTypeCommand}"  />
+						</Grid>		
+
+						<Grid  Grid.Column="1" >
+							<Button 
+								BackgroundColor="{Binding ShowUserNameSearch, Converter={StaticResource ActiveBackgroundColorValueConverter}}"
+								TextColor="{Binding ShowUserNameSearch, Converter={StaticResource ActiveTextColorValueConverter}}"	
+								FontSize="10"
+								Text="Users"  
+								Margin="0" 
+								HorizontalOptions="FillAndExpand" 
+								VerticalOptions="Start"   
+								WidthRequest="200" 
+								HeightRequest="30"  
+								Command="{Binding ToggleSearchTypeCommand}"  />
+						</Grid>		
+
+					</Grid>
+				</Frame>
+
+				<Grid>
+					
+					<!--SEARCH TABS and RESULTS-->
+					<StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" >
+
+
+
+
+
+
+						<!--TAG SEARCH RESULTS-->
+						<ListView 
+							IsVisible="{Binding TagSearchResultsVisible}"
+							SeparatorVisibility="None"
+							SeparatorColor="Silver"
+							ItemsSource="{Binding HashTagList}"
+							RowHeight="30"
+							BackgroundColor="White"
+							VerticalOptions="Start"
+							HasUnevenRows="false">
+					
+						    <ListView.Behaviors>
+							      <b:EventToCommandBehavior EventName="ItemTapped" Command="{Binding GoDiscoverFromTagSearchCommand}" EventArgsConverter="{StaticResource ItemTappedConverter}" />
+			    			</ListView.Behaviors>
+					
+							<ListView.ItemTemplate>
+								<DataTemplate>
+									<ViewCell>
+
+											<Label Margin="10,0,0,0" HeightRequest="20"   HorizontalOptions="Start" HorizontalTextAlignment="Start" Font="MuseoSans-300"  VerticalOptions="Center" VerticalTextAlignment="Center"  TextColor="Black" Text="{ Binding DisplayTagForSearch }" FontSize="10"  />	
+										
+									</ViewCell>
+								</DataTemplate>
+							</ListView.ItemTemplate>
+						
+						</ListView>
+
+						<!--USERNAME SEARCH RESULTS-->
+						<ListView 
+							IsVisible="{Binding UserSearchResultsVisible}"
+							SeparatorVisibility="Default" 
+							SeparatorColor="Silver"
+							ItemsSource="{Binding UsersList}"
+							RowHeight="60"
+							BackgroundColor="White"
+							VerticalOptions="Start"
+							HasUnevenRows="false">
+					
+						    <ListView.Behaviors>
+							      <b:EventToCommandBehavior EventName="ItemTapped" Command="{Binding GoDiscoverFromUserSearchCommand}" EventArgsConverter="{StaticResource ItemTappedConverter}" />
+			    			</ListView.Behaviors>
+					
+							<ListView.ItemTemplate>
+								<DataTemplate>
+									<ViewCell>
+
+										<Grid Grid.Row="1" BackgroundColor="White" Padding="20,0,10,0" VerticalOptions="Center" >
+											<Grid.RowDefinitions>
+												<RowDefinition Height="40" />
+											</Grid.RowDefinitions>
+											<Grid.ColumnDefinitions>
+												<ColumnDefinition Width="50" />
+												<ColumnDefinition Width="*" />
+
+											</Grid.ColumnDefinitions>
+										
+											<imageCircle:CircleImage Grid.Column="0" Source="{Binding ExpandedProfilePictures.KMedium.DownloadURL}"  WidthRequest="35" HeightRequest="35" BorderColor="Gray" BorderThickness="2" Aspect="AspectFill" VerticalOptions="Center" HorizontalOptions="Center" />
+											<StackLayout  Grid.Column="1" Orientation="Vertical" HorizontalOptions="Start">
+												<Label    HorizontalOptions="Start" HorizontalTextAlignment="Start" Font="MuseoSans-300"  VerticalOptions="End" VerticalTextAlignment="Center"  TextColor="{StaticResource AccentColor}" Text="{ Binding DisplayUsername }" FontSize="14"  />
+												<Label    HorizontalOptions="Start" HorizontalTextAlignment="Start" Font="MuseoSans-300"  VerticalOptions="Start" VerticalTextAlignment="Center"  TextColor="Black" Text="{ Binding FullName }" FontSize="10"  />
+												
+											</StackLayout>
+
+
+
+											
+										</Grid>
+									
+									</ViewCell>
+								</DataTemplate>
+							</ListView.ItemTemplate>
+						
+						</ListView>
+
+					</StackLayout>
+						
+
+
+				</Grid>
+
+			</StackLayout>
+
+		</ScrollView>
+		 
+
+	</ContentPage.Content>
+</ContentPage>

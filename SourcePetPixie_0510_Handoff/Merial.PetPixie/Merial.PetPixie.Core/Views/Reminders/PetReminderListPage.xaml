@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MasterDetailPage 	xmlns="http://xamarin.com/schemas/2014/forms" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+	xmlns:res="clr-namespace:Merial.PetPixie.Core.Resources;assembly=Merial.PetPixie.Core"
+	xmlns:views="clr-namespace:Merial.PetPixie.Core.Views;assembly=Merial.PetPixie.Core"
+	xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+	xmlns:fab="clr-namespace:FAB.Forms;assembly=FAB.Forms"
+	xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
+	xmlns:b="clr-namespace:Merial.PetPixie.Core.Behaviors;assembly=Merial.PetPixie.Core" 
+	xmlns:c="clr-namespace:Merial.PetPixie.Core.Converters;assembly=Merial.PetPixie.Core" 
+	x:Class="Merial.PetPixie.Core.Views.Reminder.PetReminderListPage" BackgroundColor="#f0f0f0" >
+
+	<ContentPage.Resources>
+		<ResourceDictionary>
+			<c:ItemTappedEventArgsConverter x:Key="ItemTappedConverter" />
+		</ResourceDictionary>
+	</ContentPage.Resources>
+	
+  	<MasterDetailPage.Master>
+		<ContentPage Title="reminders"  />		
+	</MasterDetailPage.Master>
+
+	<MasterDetailPage.Detail >
+
+		<ContentPage x:Name="ContentContainer" BackgroundColor="#f0f0f0" >
+
+			<StackLayout Orientation="Vertical" VerticalOptions="Start" >
+				<views:TopNavBar x:Name="navBar" HeightRequest="40" TranslationY="20"  />
+
+				<ScrollView Orientation="Vertical">
+
+					<ListView 
+						Margin="0,20,0,0"
+						x:Name="listItems"
+						SeparatorVisibility="None" 
+						ItemsSource="{Binding Items}"
+						VerticalOptions="Start"
+						HasUnevenRows="true">
+						<ListView.ItemTemplate>
+							<DataTemplate>
+								<ViewCell >
+									<StackLayout Orientation="Vertical" Padding="0" VerticalOptions="Start" HorizontalOptions="FillAndExpand"  >
+										<StackLayout Orientation="Vertical" Margin="20,10,20,0"  HorizontalOptions="Center"  >
+											<controls:CircleImage Source="{Binding ImageUrlMedium}" WidthRequest="60" HeightRequest="60"  BorderColor="White" BorderThickness="3" Aspect="AspectFill" VerticalOptions="Start" HorizontalOptions="Center"  />
+											<Label Text="{Binding PetWithReminders.Name}" HeightRequest="30" WidthRequest="160" TextColor="{StaticResource AccentColor}" FontSize="14" VerticalOptions="Center" VerticalTextAlignment="Center" TranslationY="-5" HorizontalOptions="Center" HorizontalTextAlignment="Center" />
+										</StackLayout>
+
+										<StackLayout Orientation="Vertical" BackgroundColor="White" Padding="0,0,0,0" HorizontalOptions="FillAndExpand" Margin="0,0,0,20" >
+									
+											<views:MyListView 
+												IsPullToRefreshEnabled="false"
+												IsVisible = "{Binding HasReminders}"
+												x:Name="listPetReminders"
+												SeparatorVisibility="Default" 
+												SeparatorColor="Silver"
+												ItemsSource="{Binding PetWithReminders.Reminders}"
+												BackgroundColor="White"
+												VerticalOptions="Start"
+												RowHeight="40"
+												HasUnevenRows="false">
+												<views:MyListView.Behaviors>
+										      		<b:EventToCommandBehavior EventName="ItemTapped" Command="{Binding OpenReminderCommand, Mode=TwoWay}" EventArgsConverter="{StaticResource ItemTappedConverter}" />
+						    					</views:MyListView.Behaviors>
+												<views:MyListView.ItemTemplate>
+													<DataTemplate>
+														<ViewCell>
+
+															<Grid  BackgroundColor="White" Padding="20,0,10,0" VerticalOptions="Center" HorizontalOptions="FillAndExpand" >
+																<Grid.RowDefinitions>
+																	<RowDefinition Height="40" />
+																</Grid.RowDefinitions>
+																<Grid.ColumnDefinitions>
+																	<ColumnDefinition Width="*" />
+																	<ColumnDefinition Width="20" />
+																</Grid.ColumnDefinitions>
+												
+																<StackLayout Orientation="Vertical" Grid.Column="0" HorizontalOptions="Start" HeightRequest="30"  >
+																	<Label WidthRequest="200"  HorizontalOptions="Start" HorizontalTextAlignment="Start" FontFamily="MuseoSans-300" HeightRequest="15"  VerticalOptions="Center" VerticalTextAlignment="End"  TextColor="Black" Text="{Binding TypeName}" FontSize="10"  />
+																	<Label WidthRequest="200"  HorizontalOptions="Start" HorizontalTextAlignment="Start" FontFamily="MuseoSans-300"  HeightRequest="15"  VerticalOptions="Center" VerticalTextAlignment="Start"  TextColor="{StaticResource AccentColor}" Text="{Binding ReminderDate, StringFormat='{}{0:ddd MMM d}'}"   FontSize="10"  />
+																</StackLayout>
+																<Button  Grid.Column="1"  Image="ArrowNextDark.png" WidthRequest="17" HeightRequest="17" VerticalOptions="Center" HorizontalOptions="End"    />
+
+															</Grid>
+											
+														</ViewCell>
+													</DataTemplate>
+												</views:MyListView.ItemTemplate>
+											
+											</views:MyListView>
+
+											<Button   Command="{Binding AddReminderCommand}" Margin="20" WidthRequest="100" BackgroundColor="{StaticResource AccentColor}" Text="Add new reminder" TextColor="White"  FontFamily="MuseoSans-300"   HeightRequest="25" VerticalOptions="Center" HorizontalOptions="Center" FontSize="10" />
+
+										</StackLayout>
+
+
+									</StackLayout>
+								</ViewCell>
+							</DataTemplate>
+						</ListView.ItemTemplate>
+					</ListView>
+
+						
+				</ScrollView>
+			</StackLayout>
+
+		</ContentPage>
+
+	</MasterDetailPage.Detail>
+
+</MasterDetailPage>

@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+		xmlns="http://xamarin.com/schemas/2014/forms" 
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+			xmlns:views="clr-namespace:Merial.PetPixie.Core;assembly=Merial.PetPixie.Core"
+		x:Class="Merial.PetPixie.Core.TermsOfUsePage">
+	<ContentPage.Content>
+		<Grid TranslationY="20"
+					ColumnSpacing="0" 
+					RowSpacing="0" 
+					HorizontalOptions="Fill" 
+					VerticalOptions="FillAndExpand"
+					WidthRequest="800"
+					HeightRequest="800"
+					BackgroundColor="White"
+					Padding="0">
+
+		<Grid.RowDefinitions>
+			<RowDefinition Height="45" />
+			<RowDefinition Height="0" />
+			<RowDefinition Height="*" />
+			<RowDefinition Height="0" />
+		</Grid.RowDefinitions>
+
+
+		<!-- NAV BAR -->
+		<views:TopNavBarModal x:Name="navBar" HorizontalOptions="FillAndExpand" Grid.Row="0"  />
+			
+		<!-- HEADER -->
+		<!--<commonViews:HeaderBlock Grid.Row="1"  HorizontalOptions="FillAndExpand" VerticalOptions="Start" /> -->
+
+
+		<!---CONTENT CONTAINER-->
+		<StackLayout Orientation="Vertical" Grid.Row="2" VerticalOptions="Start" >
+			<Label Style="{StaticResource SettingsHeaderStyle}" VerticalOptions="Start" VerticalTextAlignment="Start" Text="About Pet+Pixie" HeightRequest="30" WidthRequest="100" />
+		</StackLayout>
+
+
+
+		<!-- FOOTER -->
+		<!--<views:FooterBlock Grid.Row="3"  HorizontalOptions="FillAndExpand" VerticalOptions="Start" /> -->
+			
+
+
+			<views:NewPostDialog x:Name="dialogNewPost" IsVisible="false" Grid.Row="2"  />
+	
+ 
+	</Grid>
+	</ContentPage.Content>
+</ContentPage>

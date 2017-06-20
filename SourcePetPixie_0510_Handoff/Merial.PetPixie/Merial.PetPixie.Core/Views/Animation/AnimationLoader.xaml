@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+	x:Class="Merial.PetPixie.Core.Views.AnimationLoader">
+	<ContentView.Content>
+		<StackLayout HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="200" HeightRequest="100" BackgroundColor="Red" />		
+	</ContentView.Content>
+</ContentView>

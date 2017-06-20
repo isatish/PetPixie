@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:top="clr-namespace:Merial.PetPixie.Core.Views;assembly=Merial.PetPixie.Core"
+	xmlns:views="clr-namespace:Merial.PetPixie.Core.Views;assembly=Merial.PetPixie.Core"
+	x:Class="Merial.PetPixie.Core.Views.CropperPage"  		
+	xmlns:cv="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.CarouselView"
+	xmlns:local="clr-namespace:Merial.PetPixie.Core.Views;assembly=Merial.PetPixie.Core"
+	xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
+	xmlns:res="clr-namespace:Merial.PetPixie.Core.Resources;assembly=Merial.PetPixie.Core"
+	Title="Settings" 
+	Padding="0, 0, 0, 0">
+	<ContentPage.Resources>
+	  
+
+    </ContentPage.Resources>
+
+
+	<StackLayout Orientation="Vertical" Padding="0" Margin="0" >
+
+		<top:TopNavBar x:Name="navBar" HeightRequest="50" TranslationY="20"  />
+
+
+		<StackLayout x:Name="MainContentsStack" Orientation="Vertical"  TranslationY="10" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"   >
+
+
+
+				<Grid x:Name="gridFun" RowSpacing="0" ColumnSpacing="0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" >
+					<Grid.RowDefinitions>
+						<RowDefinition Height="*" />
+						<RowDefinition Height="250" />
+						<RowDefinition Height="*" />
+					</Grid.RowDefinitions>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="*" />
+						<ColumnDefinition Width="250" />
+						<ColumnDefinition Width="*" />
+					</Grid.ColumnDefinitions>
+ 		
+
+				<!--PICTURE TAKEN BY USER-->
+					<views:PictureFunCropperView Grid.Row="0" Grid.Column="0" Grid.RowSpan="3" Grid.ColumnSpan="3" IsVisible="true" IsEnabled="true"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
+					
+
+				<!--CLEAR AREA-->
+				<StackLayout Grid.Row="1" Grid.Column="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"      BackgroundColor="Black" Opacity="0" />
+
+				<!--BLOCKED OUT AREA-->
+				<StackLayout Grid.Row="0" Grid.Column="0" Grid.RowSpan="3" HorizontalOptions="Fill" VerticalOptions="FillAndExpand" BackgroundColor="Black" Opacity="0.7" />
+				<StackLayout Grid.Row="0" Grid.Column="2" Grid.RowSpan="3" HorizontalOptions="Fill" VerticalOptions="FillAndExpand" BackgroundColor="Black" Opacity="0.7" />
+				<StackLayout Grid.Row="0" Grid.Column="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="Black" Opacity="0.7" />
+				<StackLayout Grid.Row="2" Grid.Column="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="Black" Opacity="0.7" />
+
+
+
+
+
+				<!--					<views:PictureHatModView IsVisible="false" IsEnabled="false"  HorizontalOptions="Start" VerticalOptions="StartAndExpand" WidthRequest="700" HeightRequest="700" />
+					<local:GestureImage Source="accessories_1.png" IsEnabled="true" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" WidthRequest="700" HeightRequest="700" />
+-->
+				</Grid>
+
+				 
+
+
+ 
+		
+
+			</StackLayout>
+		</StackLayout>
+</ContentPage>
+
+
+
+
+

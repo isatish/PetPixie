@@ -1,0 +1,158 @@
+﻿<Properties StartupConfiguration="{88A375C3-8567-47B7-A040-CF48B7049986}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="SourcePetPixie_0510_Handoff Status">
+    <Files>
+      <File FileName="Merial.PetPixie/Merial.PetPixie.Core/ViewModels/Notifications/NotificationsFrameViewModel.cs" Line="211" Column="9" />
+      <File FileName="Merial.PetPixie/Merial.PetPixie.Core/ViewModels/Notifications/NotificationViewModel.cs" Line="31" Column="49" />
+      <File FileName="Merial.PetPixie/Merial.PetPixie.Core/Services/Contracts/INotificationService.cs" Line="15" Column="41" />
+      <File FileName="Merial.PetPixie/Merial.PetPixie.Core/Views/Settings/NotificationSettingsPage.xaml.cs" Line="12" Column="23" />
+      <File FileName="Merial.PetPixie/Merial.PetPixie.Core/Views/Settings/NotificationSettingsPage.xaml" Line="94" Column="15" />
+      <File FileName="Merial.PetPixie/Merial.PetPixie.Core/Views/MyVets/MyVetInfoPage.xaml" Line="155" Column="1" />
+      <File FileName="SourcePetPixie_0510_Handoff Status" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/Helpers/SafeMvxCommand.cs" line="63" column="47" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/Helpers/SafeMvxCommandAsync.cs" line="32" column="47" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/Helpers/SafeMvxCommandAsyncWithResult.cs" line="33" column="47" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/Helpers/SafeMvxCommandWithResult.cs" line="64" column="47" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/ViewsNewPetPixie/ViewModels/PictureFun/ShareViewModel.cs" line="419" column="46" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/ViewsNewPetPixie/Views/Notifications/NotificationPage.xaml.cs" line="30" column="50" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/ViewsNewPetPixie/ViewModels/Notifications/NotificationViewModel.cs" line="31" column="1" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/ViewsNewPetPixie/ViewModels/Notifications/NotificationViewModel.cs" line="37" column="1" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/ViewsNewPetPixie/ViewModels/Notifications/NotificationViewModel.cs" line="36" column="1" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/ViewsNewPetPixie/ViewModels/Notifications/NotificationsFrameViewModel.cs" line="52" column="1" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/ViewsNewPetPixie/ViewModels/Profile/ProfileEditorViewModel.cs" line="200" column="21" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/ViewsNewPetPixie/ViewModels/Profile/ProfileEditorViewModel.cs" line="188" column="1" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/ViewsNewPetPixie/ViewModels/Discover/SearchViewModel.cs" line="334" column="1" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/ViewsNewPetPixie/ViewModels/Discover/SearchViewModel.cs" line="274" column="1" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/ViewsNewPetPixie/ViewModels/Discover/SearchViewModel.cs" line="310" column="1" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/ViewsNewPetPixie/ViewModels/Reminders/PetReminderListViewModel.cs" line="80" column="1" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/ViewsNewPetPixie/ViewModels/Reminders/PetReminderListViewModel.cs" line="187" column="1" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/ViewsNewPetPixie/ViewModels/Reminders/PetReminderListViewModel.cs" line="179" column="1" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/ViewModels/Reminders/PetReminderListViewModel.cs" line="235" column="1" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/ViewModels/Reminders/PetReminderListViewModel.cs" line="230" column="1" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/ViewModels/Animation/AnimationLoaderViewModel.cs" line="1429" column="1" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/ViewModels/Animation/AnimationLoaderViewModel.cs" line="340" column="1" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/Views/Animation/AnimationLoaderPage.xaml.cs" line="312" column="1" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/ViewModels/Animation/AnimationLoaderViewModel.cs" line="112" column="1" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/ViewModels/PictureFun/PictureFunViewModel.cs" line="298" column="1" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/ViewModels/PictureFun/PictureFunViewModel.cs" line="197" column="1" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/ViewModels/FindFriends/FindFriendsTabsViewModel.cs" line="553" column="1" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/ViewModels/FindFriends/FindFriendsFromFacebookViewModel.cs" line="237" column="1" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/ViewModels/FindFriends/FindFriendsFromFacebookViewModel.cs" line="162" column="1" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/ViewModels/FindFriends/FindFriendsTabsViewModel.cs" line="139" column="1" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/ViewModels/FindFriends/FindFriendsTabsViewModel.cs" line="149" column="1" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/ViewModels/FindFriends/FindFriendsTabsViewModel.cs" line="544" column="1" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/ViewModels/FindFriends/FindFriendsTabsViewModel.cs" line="558" column="1" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/ViewModels/FindFriends/FindFriendsTabsViewModel.cs" line="574" column="1" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/ViewModels/FindFriends/FindFriendsTabsViewModel.cs" line="273" column="1" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/Views/FindFriends/FindFriendsFromFacebookPage.xaml" line="116" column="1" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/ViewModels/Reminders/PetReminderListViewModel.cs" line="147" column="1" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/ViewModels/Reminders/PetReminderListViewModel.cs" line="151" column="1" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/ViewModels/Reminders/PetReminderListViewModel.cs" line="142" column="1" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/ViewModels/Reminders/PetReminderListViewModel.cs" line="205" column="1" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/ViewModels/Reminders/PetReminderListViewModel.cs" line="201" column="101" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/ViewModels/Feed/FeedItemViewModel.cs" line="804" column="1" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/ViewModels/Discover/DiscoverViewModel.cs" line="273" column="1" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/ViewModels/Discover/DiscoverViewModel.cs" line="289" column="1" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/ViewModels/Discover/DiscoverViewModel.cs" line="319" column="1" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/ViewModels/Discover/DiscoverViewModel.cs" line="318" column="1" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/ViewModels/Discover/DiscoverViewModel.cs" line="400" column="1" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/ViewModels/Feed/FeedItemViewModel.cs" line="809" column="53" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.iOS/Services/ImageService.cs" line="161" column="1" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/Common/Controls/WrapLayout.cs" line="323" column="1" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/Common/Controls/WrapLayout.cs" line="298" column="1" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/ViewModels/Core/ViewModelBase.cs" line="571" column="23" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/Views/Profile/ProfileDetailPage.xaml.cs" line="122" column="45" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/ViewModels/Reminders/PetReminderOtherDetailViewModel.cs" line="144" column="1" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/ViewModels/Reminders/Core/PetReminderBaseDetailViewModel.cs" line="132" column="1" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/ViewModels/Reminders/Core/PetReminderBaseDetailViewModel.cs" line="134" column="1" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/ViewModels/Profile/ProfileDetailBaseViewModel.cs" line="341" column="1" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/ViewModels/Profile/ProfileDetailBaseViewModel.cs" line="342" column="1" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/ViewModels/Profile/ProfileDetailBaseViewModel.cs" line="343" column="1" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/ViewModels/Profile/ProfileDetailBaseViewModel.cs" line="340" column="1" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/ViewModels/Profile/ProfileDetailBaseViewModel.cs" line="348" column="58" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/ViewModels/Reminders/PetReminderListViewModel.cs" line="191" column="1" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/ViewModels/Reminders/PetReminderListViewModel.cs" line="186" column="1" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/ViewModels/Reminders/PetReminderSelectProductViewModel.cs" line="102" column="1" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/ViewModels/Reminders/PetReminderProductDetailViewModel.cs" line="29" column="1" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/ViewModels/Reminders/Core/PetReminderBaseDetailViewModel.cs" line="244" column="1" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/ViewModels/Reminders/PetReminderOtherDetailViewModel.cs" line="87" column="1" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/ViewModels/Reminders/PetReminderItemViewModel.cs" line="50" column="1" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/ViewModels/Reminders/PetReminderOtherDetailViewModel.cs" line="80" column="1" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/ViewModels/Reminders/PetReminderItemViewModel.cs" line="453" column="13" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/ViewModels/Reminders/PetReminderItemViewModel.cs" line="443" column="1" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/ViewModels/Reminders/PetReminderOtherDetailViewModel.cs" line="146" column="1" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/ViewModels/Reminders/PetReminderOtherDetailViewModel.cs" line="149" column="1" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/ViewModels/Reminders/PetReminderItemViewModel.cs" line="418" column="27" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/ViewModels/Reminders/PetReminderItemViewModel.cs" line="428" column="1" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/ViewModels/Reminders/PetReminderOtherDetailViewModel.cs" line="150" column="1" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/ViewModels/PictureFun/Gestures/CustomEventArgsViewModel.cs" line="48" column="1" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/Views/MyVets/VetMapPage.xaml.cs" line="285" column="24" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/Services/VetService.cs" line="42" column="1" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/Views/MyVets/VetMapPage.xaml.cs" line="291" column="1" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/Services/VetService.cs" line="43" column="1" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/ViewModels/Feed/FeedViewModel.cs" line="96" column="1" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/ViewModels/Feed/FeedViewModel.cs" line="103" column="1" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/ViewModels/Feed/FeedViewModel.cs" line="98" column="1" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/ViewModels/Feed/FeedViewModel.cs" line="167" column="46" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/ViewModels/Reminders/PetReminderProductDetailViewModel.cs" line="39" column="1" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/ViewModels/Reminders/Core/PetReminderBaseDetailViewModel.cs" line="157" column="1" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/ViewModels/Reminders/Core/PetReminderBaseDetailViewModel.cs" line="148" column="1" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/Services/ReminderService.cs" line="63" column="1" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/Services/ReminderService.cs" line="169" column="1" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/ViewModels/Reminders/PetReminderItemViewModel.cs" line="414" column="22" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/Views/Reminders/PetReminderProductDetailPage.xaml.cs" line="42" column="43" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/Views/Reminders/PetReminderOtherDetailPage.xaml.cs" line="42" column="1" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/Views/Reminders/PetReminderOtherDetailPage.xaml.cs" line="65" column="35" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/ViewModels/Reminders/Core/PetReminderBaseDetailViewModel.cs" line="227" column="1" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/AnimationView.cs" line="6" column="15" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/AnimationView.cs" line="8" column="1" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/AnimationView.cs" line="28" column="1" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/AnimationView.cs" line="35" column="1" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/AnimationView.cs" line="42" column="1" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/AnimationView.cs" line="49" column="1" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/AnimationView.cs" line="56" column="1" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/Views/Feed/FeedPageView.xaml.cs" line="25" column="1" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/Views/Feed/FeedPageView.xaml.cs" line="24" column="1" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/Views/Feed/FeedPage.xaml.cs" line="122" column="1" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/ViewModels/Login/AuthenticationViewModelBase.cs" line="102" column="87" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/ViewModels/Login/AuthenticationViewModelBase.cs" line="304" column="1" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/ViewModels/Login/AuthenticationViewModelBase.cs" line="306" column="1" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/ViewModels/Login/AuthenticationViewModelBase.cs" line="311" column="1" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/ViewModels/Login/AuthenticationViewModelBase.cs" line="314" column="1" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/ViewModels/Login/CompleteAccountViewModel.cs" line="155" column="1" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/Services/PetService.cs" line="74" column="1" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/ViewModels/Pets/ProfilePetViewModel.cs" line="447" column="1" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/ViewModels/Pets/PetBreedSelectorViewModel.cs" line="64" column="1" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/ViewModels/Pets/ProfilePetViewModel.cs" line="318" column="1" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/ViewModels/Pets/ProfilePetViewModel.cs" line="64" column="1" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/ViewModels/Pets/ProfilePetViewModel.cs" line="79" column="1" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/ViewModels/Pets/ProfilePetViewModel.cs" line="196" column="1" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/ViewModels/Pets/ProfilePetViewModel.cs" line="215" column="1" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/ViewModels/Pets/ProfilePetViewModel.cs" line="233" column="1" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/ViewModels/Pets/ProfilePetViewModel.cs" line="229" column="64" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/ViewModels/Pets/ProfilePetViewModel.cs" line="75" column="1" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/Services/UserService.cs" line="231" column="1" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/Services/UserService.cs" line="243" column="1" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/Services/UserService.cs" line="224" column="39" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/ViewModels/Pets/ProfilePetViewModel.cs" line="227" column="1" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/Services/UploadService.cs" line="42" column="1" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/ViewModels/Pets/ProfilePetViewModel.cs" line="225" column="1" />
+      <Breakpoint file="/Users/DavidSilverlight/Xamarin/App_PetPixie/SourceCrossForms/Merial.PetPixie/Merial.PetPixie.Core/Services/UploadService.cs" line="17" column="1" />
+      <Breakpoint file="/Developer/Merial/PetPixie/SourcePetPixie_0510_Handoff/Merial.PetPixie/Merial.PetPixie.iOS/Renderers/FacebookLoginButtonRendererIos.cs" relfile="Merial.PetPixie/Merial.PetPixie.iOS/Renderers/FacebookLoginButtonRendererIos.cs" line="40" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.Src.Merial.PetPixie.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.E5B23D74-A7BB-4A46-A5D2-5CC1513A17D5" />
+  <DisabledProjects>
+    <String>Merial.PetPixie/MvvmCross.Forms.Presenter.Droid/MvvmCross.Forms.Presenter.Droid.csproj</String>
+    <String>Merial.PetPixie/XamForms.MvxTemplate.Droid/XamForms.MvxTemplate.Droid.csproj</String>
+    <String>Merial.PetPixie/MVVMCross/MvvmCross.Forms.Presenter.Droid/MvvmCross.Forms.Presenter.Droid.csproj</String>
+    <String>Merial.PetPixie/MasterDetail/MvvmCross.Forms.Presenter.Core/MvvmCross.Forms.Presenter.Core.csproj</String>
+  </DisabledProjects>
+  <MonoDevelop.Ide.ItemProperties.Src.Merial.PetPixie.Core HideGettingStarted="True" />
+</Properties>

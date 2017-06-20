@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+	xmlns:res="clr-namespace:Merial.PetPixie.Core.Resources;assembly=Merial.PetPixie.Core"
+	xmlns:views="clr-namespace:Merial.PetPixie.Core.Views;assembly=Merial.PetPixie.Core"
+	xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+	xmlns:fab="clr-namespace:FAB.Forms;assembly=FAB.Forms"
+	xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
+	xmlns:b="clr-namespace:Merial.PetPixie.Core.Behaviors;assembly=Merial.PetPixie.Core" 
+	xmlns:c="clr-namespace:Merial.PetPixie.Core.Converters;assembly=Merial.PetPixie.Core" 
+	xmlns:top="clr-namespace:Merial.PetPixie.Core.Views;assembly=Merial.PetPixie.Core"
+	x:Class="Merial.PetPixie.Core.Views.SharePage" 
+	Padding="0, 0, 0, 0"
+	BackgroundColor="#f0f0f0" >
+	
+	<ContentPage.Resources>
+		<ResourceDictionary>
+			<c:ItemTappedEventArgsConverter x:Key="ItemTappedConverter" />
+		</ResourceDictionary>
+	</ContentPage.Resources>
+
+	<StackLayout Orientation="Vertical" Padding="0" Margin="0" VerticalOptions="Start" >
+		<top:TopNavBar x:Name="navBar" HeightRequest="50" TranslationY="20"  />
+		<StackLayout x:Name="MainContentsStack" Orientation="Vertical"  TranslationY="20" VerticalOptions="Start" HorizontalOptions="Start"   >
+
+<!--			<Grid x:Name="gridFun" WidthRequest="400" HeightRequest="400" Padding="0" BackgroundColor="Green" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
+				<Image x:Name="imagePreview" HorizontalOptions="FillAndExpand" VerticalOptions="Start" Aspect="AspectFill"   WidthRequest="400" HeightRequest="400" Margin="0" />
+			</Grid>-->
+
+
+		
+			<Grid   IsVisible="true" VerticalOptions="Start" >
+				<Grid.RowDefinitions>
+					<RowDefinition Height="0" />
+					<RowDefinition Height="120" x:Name="ImageAndDesc" />
+					<RowDefinition Height="0" x:Name="Blank1" />
+					<RowDefinition Height="20" x:Name="WhoIsPostingHeader" />
+					<RowDefinition Height="140" x:Name="WhoIsPosting" />
+					<RowDefinition Height="0" x:Name="Blank2" />
+					<RowDefinition Height="20" x:Name="ShareOnHeader" />
+					<RowDefinition Height="80" x:Name="ShareOn" />
+					<RowDefinition Height="0" x:Name="Blank3" />
+					<RowDefinition Height="40" x:Name="ShareImage" />
+					<RowDefinition Height="*" />
+				</Grid.RowDefinitions>
+
+				<Image IsVisible="false" Grid.Row="0" x:Name="imagePreview" HorizontalOptions="Start" VerticalOptions="Start" Aspect="AspectFit"   WidthRequest="300" HeightRequest="300" Margin="0" />
+		
+
+				<StackLayout Grid.Row="1"  Orientation="Horizontal"   HorizontalOptions="FillAndExpand" VerticalOptions="Start" Margin="5"  >
+					<Image x:Name="ImageTest"  Source="{Binding Image}"    WidthRequest="120" HeightRequest="120" Aspect="AspectFit" VerticalOptions="Start" HorizontalOptions="Start" />
+					<Frame HorizontalOptions="FillAndExpand" Padding="1" HasShadow="false"  VerticalOptions="Start"  >
+						<Entry Placeholder="Add description" FontSize="10" PlaceholderColor="Silver" WidthRequest="120"  HeightRequest="120" />
+					</Frame>
+				</StackLayout>  
+
+			 	<Label Grid.Row="3" Grid.Column="0"  Text="Who Is Posting?" HeightRequest="20" VerticalOptions="Start" VerticalTextAlignment="End" HorizontalOptions="Center" Font="MuseoSans-300" TextColor="Black" FontSize="12"   />
+				<views:MyListView 
+						Grid.Row="4" 
+						BackgroundColor="White"  
+						HorizontalOptions="FillAndExpand"
+						VerticalOptions="Start"
+						SeparatorVisibility="None" 
+						SeparatorColor="#DFDFDF"
+						ItemsSource="{Binding Pets}"
+						RowHeight="40" 
+						HeightRequest="130"
+						HasUnevenRows="false">
+
+						<views:MyListView.ItemTemplate>
+						<DataTemplate>
+							<ViewCell>
+
+									<Grid Grid.Row="1" BackgroundColor="White" Padding="20,0,10,0" VerticalOptions="Center" >
+											<Grid.RowDefinitions>
+													<RowDefinition Height="30" />
+											</Grid.RowDefinitions>
+											<Grid.ColumnDefinitions>
+													<ColumnDefinition Width="100" />
+													<ColumnDefinition Width="*" />
+													<ColumnDefinition Width="70" />
+											</Grid.ColumnDefinitions>
+
+											<Label  Grid.Column="0"   HorizontalOptions="Start" HorizontalTextAlignment="Start" Font="MuseoSans-300"  VerticalOptions="Center" VerticalTextAlignment="Center"  TextColor="{StaticResource AccentColor} " Text="{ Binding Name }" FontSize="14"  />
+											<Switch WidthRequest="20" Grid.Column="2" IsToggled="{Binding IsSelected}" />
+									</Grid>
+						
+						</ViewCell>
+					</DataTemplate>
+				</views:MyListView.ItemTemplate>
+			</views:MyListView>
+	
+
+				 <!--Share On-->
+				<Label Grid.Row="6" Grid.Column="0"  Text="Share On" HeightRequest="40" VerticalOptions="Center" VerticalTextAlignment="End" HorizontalOptions="Center" Font="MuseoSans-300" TextColor="Black" FontSize="12"   />
+				<Grid  Grid.Row="7" BackgroundColor="White"  HorizontalOptions="FillAndExpand">
+					<StackLayout Grid.Row="0" BackgroundColor="White"  HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+						<Label  Text="Facebook"  Margin="20,0,0,0"	WidthRequest="200"	HeightRequest="30" VerticalOptions="Center" VerticalTextAlignment="Center" HorizontalOptions="Start" Font="MuseoSans-300" TextColor="#536a63" FontSize="12"   />
+						<Switch WidthRequest="20" />
+					</StackLayout>
+
+					<StackLayout Grid.Row="1" BackgroundColor="White"  HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+						<Label  Text="Twitter"  Margin="20,0,0,0"	WidthRequest="200"	HeightRequest="30" VerticalOptions="Center" VerticalTextAlignment="Center" HorizontalOptions="Start" Font="MuseoSans-300" TextColor="#536a63" FontSize="12"   />
+						<Switch WidthRequest="20" />
+					</StackLayout>
+
+				</Grid>
+				
+
+				
+
+				<Button  Grid.Row="9" Text="Share Image" Margin="0,20,0,0" FontSize="12" BackgroundColor="{StaticResource AccentColor}" TextColor="White" HeightRequest="25" VerticalOptions="Start" HorizontalOptions="Center"  WidthRequest="130" Command="{Binding ShareImageCommand}"  />
+
+		</Grid>   
+					
+		</StackLayout>
+ 	</StackLayout>
+	 
+</ContentPage>

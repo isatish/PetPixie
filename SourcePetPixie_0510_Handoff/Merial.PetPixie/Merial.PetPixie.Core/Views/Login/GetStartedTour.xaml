@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+       xmlns:cv="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.CarouselView"
+       xmlns:local="clr-namespace:Merial.PetPixie.Core.Views;assembly=Merial.PetPixie.Core"
+       xmlns:testCarouselView="clr-namespace:Merial.PetPixie.Core.Views;assembly=Merial.PetPixie.Core"
+       x:Class="Merial.PetPixie.Core.Views.GetStartedTour">
+
+       <ContentView.Resources>
+              <ResourceDictionary>
+
+                     <!-- Feed Template -->
+                     <DataTemplate x:Key="FeedTemplate">
+                            <Image Source="GettingStarted1.png"  Margin="0,0,0,0" VerticalOptions="Start"  HorizontalOptions="Start"    Aspect="AspectFill"  />
+                     </DataTemplate>
+
+                      <!-- Discover Template -->
+                      <DataTemplate x:Key="DiscoverTemplate">
+                               <Image Source="GettingStarted2.png"  Margin="0,0,0,0" VerticalOptions="Start"  HorizontalOptions="Start"    Aspect="AspectFill"  />
+                     </DataTemplate>
+               
+                     <!-- Find a Vet Template -->
+                     <DataTemplate x:Key="TakeAPhotoTemplate">
+                            <Image Source="GettingStarted3.png"  Margin="0,0,0,0" VerticalOptions="Start"  HorizontalOptions="Start"    Aspect="AspectFill"  />   
+                     </DataTemplate>
+
+			<!-- MyPack Template -->
+                     <DataTemplate x:Key="MyPackTemplate">
+                            <Image Source="GettingStarted4.png"  Margin="0,0,0,0" VerticalOptions="Start"  HorizontalOptions="Start"    Aspect="AspectFill"  />
+                     </DataTemplate>
+
+                     <!-- Find a Vet Template -->
+                     <DataTemplate x:Key="VetTemplate">
+                            <Image Source="GettingStarted5.png"  Margin="0,0,0,0" VerticalOptions="Start"  HorizontalOptions="Start"    Aspect="AspectFill"  />
+                     </DataTemplate>
+
+                     <local:GetStartedTemplateSelector x:Key="carouselDataTemplateSelector" FeedTemplate="{StaticResource FeedTemplate}" DiscoverTemplate="{StaticResource DiscoverTemplate}"     TakeAPhotoTemplate="{StaticResource TakeAPhotoTemplate}"  MyPackTemplate="{StaticResource MyPackTemplate}"  VetTemplate="{StaticResource VetTemplate}" />
+
+       </ResourceDictionary>
+
+</ContentView.Resources>
+
+
+<ContentView.Content>
+
+
+<Grid >
+       <Grid.RowDefinitions>
+              <RowDefinition Height="*"/>
+       </Grid.RowDefinitions>
+
+
+
+
+	<!--Carousel View-->
+       <cv:CarouselView 
+		
+              Grid.Row="0"
+              x:Name="MyCarouselView" 
+              BackgroundColor="Gray"
+              HorizontalOptions="FillAndExpand" 
+              VerticalOptions="FillAndExpand" 
+              ItemTemplate="{StaticResource carouselDataTemplateSelector}"   />
+
+
+
+
+		<!--Close Button-->
+          <Button Command="{Binding ShowProfileCommand}"  Clicked="Handle_CloseClicked"   Grid.Row="0"        TextColor="White"   BackgroundColor="{StaticResource AccentColor}"   FontSize="Small"  Margin="0,100,0,0"  Text="Got it.  Let's get started!"  HorizontalOptions="Center" VerticalOptions="Start"  WidthRequest="180" HeightRequest="40" />
+
+
+			
+     <!-- Header Buton -->
+       <StackLayout BackgroundColor="Transparent" IsVisible="false"
+              HorizontalOptions="Fill"
+              VerticalOptions="EndAndExpand" 
+              Padding="20"
+              Grid.Row="0" >
+
+                <Button  Command="{Binding SignupCommand}"     TextColor="White" BackgroundColor="{StaticResource AccentColor}" VerticalOptions="Center" HorizontalOptions="Center"  Image="MainTourClose.png"  WidthRequest="30" BorderRadius="2"  />
+		
+       </StackLayout>
+
+
+
+</Grid>
+
+
+</ContentView.Content>
+</ContentView>

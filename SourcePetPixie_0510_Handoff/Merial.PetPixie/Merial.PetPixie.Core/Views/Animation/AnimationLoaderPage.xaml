@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+	xmlns:shared="clr-namespace:Merial.PetPixie.Core.Shared;assembly=Merial.PetPixie.Core"
+	x:Class="Merial.PetPixie.Core.Views.AnimationLoaderPage">
+	<ContentPage.Content>
+	
+<AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+    <StackLayout Padding="10" Orientation="Vertical" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1">
+      <StackLayout Padding="0,85,0,0">
+					<shared:Loader />
+     <!--   <Image Source="myimage.png" HorizontalOptions="Center" VerticalOptions="Start" />-->
+      </StackLayout>
+
+      <StackLayout Orientation="Vertical" Padding="10, 5, 10, 5" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+        <Label Text="This works perfect"></Label>
+      </StackLayout>
+    </StackLayout>
+
+    <!-- Loader -->
+    <ContentView BackgroundColor="#222222"
+                Opacity="0.3"
+                AbsoluteLayout.LayoutFlags="All"
+                AbsoluteLayout.LayoutBounds="0,0,1,1"
+                IsVisible="true">
+      <ActivityIndicator AbsoluteLayout.LayoutFlags="All"
+                         AbsoluteLayout.LayoutBounds="0,0,1,1"
+                         VerticalOptions="Center"
+                         HorizontalOptions="Center"
+                         IsEnabled="true"
+                         IsRunning="true"
+                         IsVisible="true" />
+    </ContentView>
+  </AbsoluteLayout>
+			</ContentPage.Content>
+</ContentPage>

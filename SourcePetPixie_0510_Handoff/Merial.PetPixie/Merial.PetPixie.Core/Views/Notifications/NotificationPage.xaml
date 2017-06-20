@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 	xmlns="http://xamarin.com/schemas/2014/forms" 
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		xmlns:res="clr-namespace:Merial.PetPixie.Core.Resources;assembly=Merial.PetPixie.Core"
+		xmlns:views="clr-namespace:Merial.PetPixie.Core.Views;assembly=Merial.PetPixie.Core"
+		xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+		xmlns:fab="clr-namespace:FAB.Forms;assembly=FAB.Forms"
+		xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
+		xmlns:b="clr-namespace:Merial.PetPixie.Core.Behaviors;assembly=Merial.PetPixie.Core" 
+		xmlns:c="clr-namespace:Merial.PetPixie.Core.Converters;assembly=Merial.PetPixie.Core" 
+		x:Class="Merial.PetPixie.Core.Views.NotificationPage" BackgroundColor="#f0f0f0" >
+	
+		  <ContentPage.Resources>
+		    <ResourceDictionary>
+		      <c:ItemTappedEventArgsConverter x:Key="ItemTappedConverter" />
+		    </ResourceDictionary>
+		  </ContentPage.Resources>
+
+		
+	<ContentPage.Content >
+
+		<Grid  TranslationY="20"  >
+			<Grid.RowDefinitions>
+				<RowDefinition Height="40" />
+				<RowDefinition Height="40" />
+				<RowDefinition Height="*" />
+			</Grid.RowDefinitions>
+
+			<views:TopNavBar Grid.Row="0" x:Name="navBar" HeightRequest="40" />
+
+			<Grid Grid.Row="1"   Padding="20,0,10,0" >
+				<Grid.RowDefinitions>
+					<RowDefinition Height="25" />
+				</Grid.RowDefinitions>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="200" />
+					<ColumnDefinition Width="*" />
+					<ColumnDefinition Width="40" />
+				</Grid.ColumnDefinitions>
+
+				<Button Grid.Column="2" BackgroundColor="White" Text="Previous notifications"  WidthRequest="100" HeightRequest="25" VerticalOptions="Center" HorizontalOptions="End"  Margin="0,0,10,0"   />
+
+			</Grid>
+
+
+			<ListView 
+					Grid.Row="2"
+					Margin="0,20,0,0"
+					SeparatorVisibility="Default" 
+					ItemsSource="{Binding Notifications}"
+					RowHeight="60"
+					BackgroundColor="White"
+					SeparatorColor="White"
+					VerticalOptions="Start"
+					HasUnevenRows="false">
+			
+				    <ListView.Behaviors>
+					      <b:EventToCommandBehavior EventName="ItemTapped" Command="{Binding VetSelectedCommand}" EventArgsConverter="{StaticResource ItemTappedConverter}" />
+	    			</ListView.Behaviors>
+			
+					<ListView.ItemTemplate>
+						<DataTemplate>
+							<ViewCell>
+
+								<Grid BackgroundColor="White" Padding="10,0,10,0" VerticalOptions="Center" >
+									<Grid.RowDefinitions>
+										<RowDefinition Height="40" />
+									</Grid.RowDefinitions>
+									<Grid.ColumnDefinitions>
+										<ColumnDefinition Width="35" />
+										<ColumnDefinition Width="*" />
+										<ColumnDefinition Width="120" />
+									</Grid.ColumnDefinitions>
+
+								
+									<controls:CircleImage Source="{ Binding ProfileImageUrl }" Grid.Column="0"  BorderColor="Gray" BorderThickness="1" Aspect="AspectFill" VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="35" HeightRequest="35"  />
+	
+							
+									<StackLayout Orientation="Vertical" Grid.Column="1">
+										<Label HorizontalOptions="Start" HorizontalTextAlignment="Start" HeightRequest="20" Font="MuseoSans-300"  VerticalOptions="End" VerticalTextAlignment="End"  TextColor="{StaticResource AccentColor} " Text="{ Binding Profile.UserName }" FontSize="12"  />
+										<Label HorizontalOptions="Start" HorizontalTextAlignment="Start" HeightRequest="20"  Font="MuseoSans-300"  VerticalOptions="Start" VerticalTextAlignment="Start"  TextColor="Black" Text="{ Binding NotificationTitle}" FontSize="12"  />
+									</StackLayout>
+									<Button  Grid.Column="2" Image="{Binding MediaImageUrl}"  BackgroundColor="#abc2bb" TextColor="White" HorizontalOptions="End" Font="MuseoSans-300" FontSize="12" WidthRequest="100" HeightRequest="25" VerticalOptions="Center" />
+
+								</Grid>
+							
+							</ViewCell>
+						</DataTemplate>
+					</ListView.ItemTemplate>
+				
+			</ListView>
+
+ 		</Grid>   
+
+		
+	</ContentPage.Content>
+</ContentPage>

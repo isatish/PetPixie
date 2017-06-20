@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MasterDetailPage 	xmlns="http://xamarin.com/schemas/2014/forms" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+	xmlns:res="clr-namespace:Merial.PetPixie.Core.Resources;assembly=Merial.PetPixie.Core"
+	xmlns:views="clr-namespace:Merial.PetPixie.Core.Views;assembly=Merial.PetPixie.Core"
+	xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+	xmlns:fab="clr-namespace:FAB.Forms;assembly=FAB.Forms"
+	xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
+	xmlns:b="clr-namespace:Merial.PetPixie.Core.Behaviors;assembly=Merial.PetPixie.Core" 
+	xmlns:c="clr-namespace:Merial.PetPixie.Core.Converters;assembly=Merial.PetPixie.Core" 
+	x:Class="Merial.PetPixie.Core.Views.Reminder.PetReminderOtherDetailPage" BackgroundColor="#f0f0f0" >
+
+	<ContentPage.Resources>
+		<ResourceDictionary>
+			<c:ItemTappedEventArgsConverter x:Key="ItemTappedConverter" />
+		</ResourceDictionary>
+	</ContentPage.Resources>
+	
+  	<MasterDetailPage.Master>
+		<ContentPage Title="reminders"  />		
+	</MasterDetailPage.Master>
+
+	<MasterDetailPage.Detail >
+
+		<ContentPage x:Name="ContentContainer" BackgroundColor="#f0f0f0" >
+
+			<StackLayout Orientation="Vertical" VerticalOptions="Start" >
+				<views:TopNavBar x:Name="navBar" HeightRequest="40" TranslationY="20"  />
+
+ 
+				<ScrollView Orientation="Vertical" >
+
+					<StackLayout x:Name="StackDeails" Orientation="Vertical" Padding="0" VerticalOptions="Start" HorizontalOptions="FillAndExpand"  >
+						<StackLayout Orientation="Vertical" Margin="20,30,20,0"  HorizontalOptions="Center"  >
+							<controls:CircleImage Source="{Binding PicturePetUrl}" WidthRequest="60" HeightRequest="60"  BorderColor="White" BorderThickness="3" Aspect="AspectFill" VerticalOptions="Start" HorizontalOptions="Center"  />
+							<Label Text="{Binding PetName}" HeightRequest="30" WidthRequest="160" TextColor="{StaticResource AccentColor}" FontSize="14" VerticalOptions="Center" VerticalTextAlignment="Center" TranslationY="-5" HorizontalOptions="Center" HorizontalTextAlignment="Center" />
+						</StackLayout>
+
+
+						<Grid  BackgroundColor="White" Padding="20,20,10,0" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand" >
+							<Grid.RowDefinitions>
+								<RowDefinition Height="25" />
+								<RowDefinition Height="25" />
+								<RowDefinition Height="25" />
+								<RowDefinition Height="25" />
+								<RowDefinition Height="25" />
+								<RowDefinition Height="25" />
+								<RowDefinition Height="100" />
+								<RowDefinition Height="*" />
+							</Grid.RowDefinitions>
+							
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="150" />
+								<ColumnDefinition Width="*" />
+								<ColumnDefinition Width="20" />
+							</Grid.ColumnDefinitions>
+
+							<Label 	Grid.Column="0" Grid.Row="0" TextColor="#aac2bb"   	Text="Reminder Type"  			WidthRequest="200"  HorizontalOptions="End" HorizontalTextAlignment="Start" FontFamily="MuseoSans-300" HeightRequest="15"  VerticalOptions="Center" VerticalTextAlignment="Center"  FontSize="12"  />
+							<Label  Grid.Column="1" Grid.Row="0" TextColor="Black"  	Text="{Binding Reminder.Name}"  WidthRequest="200"  HorizontalOptions="Start" HorizontalTextAlignment="Start" FontFamily="MuseoSans-300"  HeightRequest="15"  VerticalOptions="Center" VerticalTextAlignment="Center"    FontSize="12"  />
+							<Button Grid.Column="2" Grid.Row="0"   						Image="ArrowNextDark.png" 		WidthRequest="17" HeightRequest="17" VerticalOptions="Center" HorizontalOptions="End"    Command="{Binding SelectReminderTypeCommand, Mode=TwoWay}"    />
+
+
+							<Label 	Grid.Column="0" Grid.Row="1" TextColor="#aac2bb"   	Text="Location"  			WidthRequest="200"  HorizontalOptions="End" HorizontalTextAlignment="Start" FontFamily="MuseoSans-300" HeightRequest="15"  VerticalOptions="Center" VerticalTextAlignment="Center"  FontSize="12"  />
+							<Label  Grid.Column="1" Grid.Row="1" TextColor="Black"  	Text="GREENFIELD ANIMAL HOSPITAL"  WidthRequest="200"  HorizontalOptions="Start" HorizontalTextAlignment="Start" FontFamily="MuseoSans-300"  HeightRequest="15"  VerticalOptions="Center" VerticalTextAlignment="Center"    FontSize="12"  />
+							<Button Grid.Column="2" Grid.Row="1"   						Image="ArrowNext17.png" 		WidthRequest="17" HeightRequest="17" VerticalOptions="Center" HorizontalOptions="End"       />
+
+
+							<Label 	Grid.Column="0" Grid.Row="2" TextColor="#aac2bb"   	Text="Reminder Start Date"  			WidthRequest="200"  HorizontalOptions="End" HorizontalTextAlignment="Start" FontFamily="MuseoSans-300" HeightRequest="15"  VerticalOptions="Center" VerticalTextAlignment="Center"  FontSize="12"  />
+							<Label  Grid.Column="1" Grid.Row="2" TextColor="Black"  	Text="{Binding Reminder.NextAlertDisplay}"  WidthRequest="200"  HorizontalOptions="Start" HorizontalTextAlignment="Start" FontFamily="MuseoSans-300"  HeightRequest="15"  VerticalOptions="Center" VerticalTextAlignment="Center"    FontSize="12"  />
+							<Button Grid.Column="2" Grid.Row="2"   						Image="ArrowNext17.png" 		WidthRequest="17" HeightRequest="17" VerticalOptions="Center" HorizontalOptions="End"       />
+
+							<Label 	Grid.Column="0" Grid.Row="3" TextColor="#aac2bb"   	Text="Repeat"  			WidthRequest="200"  HorizontalOptions="End" HorizontalTextAlignment="Start" FontFamily="MuseoSans-300" HeightRequest="15"  VerticalOptions="Center" VerticalTextAlignment="Center"  FontSize="12"  />
+							<Label  Grid.Column="1" Grid.Row="3" TextColor="Black"  	Text="Never"  WidthRequest="200"  HorizontalOptions="Start" HorizontalTextAlignment="Start" FontFamily="MuseoSans-300"  HeightRequest="15"  VerticalOptions="Center" VerticalTextAlignment="Center"    FontSize="12"  />
+							<Button Grid.Column="2" Grid.Row="3"   						Image="ArrowNext17.png" 		WidthRequest="17" HeightRequest="17" VerticalOptions="Center" HorizontalOptions="End"       />
+
+
+							<Label 	Grid.Column="0" Grid.Row="4" TextColor="#aac2bb"   	Text="Sync with Calendar"  			WidthRequest="200"  HorizontalOptions="End" HorizontalTextAlignment="Start" FontFamily="MuseoSans-300" HeightRequest="15"  VerticalOptions="Center" VerticalTextAlignment="Center"  FontSize="12"  />
+							<Label  Grid.Column="1" Grid.Row="4" TextColor="Black"  	Text=""  WidthRequest="200"  HorizontalOptions="Start" HorizontalTextAlignment="Start" FontFamily="MuseoSans-300"  HeightRequest="15"  VerticalOptions="Center" VerticalTextAlignment="Center"    FontSize="12"  />
+							<Switch Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="2"    WidthRequest="150" HorizontalOptions="End" />
+
+
+							<Label 	Grid.Column="0" Grid.Row="5" TextColor="#aac2bb"   	Text="Notes" 						WidthRequest="200"  HorizontalOptions="Start" HorizontalTextAlignment="Start" FontFamily="MuseoSans-300" HeightRequest="15"  VerticalOptions="Center" VerticalTextAlignment="Center"  FontSize="12"  />
+ 
+								
+							<Frame Padding="0" HasShadow="false"  Grid.Column="0"  Grid.Row="6" Grid.ColumnSpan="3" Margin="0,0,0,20" WidthRequest="300" HeightRequest="60" VerticalOptions="Start" >
+								<Editor   Text="{Binding Reminder.Note}" FontFamily="MuseoSans-300" FontSize="12" VerticalOptions="Start" />
+							</Frame>
+
+
+						</Grid>
+
+                                          
+					</StackLayout>
+
+ 
+						
+				</ScrollView>
+			</StackLayout>
+
+		</ContentPage>
+
+	</MasterDetailPage.Detail>
+
+</MasterDetailPage>

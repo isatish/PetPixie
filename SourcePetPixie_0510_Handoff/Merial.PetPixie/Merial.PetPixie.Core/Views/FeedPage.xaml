@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MasterDetailPage 	xmlns="http://xamarin.com/schemas/2014/forms" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+	xmlns:res="clr-namespace:Merial.PetPixie.Core.Resources;assembly=Merial.PetPixie.Core"
+	xmlns:views="clr-namespace:Merial.PetPixie.Core.Views;assembly=Merial.PetPixie.Core"
+	xmlns:shared="clr-namespace:Merial.PetPixie.Core.Shared;assembly=Merial.PetPixie.Core"
+	xmlns:fab="clr-namespace:FAB.Forms;assembly=FAB.Forms"
+	xmlns:controls="clr-namespace:Merial.PetPixie.Core.Controls;assembly=Merial.PetPixie.Core"
+	xmlns:imageCircle="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
+	xmlns:converters="clr-namespace:Merial.PetPixie.Core.Converters;assembly=Merial.PetPixie.Core"
+	x:Class="Merial.PetPixie.Core.Views.FeedPage" 
+	Padding="0, 20, 0, 0" >
+	
+	<ContentPage.Resources>
+		<ResourceDictionary>
+			<converters:TimeAgoValueConverter x:Key="TimeAgoValueConverter" />
+		</ResourceDictionary>
+	</ContentPage.Resources>
+	
+  	<MasterDetailPage.Master>
+		<ContentPage Title="Feed"  />		
+	</MasterDetailPage.Master>
+
+	<MasterDetailPage.Detail >
+
+		<ContentPage x:Name="ContentContainer" >
+             
+
+			<StackLayout Orientation="Vertical" >
+				<views:TopNavBar x:Name="navBar" HeightRequest="40" TranslationY="20"  />
+                            <Grid>
+
+
+
+				<views:MyListView 
+					x:Name="listItems"
+					SeparatorVisibility="None" 
+					SeparatorColor="#DFDFDF"
+					ItemsSource="{Binding Items}"
+					TranslationY="20"
+					Margin="0,0,0,20"
+					HasUnevenRows="true">
+
+					<ListView.ItemTemplate>
+						<DataTemplate>
+							<ViewCell>
+								<views:FeedPageView />
+							</ViewCell>
+						</DataTemplate>
+					</ListView.ItemTemplate>
+
+				</views:MyListView>
+
+                            <Image x:Name="imageTourBackground"  Source="GettingStartedBg.png"  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Aspect="AspectFill" Margin="0" />
+                                <views:GetStartedTour IsVisible="false"  x:Name="CarouselGettingStartedTour"   HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" WidthRequest="400" HeightRequest="1000"   TranslationY="20"/>
+<!--                                <views:GetStartedTour IsVisible="false"  x:Name="CarouselGettingStartedTour"   HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" WidthRequest="400" HeightRequest="1000"   TranslationY="20" IsVisible="{Binding ShowTour, Mode=TwoWay}"  />
+-->
+				</Grid>
+
+			</StackLayout>
+
+		</ContentPage>
+
+	</MasterDetailPage.Detail>
+
+</MasterDetailPage>
+

@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+	xmlns:res="clr-namespace:Merial.PetPixie.Core.Resources;assembly=Merial.PetPixie.Core"
+	xmlns:views="clr-namespace:Merial.PetPixie.Core.Views;assembly=Merial.PetPixie.Core"
+	xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+	xmlns:fab="clr-namespace:FAB.Forms;assembly=FAB.Forms"
+	xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
+	xmlns:b="clr-namespace:Merial.PetPixie.Core.Behaviors;assembly=Merial.PetPixie.Core" 
+	xmlns:c="clr-namespace:Merial.PetPixie.Core.Converters;assembly=Merial.PetPixie.Core" 
+	x:Class="Merial.PetPixie.Core.Views.ProfileEditorPage" 
+	BackgroundColor="#f0f0f0" >
+	
+	<ContentPage.Resources>
+		<ResourceDictionary>
+			<c:ItemTappedEventArgsConverter x:Key="ItemTappedConverter" />
+		</ResourceDictionary>
+	</ContentPage.Resources>
+
+	<ContentPage.Content >
+
+		<Grid  TranslationY="20" VerticalOptions="Start"  >
+			<Grid.RowDefinitions>
+				<RowDefinition Height="40" />
+				<RowDefinition Height="50" />
+				<RowDefinition Height="70" x:Name="Name" />
+				<RowDefinition Height="70" x:Name="AboutMe" />
+				<RowDefinition Height="40" x:Name="Phone" />
+				<RowDefinition Height="20" x:Name="PrivateInfoForYou" />
+				<RowDefinition Height="40" x:Name="Email" />
+				<RowDefinition Height="20" x:Name="CountryHeader" />
+				<RowDefinition Height="40" x:Name="Country" />
+				<RowDefinition Height="40" x:Name="AddPet" />
+				<RowDefinition Height="20" x:Name="DeleteAccount" />
+				<RowDefinition Height="*" />
+			</Grid.RowDefinitions>
+
+			<views:TopNavBar Grid.Row="0" x:Name="navBar" HeightRequest="40" />
+
+
+			<controls:CircleImage Grid.Row="1"  Source="{Binding Profile.ImageSrc}"  WidthRequest="45" HeightRequest="45" BorderColor="#536a63" BorderThickness="1" Aspect="AspectFill" VerticalOptions="Center" HorizontalOptions="Center" >
+				<controls:CircleImage.GestureRecognizers>
+					<TapGestureRecognizer  Command="{Binding TakePictureFromCameraCommand}" NumberOfTapsRequired="1"   />
+				</controls:CircleImage.GestureRecognizers>
+			</controls:CircleImage> 
+
+			<!--UserName / DisplayName-->
+
+			<Grid Grid.Row="2" RowSpacing="5" BackgroundColor="White" Padding="20,0,10,10" HorizontalOptions="FillAndExpand" >
+				<Grid.RowDefinitions>
+					<RowDefinition Height="40" />
+					<RowDefinition Height="*" />
+				</Grid.RowDefinitions>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="*" />
+					<ColumnDefinition Width="*" />
+				</Grid.ColumnDefinitions>
+
+				<Label Grid.Row="0" Grid.Column="0"  Text="Name" 		HeightRequest="30" VerticalOptions="Center" VerticalTextAlignment="Center" HorizontalOptions="Start" Font="MuseoSans-300" TextColor="#536a63" FontSize="12"   />
+				<Entry Grid.Row="0" Grid.Column="1"  Text="{Binding Profile.UserFullName}" HorizontalOptions="Start" BackgroundColor="#aac2bb" WidthRequest="200" HeightRequest="30"   VerticalOptions="Center" FontFamily="MuseoSans-300" TextColor="White" FontSize="12"   />
+
+				<Label Grid.Row="1" Grid.Column="0"  Text="UserName" 					HeightRequest="20" VerticalOptions="Start" VerticalTextAlignment="Start" HorizontalOptions="Start" Font="MuseoSans-300" TextColor="#536a63" FontSize="12"   />
+				<Label Grid.Row="1" Grid.Column="1"  Text="{Binding Profile.UserName}" 	HeightRequest="20" VerticalOptions="Start" VerticalTextAlignment="Start"  HorizontalOptions="End" HorizontalTextAlignment="End"  Font="MuseoSans-300" TextColor="Black" FontSize="12"   />
+
+			</Grid>
+
+
+			<!--ABOUT ME-->
+			<StackLayout Grid.Row="3" Orientation="Horizontal" BackgroundColor="White" Margin="0,10,0,10" Padding="20,10,10,10" >
+				<Label Text="About Me" 		HeightRequest="20" WidthRequest="100" VerticalOptions="Start" VerticalTextAlignment="Start" HorizontalOptions="Start" Font="MuseoSans-300" TextColor="#536a63" FontSize="12"   />
+				<Entry  Text="{Binding Profile.AboutMe}" HorizontalOptions="End" WidthRequest="200" BackgroundColor="#aac2bb"  	HeightRequest="60" VerticalOptions="Start"    FontFamily="MuseoSans-300" TextColor="White" FontSize="12"   />
+			</StackLayout>
+
+
+			
+			<!--PHONE-->
+			<Grid  Grid.Row="4" BackgroundColor="White"  HorizontalOptions="FillAndExpand">
+				<Label  Text="Phone"  Margin="20,0,0,0"		HeightRequest="100" VerticalOptions="Start" VerticalTextAlignment="Center" HorizontalOptions="Start" Font="MuseoSans-300" TextColor="#536a63" FontSize="12"   />
+				<Entry  BackgroundColor="#aac2bb"   Margin="0,0,10,0"	 Text="{Binding Profile.PhoneNumber}" HorizontalOptions="End"  HeightRequest="30" WidthRequest="100" VerticalOptions="Center"  FontFamily="MuseoSans-300" Keyboard="Telephone" TextColor="White" FontSize="12"   />
+			</Grid>
+			
+
+			 <!--EMAIL-->
+			<Label Grid.Row="5" Grid.Column="0"  Text="Private information only for you" HeightRequest="40" VerticalOptions="Center" VerticalTextAlignment="End" HorizontalOptions="Center" Font="MuseoSans-300" TextColor="Black" FontSize="12"   />
+			<Grid  Grid.Row="6" BackgroundColor="White"  HorizontalOptions="FillAndExpand">
+				<Label  Text="Email"  Margin="20,0,0,0"		HeightRequest="100" VerticalOptions="Start" VerticalTextAlignment="Center" HorizontalOptions="Start" Font="MuseoSans-300" TextColor="#536a63" FontSize="12"   />
+				<Entry  BackgroundColor="#aac2bb"   Margin="0,0,10,0"	 Text="{Binding Profile.Email}" HorizontalOptions="End"  HeightRequest="30" WidthRequest="200" VerticalOptions="Center"  FontFamily="MuseoSans-300" Keyboard="Telephone" TextColor="White" FontSize="12"   />
+			</Grid>
+			
+
+
+			<!--	COUNTRY-->
+			<Label Grid.Row="7" Grid.Column="0"  Text="Country" HeightRequest="40" VerticalOptions="FillAndExpand" VerticalTextAlignment="End" HorizontalOptions="Center" Font="MuseoSans-300" TextColor="Black" FontSize="12"   />
+
+			<Grid  Grid.Row="8" BackgroundColor="White"  HorizontalOptions="FillAndExpand">
+				<Label  Text="Country"  Margin="20,0,0,0"		HeightRequest="100" VerticalOptions="Start" VerticalTextAlignment="Center" HorizontalOptions="Start" Font="MuseoSans-300" TextColor="#536a63" FontSize="12"   />
+				<Button Margin="0,0,10,0"  BackgroundColor="Transparent" Image="ArrowNext17.png" WidthRequest="17" HeightRequest="17" VerticalOptions="Center" HorizontalOptions="End"       />
+			</Grid>
+			
+
+			<Button  Grid.Row="9" Text="Add New Pet" Margin="0,20,0,0" FontSize="12" BackgroundColor="{StaticResource AccentColor}" TextColor="White" HeightRequest="25" VerticalOptions="Start" HorizontalOptions="Center"  WidthRequest="130" Command="{Binding AddNewPetsCommand}"  />
+					
+			<Button    Grid.Row="10" Text="Delete My Account" FontSize="12" TextColor="{StaticResource AccentColor}" BackgroundColor="Transparent" HeightRequest="25" VerticalOptions="End" HorizontalOptions="Center"  WidthRequest="130" Command="{Binding DeleteAccountCommand}"  />
+
+		</Grid>   
+
+		
+	</ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,6 @@
+/Developer/Merial/PetPixie/SourcePetPixie_0510_Handoff/bin/Debug/Mvx/Portable/MvvmCross.Forms.Presenter.Core.dll
+/Developer/Merial/PetPixie/SourcePetPixie_0510_Handoff/bin/Debug/Mvx/Portable/MvvmCross.Forms.Presenter.Core.pdb
+/Developer/Merial/PetPixie/SourcePetPixie_0510_Handoff/Merial.PetPixie/MvvmCross.Forms.Presenter.Core/obj/Release/MvvmCross.Forms.Presenter.Core.csproj.CoreCompileInputs.cache
+/Developer/Merial/PetPixie/SourcePetPixie_0510_Handoff/Merial.PetPixie/MvvmCross.Forms.Presenter.Core/obj/Release/MvvmCross.Forms.Presenter.Core.dll
+/Developer/Merial/PetPixie/SourcePetPixie_0510_Handoff/Merial.PetPixie/MvvmCross.Forms.Presenter.Core/obj/Release/MvvmCross.Forms.Presenter.Core.pdb
+/Developer/Merial/PetPixie/SourcePetPixie_0510_Handoff/Merial.PetPixie/MvvmCross.Forms.Presenter.Core/obj/Release/MvvmCross.Forms.Presenter.Core.csprojResolveAssemblyReference.cache

@@ -1,0 +1,863 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <MinimumVisualStudioVersion>10.0</MinimumVisualStudioVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{74043E51-EF7B-4CE1-AF3F-7612ED1D05B6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Merial.PetPixie.Core</RootNamespace>
+    <AssemblyName>Merial.PetPixie.Core</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <TargetFrameworkProfile>Profile7</TargetFrameworkProfile>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;PROD;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType></DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;PROD</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Repository\BaseRepository.cs" />
+    <Compile Include="Repository\IRepository.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\BreedService.cs" />
+    <Compile Include="Services\CommentService.cs" />
+    <Compile Include="Services\ConnectivityService.cs" />
+    <Compile Include="Services\FeedService.cs" />
+    <Compile Include="Services\FriendService.cs" />
+    <Compile Include="Services\HashTagService.cs" />
+    <Compile Include="Services\KinveyService.cs" />
+    <Compile Include="Services\KinveyServiceBase.cs" />
+    <Compile Include="Services\MediaService.cs" />
+    <Compile Include="Services\NotificationService.cs" />
+    <Compile Include="Services\PetService.cs" />
+    <Compile Include="Services\ProfileService.cs" />
+    <Compile Include="Services\ReminderService.cs" />
+    <Compile Include="Services\UploadService.cs" />
+    <Compile Include="Services\UserService.cs" />
+    <Compile Include="Services\VetService.cs" />
+    <Compile Include="Services\Contracts\IBitmapService.cs" />
+    <Compile Include="Services\Contracts\IBreedService.cs" />
+    <Compile Include="Services\Contracts\IByteService.cs" />
+    <Compile Include="Services\Contracts\ICacheService.cs" />
+    <Compile Include="Services\Contracts\ICalendarService.cs" />
+    <Compile Include="Services\Contracts\ICommentService.cs" />
+    <Compile Include="Services\Contracts\IConnectivityService.cs" />
+    <Compile Include="Services\Contracts\IDeviceHelper.cs" />
+    <Compile Include="Services\Contracts\IDeviceInfoService.cs" />
+    <Compile Include="Services\Contracts\IFacebookService.cs" />
+    <Compile Include="Services\Contracts\IFeedService.cs" />
+    <Compile Include="Services\Contracts\IFriendService.cs" />
+    <Compile Include="Services\Contracts\IHashTagService.cs" />
+    <Compile Include="Services\Contracts\IImageService.cs" />
+    <Compile Include="Services\Contracts\IInitService.cs" />
+    <Compile Include="Services\Contracts\IKinveyClientProvider.cs" />
+    <Compile Include="Services\Contracts\IKinveyService.cs" />
+    <Compile Include="Services\Contracts\IMediaService.cs" />
+    <Compile Include="Services\Contracts\INavigationService.cs" />
+    <Compile Include="Services\Contracts\INotificationService.cs" />
+    <Compile Include="Services\Contracts\IPetService.cs" />
+    <Compile Include="Services\Contracts\IPopupService.cs" />
+    <Compile Include="Services\Contracts\IProfileService.cs" />
+    <Compile Include="Services\Contracts\IReminderService.cs" />
+    <Compile Include="Services\Contracts\ITwitterService.cs" />
+    <Compile Include="Services\Contracts\IUploadService.cs" />
+    <Compile Include="Services\Contracts\IUserService.cs" />
+    <Compile Include="Services\Contracts\IVetService.cs" />
+    <Compile Include="Services\Contracts\IVideoService.cs" />
+    <Compile Include="Models\CellWrapperViewModel.cs" />
+    <Compile Include="Models\CommentModel.cs" />
+    <Compile Include="Models\ContactModel.cs" />
+    <Compile Include="Models\EntityBase.cs" />
+    <Compile Include="Models\FeedModel.cs" />
+    <Compile Include="Models\HashTagModel.cs" />
+    <Compile Include="Models\LatLngDistance.cs" />
+    <Compile Include="Models\MainTour.cs" />
+    <Compile Include="Models\NotificationModel.cs" />
+    <Compile Include="Models\PetModel.cs" />
+    <Compile Include="Models\PetReminderModel.cs" />
+    <Compile Include="Models\ProductModel.cs" />
+    <Compile Include="Models\ProfileModel.cs" />
+    <Compile Include="Models\ReminderFrequencyModel.cs" />
+    <Compile Include="Models\ReminderModel.cs" />
+    <Compile Include="Models\ReminderTypeModel.cs" />
+    <Compile Include="Models\SignupModel.cs" />
+    <Compile Include="Models\TypeMedia.cs" />
+    <Compile Include="Models\UserExistResponse.cs" />
+    <Compile Include="Models\UserRatingModel.cs" />
+    <Compile Include="Models\VetModel.cs" />
+    <Compile Include="Models\VetReminderModel.cs" />
+    <Compile Include="Models\Contracts\ICellWrapperViewModel.cs" />
+    <Compile Include="Models\Enums\CacheMode.cs" />
+    <Compile Include="Models\Enums\ContentStatus.cs" />
+    <Compile Include="Models\Enums\EntityMode.cs" />
+    <Compile Include="Models\Enums\Environement.cs" />
+    <Compile Include="Models\Enums\LocalCachingPolicy.cs" />
+    <Compile Include="Models\Enums\NotificationType.cs" />
+    <Compile Include="Models\Enums\PickerType.cs" />
+    <Compile Include="Models\Enums\ReminderFrequencyType.cs" />
+    <Compile Include="Models\Enums\ReminderSubType.cs" />
+    <Compile Include="Models\Enums\ReminderType.cs" />
+    <Compile Include="Models\Enums\RequestErrorHandlingPolicy.cs" />
+    <Compile Include="Models\Enums\SearchMode.cs" />
+    <Compile Include="Models\Enums\TransisitionType.cs" />
+    <Compile Include="Models\Enums\TypePet.cs" />
+    <Compile Include="Models\EventHandler\LocationChangedEventArgs.cs" />
+    <Compile Include="Models\Extensions\ExtensionModel.cs" />
+    <Compile Include="Models\Interface\IItemRadio.cs" />
+    <Compile Include="Models\Kinvey\KAcl.cs" />
+    <Compile Include="Models\Kinvey\KBreed.cs" />
+    <Compile Include="Models\Kinvey\KComment.cs" />
+    <Compile Include="Models\Kinvey\KEntity.cs" />
+    <Compile Include="Models\Kinvey\KExists.cs" />
+    <Compile Include="Models\Kinvey\KExpandedComments.cs" />
+    <Compile Include="Models\Kinvey\KExpandedImages.cs" />
+    <Compile Include="Models\Kinvey\KExpandedLikes.cs" />
+    <Compile Include="Models\Kinvey\KExpandedProfilePictures.cs" />
+    <Compile Include="Models\Kinvey\KFeed.cs" />
+    <Compile Include="Models\Kinvey\KFile.cs" />
+    <Compile Include="Models\Kinvey\KFrequency.cs" />
+    <Compile Include="Models\Kinvey\KFrom.cs" />
+    <Compile Include="Models\Kinvey\KHashTag.cs" />
+    <Compile Include="Models\Kinvey\KImage.cs" />
+    <Compile Include="Models\Kinvey\KImages.cs" />
+    <Compile Include="Models\Kinvey\KInappropriateReport.cs" />
+    <Compile Include="Models\Kinvey\KKmd.cs" />
+    <Compile Include="Models\Kinvey\KLarge.cs" />
+    <Compile Include="Models\Kinvey\KLike.cs" />
+    <Compile Include="Models\Kinvey\KLookup.cs" />
+    <Compile Include="Models\Kinvey\KMedia.cs" />
+    <Compile Include="Models\Kinvey\KMedium.cs" />
+    <Compile Include="Models\Kinvey\KNotification.cs" />
+    <Compile Include="Models\Kinvey\KNotificationSettings.cs" />
+    <Compile Include="Models\Kinvey\KPetBase.cs" />
+    <Compile Include="Models\Kinvey\KPetWithReminders.cs" />
+    <Compile Include="Models\Kinvey\KPictures.cs" />
+    <Compile Include="Models\Kinvey\KProduct.cs" />
+    <Compile Include="Models\Kinvey\KProfile.cs" />
+    <Compile Include="Models\Kinvey\KProfileCounts.cs" />
+    <Compile Include="Models\Kinvey\KRating.cs" />
+    <Compile Include="Models\Kinvey\KReminder.cs" />
+    <Compile Include="Models\Kinvey\KReminderFrequency.cs" />
+    <Compile Include="Models\Kinvey\KReminderType.cs" />
+    <Compile Include="Models\Kinvey\KResponseReminder.cs" />
+    <Compile Include="Models\Kinvey\KResult.cs" />
+    <Compile Include="Models\Kinvey\KSmall.cs" />
+    <Compile Include="Models\Kinvey\KUser.cs" />
+    <Compile Include="Models\Kinvey\KUserRelationship.cs" />
+    <Compile Include="Models\Kinvey\KUserTypeDetection.cs" />
+    <Compile Include="Models\Kinvey\KVet.cs" />
+    <Compile Include="Models\Kinvey\KVetRating.cs" />
+    <Compile Include="Models\Kinvey\KVideo.cs" />
+    <Compile Include="Models\Partial\KHashTag.cs" />
+    <Compile Include="Models\PushModels\PushNotificationModel.cs" />
+    <Compile Include="Models\SocialModels\FacebookUserModel.cs" />
+    <Compile Include="Models\SocialModels\SocialUserModel.cs" />
+    <Compile Include="Models\SocialModels\TwitterUserModel.cs" />
+    <Compile Include="Common\Exceptions\UsernameAlreadyExistsException.cs" />
+    <Compile Include="Converters\DateTimeToStringValueConverter.cs" />
+    <Compile Include="Converters\IsMedicalAlertBackgroundColorValueConverter.cs" />
+    <Compile Include="Converters\LikeUsersValueConverter.cs" />
+    <Compile Include="Converters\TextColorValueConverter.cs" />
+    <Compile Include="Converters\TimeAgoValueConverter.cs" />
+    <Compile Include="Helpers\InputValidationHelper.cs" />
+    <Compile Include="Helpers\MapSettings.cs" />
+    <Compile Include="Helpers\ObjectHelper.cs" />
+    <Compile Include="Helpers\ReminderHelper.cs" />
+    <Compile Include="Helpers\SafeMvxCommand.cs" />
+    <Compile Include="Helpers\SafeMvxCommandAsync.cs" />
+    <Compile Include="Helpers\SafeMvxCommandAsyncWithResult.cs" />
+    <Compile Include="Helpers\SafeMvxCommandWithResult.cs" />
+    <Compile Include="Helpers\Settings.cs" />
+    <Compile Include="Helpers\StreamHelper.cs" />
+    <Compile Include="Helpers\ValidationHelperExtensions.cs" />
+    <Compile Include="Properties\Annotations.cs" />
+    <Compile Include="Config.cs" />
+    <Compile Include="Constants.cs" />
+    <Compile Include="IAuthentication.cs" />
+    <Compile Include="Services\Contracts\ILocalizeService.cs" />
+    <Compile Include="App.cs" />
+    <Compile Include="Models\NotificationSettingModel.cs" />
+    <Compile Include="Services\Contracts\ILocationService.cs" />
+    <Compile Include="Effects\ShadownEffect.cs" />
+    <Compile Include="Converters\ItemTappedEventArgsConverter.cs" />
+    <Compile Include="Behaviors\EventToCommandBehavior.cs" />
+    <Compile Include="Behaviors\BindableBehavior.cs" />
+    <Compile Include="Converters\TextChangedEventArgsConverter.cs" />
+    <Compile Include="Converters\FocusedEventArgsConverter.cs" />
+    <Compile Include="Common\Controls\AwesomeWrappanel.cs" />
+    <Compile Include="Renderers\MyListView.cs" />
+    <Compile Include="Renderers\GestureImage.cs" />
+    <Compile Include="Common\Controls\ImageButton.xaml.cs">
+      <DependentUpon>ImageButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Common\Controls\PetPixieButton.cs" />
+    <Compile Include="Renderers\FacebookLoginButton.cs" />
+    <Compile Include="Renderers\FacebookSignupButton.cs" />
+    <Compile Include="Helpers\MediaHelper.cs" />
+    <Compile Include="Renderers\CustomMap.cs" />
+    <Compile Include="Renderers\CustomPin.cs" />
+    <Compile Include="Resources\AppResources.Designer.cs" />
+    <Compile Include="Resources\TranslateExtension.cs" />
+    <Compile Include="Common\Controls\UserRating.xaml.cs">
+      <DependentUpon>UserRating.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Common\Controls\WrapLayout.cs" />
+    <Compile Include="Helpers\FABHelper.cs" />
+    <Compile Include="Converters\Converters.cs" />
+    <Compile Include="Converters\StringReverseConverter.cs" />
+    <Compile Include="Converters\ActiveBackgroundColorValueConverter.cs" />
+    <Compile Include="Converters\ActiveTextColorValueConverter.cs" />
+    <Compile Include="Views\Comments\CommentListPage.xaml.cs">
+      <DependentUpon>..\..\ViewsNewPetPixie\Views\Comments\CommentListPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Discover\DiscoverPage.xaml.cs">
+      <DependentUpon>..\..\ViewsNewPetPixie\Views\Discover\DiscoverPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Discover\DiscoverTemplateSelector.cs" />
+    <Compile Include="Views\Discover\SearchPage.xaml.cs">
+      <DependentUpon>..\..\ViewsNewPetPixie\Views\Discover\SearchPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FindFriends\FindFriendsTabsPage.xaml.cs">
+      <DependentUpon>..\..\ViewsNewPetPixie\Views\FindFriends\FindFriendsTabsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Followers\FollowersPage.xaml.cs">
+      <DependentUpon>..\..\ViewsNewPetPixie\Views\Followers\FollowersPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Followers\FollowingsPage.xaml.cs">
+      <DependentUpon>..\..\ViewsNewPetPixie\Views\Followers\FollowingsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Likes\LikeListPage.xaml.cs">
+      <DependentUpon>..\..\ViewsNewPetPixie\Views\Likes\LikeListPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Login\CarouselTemplateSelector.cs" />
+    <Compile Include="Views\Login\CompleteAccountPage.xaml.cs">
+      <DependentUpon>..\..\ViewsNewPetPixie\Views\Login\CompleteAccountPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Login\ForgetPasswordPage.xaml.cs">
+      <DependentUpon>..\..\ViewsNewPetPixie\Views\Login\ForgetPasswordPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Login\LoginPage.xaml.cs">
+      <DependentUpon>..\..\ViewsNewPetPixie\Views\Login\LoginPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Login\LoginTourPage.xaml.cs">
+      <DependentUpon>..\..\ViewsNewPetPixie\Views\Login\LoginTourPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Login\SignUpPage.xaml.cs">
+      <DependentUpon>..\..\ViewsNewPetPixie\Views\Login\SignUpPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MyPack\MyPackPage.xaml.cs">
+      <DependentUpon>..\..\ViewsNewPetPixie\Views\MyPack\MyPackPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MyVets\MyVetInfoPage.xaml.cs">
+      <DependentUpon>..\..\ViewsNewPetPixie\Views\MyVets\MyVetInfoPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MyVets\MyVetsPage.xaml.cs">
+      <DependentUpon>..\..\ViewsNewPetPixie\Views\MyVets\MyVetsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MyVets\VetMapPage.xaml.cs">
+      <DependentUpon>..\..\ViewsNewPetPixie\Views\MyVets\VetMapPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MyVets\VetMapSearchAddressPage.xaml.cs">
+      <DependentUpon>..\..\ViewsNewPetPixie\Views\MyVets\VetMapSearchAddressPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MyVets\VetSearchResult.cs" />
+    <Compile Include="Views\Navigation\LeftNavBar.xaml.cs">
+      <DependentUpon>..\..\ViewsNewPetPixie\Views\Navigation\LeftNavBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Navigation\NewPostDialogue.xaml.cs">
+      <DependentUpon>..\..\ViewsNewPetPixie\Views\Navigation\NewPostDialogue.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Navigation\TopNavBar.xaml.cs">
+      <DependentUpon>..\..\ViewsNewPetPixie\Views\Navigation\TopNavBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Notifications\NotificationPage.xaml.cs">
+      <DependentUpon>..\..\ViewsNewPetPixie\Views\Notifications\NotificationPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Notifications\NotificationsFramePage.xaml.cs">
+      <DependentUpon>..\..\ViewsNewPetPixie\Views\Notifications\NotificationsFramePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Notifications\NotificationsTemplateSelector.cs" />
+    <Compile Include="Views\Pets\PetBreedSelectorPage.xaml.cs">
+      <DependentUpon>..\..\ViewsNewPetPixie\Views\Pets\PetBreedSelectorPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pets\ProfilePetPage.xaml.cs">
+      <DependentUpon>..\..\ViewsNewPetPixie\Views\Pets\ProfilePetPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PictureFun\CropperaPage.cs" />
+    <Compile Include="Views\PictureFun\CropperPage.xaml.cs">
+      <DependentUpon>..\..\ViewsNewPetPixie\Views\PictureFun\CropperPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PictureFun\FunTemplateSelector.cs" />
+    <Compile Include="Views\PictureFun\PictureFunCropperView.xaml.cs">
+      <DependentUpon>..\..\ViewsNewPetPixie\Views\PictureFun\PictureFunCropperView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PictureFun\PictureFunModView.xaml.cs">
+      <DependentUpon>..\..\ViewsNewPetPixie\Views\PictureFun\PictureFunModView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PictureFun\PictureFunPage.xaml.cs">
+      <DependentUpon>..\..\ViewsNewPetPixie\Views\PictureFun\PictureFunPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PictureFun\SharePage.xaml.cs">
+      <DependentUpon>..\..\ViewsNewPetPixie\Views\PictureFun\SharePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Profile\ProfileDetailPage.xaml.cs">
+      <DependentUpon>..\..\ViewsNewPetPixie\Views\Profile\ProfileDetailPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Profile\ProfileEditorPage.xaml.cs">
+      <DependentUpon>..\..\ViewsNewPetPixie\Views\Profile\ProfileEditorPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Reminders\PetReminderListPage.xaml.cs">
+      <DependentUpon>..\..\ViewsNewPetPixie\Views\Reminders\PetReminderListPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Reminders\PetReminderSelectTypePage.xaml.cs">
+      <DependentUpon>..\..\ViewsNewPetPixie\Views\Reminders\PetReminderSelectTypePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Settings\NotificationSettingsPage.xaml.cs">
+      <DependentUpon>..\..\ViewsNewPetPixie\Views\Settings\NotificationSettingsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Settings\SettingsPage.xaml.cs">
+      <DependentUpon>..\..\ViewsNewPetPixie\Views\Settings\SettingsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Settings\Templates\SettingItemTemplate.xaml.cs">
+      <DependentUpon>..\..\..\ViewsNewPetPixie\Views\Settings\Templates\SettingItemTemplate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Settings\WebViewPage.xaml.cs">
+      <DependentUpon>..\..\ViewsNewPetPixie\Views\Settings\WebViewPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Templates\MenuItemTemplate.xaml.cs">
+      <DependentUpon>..\..\ViewsNewPetPixie\Views\Templates\MenuItemTemplate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\Comments\CommentItemViewModel.cs" />
+    <Compile Include="ViewModels\Comments\CommentListViewModel.cs" />
+    <Compile Include="ViewModels\Core\IAuthenticationViewModel.cs" />
+    <Compile Include="ViewModels\Core\ValidationFormViewModelBase.cs" />
+    <Compile Include="ViewModels\Core\ViewModelBase.cs" />
+    <Compile Include="ViewModels\Discover\DiscoverItemViewModel.cs" />
+    <Compile Include="ViewModels\Discover\DiscoverSearchViewModel.cs" />
+    <Compile Include="ViewModels\Discover\DiscoverViewModel.cs" />
+    <Compile Include="ViewModels\Discover\SearchViewModel.cs" />
+    <Compile Include="ViewModels\Feed\FeedItemViewModel.cs" />
+    <Compile Include="ViewModels\Feed\FeedViewModel.cs" />
+    <Compile Include="ViewModels\Feed\Person.cs" />
+    <Compile Include="ViewModels\FindFriends\FindFriendsFromContactViewModel.cs" />
+    <Compile Include="ViewModels\FindFriends\FindFriendsFromFacebookViewModel.cs" />
+    <Compile Include="ViewModels\FindFriends\FindFriendsTabsViewModel.cs" />
+    <Compile Include="ViewModels\Followers\FollowersViewModel.cs" />
+    <Compile Include="ViewModels\Followers\FollowingsViewModel.cs" />
+    <Compile Include="ViewModels\Interfaces\ISwipeListViewModel.cs" />
+    <Compile Include="ViewModels\Likes\LikeListViewModel.cs" />
+    <Compile Include="ViewModels\Login\AuthenticationHelper.cs" />
+    <Compile Include="ViewModels\Login\AuthenticationViewModelBase.cs" />
+    <Compile Include="ViewModels\Login\CompleteAccountViewModel.cs" />
+    <Compile Include="ViewModels\Login\ForgetPasswordViewModel.cs" />
+    <Compile Include="ViewModels\Login\LoginPagerViewModel.cs" />
+    <Compile Include="ViewModels\Login\LoginTourViewModel.cs" />
+    <Compile Include="ViewModels\Login\LoginViewModel.cs" />
+    <Compile Include="ViewModels\Login\SignupViewModel.cs" />
+    <Compile Include="ViewModels\MvvmCross.Forms.Presenter.Core\IMvxContentPage.cs" />
+    <Compile Include="ViewModels\MvvmCross.Forms.Presenter.Core\IMvxFormsPageLoader.cs" />
+    <Compile Include="ViewModels\MvvmCross.Forms.Presenter.Core\IMvxMasterDetailViewModel.cs" />
+    <Compile Include="ViewModels\MvvmCross.Forms.Presenter.Core\MvxContentPage.cs" />
+    <Compile Include="ViewModels\MvvmCross.Forms.Presenter.Core\MvxFormsMasterDetailPagePresenter.cs" />
+    <Compile Include="ViewModels\MvvmCross.Forms.Presenter.Core\MvxFormsPageLoader.cs" />
+    <Compile Include="ViewModels\MvvmCross.Forms.Presenter.Core\MvxFormsPagePresenter.cs" />
+    <Compile Include="ViewModels\MvvmCross.Forms.Presenter.Core\MvxMasterDetailViewModel.cs" />
+    <Compile Include="ViewModels\MvvmCross.Forms.Presenter.Core\MvxPresenterHelpers.cs" />
+    <Compile Include="ViewModels\MyPack\MyPackViewModel.cs" />
+    <Compile Include="ViewModels\MyVets\MyVetInfoViewModel.cs" />
+    <Compile Include="ViewModels\MyVets\MyVetsViewModel.cs" />
+    <Compile Include="ViewModels\MyVets\VetMapSearchAddressViewModel.cs" />
+    <Compile Include="ViewModels\MyVets\VetMapSettingsViewModel.cs" />
+    <Compile Include="ViewModels\MyVets\VetMapViewModel.cs" />
+    <Compile Include="ViewModels\Navigation\LeftNavViewModel.cs" />
+    <Compile Include="ViewModels\Navigation\MainViewModel.cs" />
+    <Compile Include="ViewModels\Navigation\MenuViewModel.cs" />
+    <Compile Include="ViewModels\Navigation\RootMainViewModel.cs" />
+    <Compile Include="ViewModels\Notifications\NotificationsFrameViewModel.cs" />
+    <Compile Include="ViewModels\Notifications\NotificationViewModel.cs" />
+    <Compile Include="ViewModels\NotUsed\BaseViewModel.cs" />
+    <Compile Include="ViewModels\NotUsed\MasterDetail\RootContentViewModel.cs" />
+    <Compile Include="ViewModels\NotUsed\MasterDetail\RootNavViewModel.cs" />
+    <Compile Include="ViewModels\NotUsed\RootViewModel.cs" />
+    <Compile Include="ViewModels\NotUsed\TermsOfServiceViewModel.cs" />
+    <Compile Include="ViewModels\Pets\PetBreedSelectorViewModel.cs" />
+    <Compile Include="ViewModels\Pets\ProfilePetViewModel.cs" />
+    <Compile Include="ViewModels\PictureFun\CropperViewModel.cs" />
+    <Compile Include="ViewModels\PictureFun\Gestures\CustomEventArgsViewModel.cs" />
+    <Compile Include="ViewModels\PictureFun\Gestures\ObservableObject.cs" />
+    <Compile Include="ViewModels\PictureFun\Gestures\TextOnlyViewModel.cs" />
+    <Compile Include="ViewModels\PictureFun\Gestures\TransformViewModel.cs" />
+    <Compile Include="ViewModels\PictureFun\PictureFunViewModel.cs" />
+    <Compile Include="ViewModels\PictureFun\ShareViewModel.cs" />
+    <Compile Include="ViewModels\Profile\ProfileDetailBaseViewModel.cs" />
+    <Compile Include="ViewModels\Profile\ProfileDetailDiscoverViewModel.cs" />
+    <Compile Include="ViewModels\Profile\ProfileDetailFeedViewModel.cs" />
+    <Compile Include="ViewModels\Profile\ProfileDetailViewModel.cs" />
+    <Compile Include="ViewModels\Profile\ProfileEditorViewModel.cs" />
+    <Compile Include="ViewModels\Profile\ProfileFeedViewModel.cs" />
+    <Compile Include="ViewModels\Profile\ProfileItemViewModel.cs" />
+    <Compile Include="ViewModels\Reminders\Core\PetReminderBaseDetailViewModel.cs" />
+    <Compile Include="ViewModels\Reminders\Core\PetReminderSelectBaseViewModel.cs" />
+    <Compile Include="ViewModels\Reminders\PetReminderListViewModel.cs" />
+    <Compile Include="ViewModels\Reminders\PetReminderOtherDetailViewModel.cs" />
+    <Compile Include="ViewModels\Reminders\PetReminderProductDetailViewModel.cs" />
+    <Compile Include="ViewModels\Reminders\PetReminderSelectProductViewModel.cs" />
+    <Compile Include="ViewModels\Reminders\PetReminderSelectTypeViewModel.cs" />
+    <Compile Include="ViewModels\Reminders\SelectVetReminderViewModel.cs" />
+    <Compile Include="ViewModels\Settings\NotificationSettingsViewModel.cs" />
+    <Compile Include="ViewModels\Settings\SettingsViewModel.cs" />
+    <Compile Include="ViewModels\Settings\WebViewViewModel.cs" />
+    <Compile Include="Styles.xaml.cs">
+      <DependentUpon>Styles.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BaseModel.cs" />
+    <Compile Include="Views\Animation\AnimationLoaderPage.xaml.cs">
+      <DependentUpon>AnimationLoaderPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\Animation\AnimationTestViewModel.cs" />
+    <Compile Include="ViewModels\Animation\RelayCommand.cs" />
+    <Compile Include="ViewModels\Animation\Timer.cs" />
+    <Compile Include="ViewModels\Animation\TimerViewModel.cs" />
+    <Compile Include="ViewModels\Animation\AnimationLoaderViewModel.cs" />
+    <Compile Include="Common\Controls\Loader.xaml.cs">
+      <DependentUpon>Loader.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PictureFun\FunMetadata.cs" />
+    <Compile Include="Views\FindFriends\FindFriendsFromFacebookPage.xaml.cs">
+      <DependentUpon>FindFriendsFromFacebookPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FindFriends\FriendTemplateSelector.cs" />
+    <Compile Include="Views\FindFriends\FindFriendsFromContactPage.xaml.cs">
+      <DependentUpon>FindFriendsFromContactPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\Reminders\PetReminderItemViewModel.cs" />
+    <Compile Include="Views\Reminders\PetReminderOtherDetailPage.xaml.cs">
+      <DependentUpon>PetReminderOtherDetailPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Animation\AnimationLoader.xaml.cs">
+      <DependentUpon>AnimationLoader.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\PictureFun\Gestures\TransformingImageViewModel.cs" />
+    <Compile Include="Views\PictureFun\ImageResizer.cs" />
+    <Compile Include="Views\Feed\FeedPageView.xaml.cs">
+      <DependentUpon>FeedPageView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Converters\UserLikeHeartValueConverter.cs" />
+    <Compile Include="Views\Reminders\PetReminderSelectProductPage.xaml.cs">
+      <DependentUpon>PetReminderSelectProductPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Reminders\PetReminderProductDetailPage.xaml.cs">
+      <DependentUpon>PetReminderProductDetailPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Login\GetStartedTour.xaml.cs">
+      <DependentUpon>GetStartedTour.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Login\GetStartedTemplateSelector.cs" />
+    <Compile Include="Views\Feed\FeedItemPage.xaml.cs">
+      <DependentUpon>FeedItemPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FeedPage.xaml.cs">
+      <DependentUpon>FeedPage.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="MvvmCross.Binding, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\MvvmCross.Binding.4.1.0\lib\portable-net45+win+wpa81+wp80\MvvmCross.Binding.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MvvmCross.Core, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\MvvmCross.Core.4.1.0\lib\portable-net45+win+wpa81+wp80\MvvmCross.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MvvmCross.Forms.Presenter.Core, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\MvvmCross.Forms.Presenter.4.1.0\lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+Xamarin.iOS10\MvvmCross.Forms.Presenter.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MvvmCross.Localization, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\MvvmCross.Binding.4.1.0\lib\portable-net45+win+wpa81+wp80\MvvmCross.Localization.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MvvmCross.Platform, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\MvvmCross.Platform.4.1.0\lib\portable-net45+win+wpa81+wp80\MvvmCross.Platform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MvvmCross.Plugins.Sqlite, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\MvvmCross.Plugin.SQLitePCL.4.1.0\lib\portable-win+net45+wp8+win8+wpa81+win81+dotnet\MvvmCross.Plugins.Sqlite.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SQLite.Net, Version=3.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SQLite.Net-PCL.3.1.1\lib\portable-win8+net45+wp8+wpa81+MonoAndroid1+MonoTouch1\SQLite.Net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SQLite.Net.Async, Version=3.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SQLite.Net.Async-PCL.3.1.1\lib\portable-win8+net45+wp8+wpa81+MonoAndroid1+MonoTouch1\SQLite.Net.Async.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Akavache">
+      <HintPath>..\..\..\Libraries\Core\Debug\Akavache.dll</HintPath>
+    </Reference>
+    <Reference Include="Akavache.Sqlite3">
+      <HintPath>..\..\..\Libraries\Core\Debug\Akavache.Sqlite3.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging.Core">
+      <HintPath>..\..\..\Libraries\Core\Debug\Common.Logging.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging.Portable">
+      <HintPath>..\..\..\Libraries\Core\Debug\Common.Logging.Portable.dll</HintPath>
+    </Reference>
+    <Reference Include="HockeySDK">
+      <HintPath>..\..\..\Libraries\Core\Debug\HockeySDK.dll</HintPath>
+    </Reference>
+    <Reference Include="Kinvey-Utils">
+      <HintPath>..\..\..\Libraries\Core\Debug\Kinvey-Utils.dll</HintPath>
+    </Reference>
+    <Reference Include="Kinvey-Xamarin">
+      <HintPath>..\..\..\Libraries\Core\Debug\Kinvey-Xamarin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks">
+      <HintPath>..\..\..\Libraries\Core\Debug\Microsoft.Threading.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions">
+      <HintPath>..\..\..\Libraries\Core\Debug\Microsoft.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="ModernHttpClient">
+      <HintPath>..\..\..\Libraries\Core\Debug\ModernHttpClient.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\..\Libraries\Core\Debug\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PCLStorage.Abstractions">
+      <HintPath>..\..\..\Libraries\Core\Debug\PCLStorage.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="PCLStorage">
+      <HintPath>..\..\..\Libraries\Core\Debug\PCLStorage.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Connectivity">
+      <HintPath>..\..\..\Libraries\Core\Debug\Plugin.Connectivity.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Permissions">
+      <HintPath>..\..\..\Libraries\Core\Debug\Plugin.Permissions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Settings.Abstractions">
+      <HintPath>..\..\..\Libraries\Core\Debug\Plugin.Settings.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Settings">
+      <HintPath>..\..\..\Libraries\Core\Debug\Plugin.Settings.dll</HintPath>
+    </Reference>
+    <Reference Include="Remotion.Linq">
+      <HintPath>..\..\..\Libraries\Core\Debug\Remotion.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp.Portable">
+      <HintPath>..\..\..\Libraries\Core\Debug\RestSharp.Portable.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLite.Net.Async">
+      <HintPath>..\..\..\Libraries\Core\Debug\SQLite.Net.Async.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLite.Net">
+      <HintPath>..\..\..\Libraries\Core\Debug\SQLite.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCL.raw">
+      <HintPath>..\..\..\Libraries\Core\Debug\SQLitePCL.raw.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Extensions">
+      <HintPath>..\..\..\Libraries\Core\Debug\System.Net.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives">
+      <HintPath>..\..\..\Libraries\Core\Debug\System.Net.Http.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Plugins.Color">
+      <HintPath>..\..\..\Libraries\Core\Debug\MvvmCross.Plugins.Color.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmValidation">
+      <HintPath>..\..\..\Libraries\Core\Debug\MvvmValidation.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Plugins.PictureChooser">
+      <HintPath>..\..\..\Libraries\Core\Debug\MvvmCross.Plugins.PictureChooser.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Plugins.Email">
+      <HintPath>..\..\..\Libraries\Core\Debug\MvvmCross.Plugins.Email.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Plugins.PhoneCall">
+      <HintPath>..\..\..\Libraries\Core\Debug\MvvmCross.Plugins.PhoneCall.dll</HintPath>
+    </Reference>
+    <Reference Include="ImageCircle.Forms.Plugin.Abstractions">
+      <HintPath>..\..\packages\Xam.Plugins.Forms.ImageCircle.1.8.1\lib\portable-net45+wp80+win8+wpa81\ImageCircle.Forms.Plugin.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="MR.Gestures">
+      <HintPath>..\..\packages\MR.Gestures.1.4.1\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\MR.Gestures.dll</HintPath>
+    </Reference>
+    <Reference Include="FAB.Forms">
+      <HintPath>..\..\packages\FAB.Forms.2.1.2-pre3\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\FAB.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Media.Abstractions">
+      <HintPath>..\..\packages\Xam.Plugin.Media.2.6.3.1-beta\lib\portable-net45+wp80+win8+wpa81\Plugin.Media.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Media">
+      <HintPath>..\..\packages\Xam.Plugin.Media.2.6.3.1-beta\lib\portable-net45+wp80+win8+wpa81\Plugin.Media.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.CarouselView">
+      <HintPath>..\..\packages\Xamarin.Forms.CarouselView.2.3.0-pre2\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.CarouselView.dll</HintPath>
+    </Reference>
+    <Reference Include="Splat">
+      <HintPath>..\..\packages\Splat.1.6.2\lib\Portable-net45+win+wpa81+wp80\Splat.dll</HintPath>
+    </Reference>
+    <Reference Include="Acr.UserDialogs">
+      <HintPath>..\..\packages\Acr.UserDialogs.6.3.8\lib\portable-win+net45+wp8+win8+wpa81\Acr.UserDialogs.dll</HintPath>
+    </Reference>
+    <Reference Include="Acr.UserDialogs.Interface">
+      <HintPath>..\..\packages\Acr.UserDialogs.6.3.8\lib\portable-win+net45+wp8+win8+wpa81\Acr.UserDialogs.Interface.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Geolocator.Abstractions">
+      <HintPath>..\..\packages\Xam.Plugin.Geolocator.3.0.4\lib\portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+UAP10\Plugin.Geolocator.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Geolocator">
+      <HintPath>..\..\packages\Xam.Plugin.Geolocator.3.0.4\lib\portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+UAP10\Plugin.Geolocator.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Maps">
+      <HintPath>..\..\packages\Xamarin.Forms.Maps.2.3.3.193\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10\Xamarin.Forms.Maps.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.Interfaces">
+      <HintPath>..\..\packages\Rx-Interfaces.2.2.5\lib\portable-windows8+net45+wp8\System.Reactive.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.Core">
+      <HintPath>..\..\packages\Rx-Core.2.2.5\lib\portable-windows8+net45+wp8\System.Reactive.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.Linq">
+      <HintPath>..\..\packages\Rx-Linq.2.2.5\lib\portable-windows8+net45+wp8\System.Reactive.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.PlatformServices">
+      <HintPath>..\..\packages\Rx-PlatformServices.2.2.5\lib\portable-windows8+net45+wp8\System.Reactive.PlatformServices.dll</HintPath>
+    </Reference>
+    <Reference Include="ReactiveUI">
+      <HintPath>..\..\packages\reactiveui-core.7.2.0\lib\portable-net45+netcore45+wpa81+win8+wp8+UAP10+MonoAndroid403+MonoTouch10+Xamarin.iOS10\ReactiveUI.dll</HintPath>
+    </Reference>
+    <Reference Include="ReactiveUI.XamForms">
+      <HintPath>..\..\packages\reactiveui-xamforms.7.2.0\lib\portable-net45+netcore45+wp8+wpa81+UAP10+MonoAndroid403+MonoTouch10+Xamarin.iOS10\ReactiveUI.XamForms.dll</HintPath>
+    </Reference>
+    <Reference Include="ReactiveUI.Events_XamForms">
+      <HintPath>..\..\packages\reactiveui-events-xamforms.7.2.0\lib\portable-net45+netcore45+wp8+UAP10+MonoAndroid403+MonoTouch10+Xamarin.iOS10\ReactiveUI.Events_XamForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Lottie.Forms">
+      <HintPath>..\..\packages\Com.Airbnb.Xamarin.Forms.Lottie.1.5.2\lib\portable-net45+wp8+win+wpa81+dnxcore50\Lottie.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Core">
+      <HintPath>..\..\packages\Xamarin.Forms.2.3.4.247\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Platform">
+      <HintPath>..\..\packages\Xamarin.Forms.2.3.4.247\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Xaml">
+      <HintPath>..\..\packages\Xamarin.Forms.2.3.4.247\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.Xaml.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="Resources\AppResources.resx" />
+    <None Include="Resources\AppResources.en-US.resx" />
+    <None Include="ViewModels\MvvmCross.Forms.Presenter.Core\packages.config" />
+    <None Include="TwitterHeart.json" />
+    <None Include="Resources\TwitterHeart.json" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="MyPage.xaml" />
+    <EmbeddedResource Include="Common\Controls\ImageButton.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\Controls\UserRating.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Comments\CommentListPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Discover\DiscoverPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Discover\SearchPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FindFriends\FindFriendsTabsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Followers\FollowersPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Followers\FollowingsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Likes\LikeListPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Login\CompleteAccountPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Login\ForgetPasswordPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Login\LoginPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Login\LoginTourPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Login\SignUpPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\MyPack\MyPackPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\MyVets\MyVetInfoPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\MyVets\MyVetsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\MyVets\VetMapPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\MyVets\VetMapSearchAddressPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Navigation\LeftNavBar.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Navigation\NewPostDialogue.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Navigation\TopNavBar.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Notifications\NotificationPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Notifications\NotificationsFramePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Pets\PetBreedSelectorPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Pets\ProfilePetPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\PictureFun\CropperPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\PictureFun\PictureFunCropperView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\PictureFun\PictureFunModView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\PictureFun\PictureFunPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\PictureFun\SharePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Profile\ProfileDetailPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Profile\ProfileEditorPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Reminders\PetReminderListPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Reminders\PetReminderSelectTypePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Settings\NotificationSettingsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Settings\SettingsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Settings\Templates\SettingItemTemplate.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Settings\WebViewPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Templates\MenuItemTemplate.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Styles.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Animation\AnimationLoaderPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\Controls\Loader.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FindFriends\FindFriendsFromFacebookPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FindFriends\FindFriendsFromContactPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Reminders\PetReminderOtherDetailPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Animation\AnimationLoader.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Feed\FeedPageView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Reminders\PetReminderSelectProductPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Reminders\PetReminderProductDetailPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Login\GetStartedTour.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Feed\FeedItemPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FeedPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Effects\" />
+    <Folder Include="Behaviors\" />
+    <Folder Include="Common\Controls\" />
+    <Folder Include="Renderers\" />
+    <Folder Include="Views\" />
+    <Folder Include="ViewModels\" />
+    <Folder Include="Views\Animation\" />
+    <Folder Include="ViewModels\Animation\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MvvmCross.Forms.Presenter.Core\MvvmCross.Forms.Presenter.Core.csproj">
+      <Project>{0797D39C-C59B-4FE2-BB16-AB6FA0119C69}</Project>
+      <Name>MvvmCross.Forms.Presenter.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+  <Import Project="..\..\packages\Xamarin.Forms.2.3.4.247\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.3.4.247\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />
+</Project>

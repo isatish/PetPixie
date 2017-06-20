@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 	xmlns="http://xamarin.com/schemas/2014/forms" 
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		xmlns:res="clr-namespace:Merial.PetPixie.Core.Resources;assembly=Merial.PetPixie.Core"
+		xmlns:views="clr-namespace:Merial.PetPixie.Core.Views;assembly=Merial.PetPixie.Core"
+		x:Class="Merial.PetPixie.Core.Views.CompleteAccountPage" >
+	
+	<ContentPage.Content>
+
+		<Grid TranslationY="20">
+
+			<StackLayout Orientation="Vertical" >
+				<views:TopNavBar IsVisible="false" x:Name="navBar" HeightRequest="30"  />
+				<Button Image="ArrowBack17.png" Margin="20,0,0,0" Command="{Binding BackCommand}"   WidthRequest="17" HeightRequest="17" HorizontalOptions="Start"  />
+
+				<Label Text="Complete your account" TextColor="{StaticResource AccentColor}" FontSize="16" WidthRequest="300" HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalOptions="Start" VerticalTextAlignment="Start" />
+
+				<Image HorizontalOptions="Center" Source="PetPixieLogin.png"  Aspect="AspectFill" HeightRequest="75" Margin="0,10,0,40" />
+
+
+				<Entry  Text="{Binding Username}" 	Keyboard="Email"  	WidthRequest="300" 	Placeholder="Username" 	PlaceholderColor="Silver" HeightRequest="30" HorizontalOptions="Center" />
+				<Entry  Text="{Binding Fullname}" 	Keyboard="Text"  	WidthRequest="300" 	Placeholder="Full name" PlaceholderColor="Silver" HeightRequest="30" HorizontalOptions="Center" />
+				<Entry  Text="{Binding Email}" 		Keyboard="Chat"     WidthRequest="300"  Placeholder="Email" 	PlaceholderColor="Silver" IsPassword="true"  HeightRequest="30"  HorizontalOptions="Center" />
+
+
+				<Grid Margin="20"  >
+					<Grid.RowDefinitions>
+						<RowDefinition Height="60" />
+						<RowDefinition Height="60" />
+					</Grid.RowDefinitions>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="60" />
+						<ColumnDefinition Width="200" />
+						<ColumnDefinition Width="50" />
+					</Grid.ColumnDefinitions>
+
+ 
+					<Switch  Grid.Column="0" Grid.Row="0" WidthRequest="60" HeightRequest="20" IsToggled="true"/>
+					<Switch  Grid.Column="0" Grid.Row="1" WidthRequest="60" HeightRequest="20" IsToggled="true" />
+					
+					<Label Grid.Column="1" Grid.Row="0" VerticalOptions="Start"  Text="By checking this box you acknowledge that you are over the age of 15." TextColor="Black" FontSize="10" WidthRequest="175" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalTextAlignment="Start" />
+					<Label Grid.Column="1" Grid.Row="1"  VerticalOptions="Start" Text="Yes, I would like to receive special offers and information from Merial." TextColor="Black" FontSize="10" WidthRequest="175" HorizontalOptions="Start"   HorizontalTextAlignment="Start" VerticalTextAlignment="Start" />
+
+				</Grid>
+
+				
+				<Button x:Name="buttonJoin" Command="{Binding CreateAccountCommand}" TextColor="White" Text="Get started!" WidthRequest="300" HeightRequest="35" BackgroundColor="{StaticResource AccentColor}" HorizontalOptions="Center"    Clicked="Handle_CreateClicked"   />
+	
+
+			</StackLayout>
+	              <StackLayout x:Name="stackLoader" VerticalOptions="Center" TranslationY="-20" />
+	  </Grid>
+
+		
+	</ContentPage.Content>
+</ContentPage>

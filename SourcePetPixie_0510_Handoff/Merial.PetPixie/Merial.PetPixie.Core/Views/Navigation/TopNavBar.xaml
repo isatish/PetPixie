@@ -1,0 +1,65 @@
+<ContentView 
+	xmlns="http://xamarin.com/schemas/2014/forms" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+	x:Class="Merial.PetPixie.Core.Views.TopNavBar"
+	xmlns:views="clr-namespace:Merial.PetPixie.Core.Views;assembly=Merial.PetPixie.Core"
+	xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
+	HeightRequest="50"
+	Padding="0"
+	BackgroundColor="{StaticResource AccentColor}" >
+	 	<ContentView.Content>
+	 		<Grid HorizontalOptions="FillAndExpand"   HeightRequest="40" VerticalOptions="Center" Padding="0,0,10,0"  >
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="40" />
+					<ColumnDefinition Width="*" />
+					<ColumnDefinition Width="16" />
+					 <ColumnDefinition Width="16" />
+				</Grid.ColumnDefinitions>
+				<Grid.RowDefinitions>
+					<RowDefinition Height="50" />
+				</Grid.RowDefinitions>
+
+                             <Frame  x:Name="ButtonHamburger_anim"  IsVisible="false"  WidthRequest="100" HeightRequest="100" BackgroundColor="Transparent" OutlineColor="Transparent" HasShadow="false"   VerticalOptions="Start" HorizontalOptions="Start" Padding="0" >
+				              <Frame.GestureRecognizers>
+                                                 <TapGestureRecognizer  Command="{Binding ShowHamburgerMenuCommand}"   NumberOfTapsRequired="1"   />
+                                          </Frame.GestureRecognizers>
+				
+                                   <forms:AnimationView 
+                                                 x:Name="animTwitter"
+                                                 Animation="HamburgerArrow.json"
+                                                  Loop="false"
+                                                 AutoPlay="true"
+                                                        Progress="0"
+                                                 Scale="3"
+					
+                                                 VerticalOptions="FillAndExpand"
+                                                  InputTransparent="true"
+                                                 HorizontalOptions="FillAndExpand" />
+                            </Frame>    
+
+
+
+
+
+			
+				<Button Grid.Column="0" x:Name="ButtonBack" Margin="10,0,0,5" WidthRequest="20"  BackgroundColor="Transparent" Image="ic_back.png"    HeightRequest="20" VerticalOptions="Center" HorizontalOptions="Start" Command="{Binding BackCommand}" />	 		
+				<Button Grid.Column="0" x:Name="ButtonHamburger" IsVisible="false" Margin="10,0,0,5" WidthRequest="32" BackgroundColor="Transparent" Image="hamburger_icon.png"    HeightRequest="32" VerticalOptions="Center" HorizontalOptions="Start" Command="{Binding ShowHamburgerMenuCommand}" />
+				<Button Grid.Column="2" x:Name="ButtonNotificationsCommand" Command="{Binding ShowNotificationsCommand}"  WidthRequest="32" BackgroundColor="Transparent" Image="ic_bell.png"    HeightRequest="32" VerticalOptions="Center" HorizontalOptions="Start"  />
+				<Button Grid.Column="3" x:Name="ButtonFindFriendsCommand" 	Command="{Binding ShowFindFriendsCommand}" WidthRequest="32" BackgroundColor="Transparent" Image="ic_face.png"    HeightRequest="32" VerticalOptions="Center" HorizontalOptions="Start"   />
+				<Button Grid.Column="3" x:Name="ButtonAcceptCommand" 		Command="{Binding ValidateCommand}" WidthRequest="32" BackgroundColor="Transparent" Image="checkmark_w.png"    HeightRequest="32" VerticalOptions="Center" HorizontalOptions="Start"  />
+				<Button Grid.Column="3" x:Name="ButtonAcceptShareCommand" 	Command="{Binding ShareFunCommand}" WidthRequest="32" BackgroundColor="Transparent" Image="checkmark_w.png"    HeightRequest="32" VerticalOptions="Center" HorizontalOptions="Start"  />
+				<Button Grid.Column="3" x:Name="ButtonAcceptCropCommand" 	Command="{Binding AcceptCropCommand}" WidthRequest="32" BackgroundColor="Transparent" Image="ic_forward.png"    HeightRequest="32" VerticalOptions="Center" HorizontalOptions="Start"  />
+				<Button Grid.Column="3" x:Name="ButtonAcceptFunCommand" 	Command="{Binding AcceptFunCommand}" WidthRequest="32" BackgroundColor="Transparent" Image="ic_forward.png"    HeightRequest="32" VerticalOptions="Center" HorizontalOptions="Start"  />
+				<Button Grid.Column="3" x:Name="ButtonSearchCommand" 		Command="{Binding ShowSearchCommand}" WidthRequest="32" BackgroundColor="Transparent" Image="search.png"    HeightRequest="32" VerticalOptions="Center" HorizontalOptions="Start"  />
+				<Button Grid.Column="2" x:Name="ButtonDeleteReminderCommand" 	Command="{Binding DeleteReminderCommand}" WidthRequest="32" BackgroundColor="Transparent" Image="ic_delete.png"    HeightRequest="32" VerticalOptions="Center" HorizontalOptions="Start"  />
+                            <Button Grid.Column="3" x:Name="ButtonAddReminderCommand"      Command="{Binding ValidateCommand}" WidthRequest="32" BackgroundColor="Transparent" Image="plus.png"    HeightRequest="32" VerticalOptions="Center" HorizontalOptions="Start"  />                                    
+	       		<Button Grid.Column="3" x:Name="ButtonEditReminderCommand"      Command="{Binding ValidateCommand}" WidthRequest="32" BackgroundColor="Transparent" Image="checkmark_w.png"    HeightRequest="32" VerticalOptions="Center" HorizontalOptions="Start"  />
+			       <Label Grid.Column="0" Grid.ColumnSpan="4"  x:Name="labelHeader" Text="{Binding Title}" Font="EstiloScript"  TextColor="White" FontSize="24" VerticalOptions="Center"  VerticalTextAlignment="Center" HorizontalTextAlignment="Center" HorizontalOptions="Center" WidthRequest="150" HeightRequest="30" />
+
+
+
+
+				
+			</Grid>
+		</ContentView.Content>
+</ContentView>

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+	xmlns:res="clr-namespace:Merial.PetPixie.Core.Resources;assembly=Merial.PetPixie.Core"
+		xmlns:top="clr-namespace:Merial.PetPixie.Core.Views;assembly=Merial.PetPixie.Core"
+	xmlns:views="clr-namespace:Merial.PetPixie.Core.Views;assembly=Merial.PetPixie.Core"
+
+	xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+	xmlns:fab="clr-namespace:FAB.Forms;assembly=FAB.Forms"
+	xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
+	xmlns:b="clr-namespace:Merial.PetPixie.Core.Behaviors;assembly=Merial.PetPixie.Core" 
+	xmlns:c="clr-namespace:Merial.PetPixie.Core.Converters;assembly=Merial.PetPixie.Core" 
+	x:Class="Merial.PetPixie.Core.Views.ProfilePetPage" 
+	BackgroundColor="White" >
+	
+	<ContentPage.Resources>
+		<ResourceDictionary>
+			<c:ItemTappedEventArgsConverter x:Key="ItemTappedConverter" />
+		</ResourceDictionary>
+	</ContentPage.Resources>
+
+	<ContentPage.Content >
+
+
+
+			<StackLayout Orientation="Vertical" Padding="0" Margin="0" >
+
+				<top:TopNavBar x:Name="navBar" HeightRequest="50" TranslationY="20"  />
+					<StackLayout x:Name="MainContentsStack" Orientation="Vertical"   >
+
+
+
+		<StackLayout BackgroundColor="#f0f0f0" HeightRequest="140" HorizontalOptions="FillAndExpand" TranslationY="20"  VerticalOptions="FillAndExpand">
+
+			<controls:CircleImage Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Margin="20"  Source="{Binding Profile.ImageUrl, Mode=TwoWay}"  WidthRequest="100" HeightRequest="100" BorderColor="#536a63" BorderThickness="1" Aspect="AspectFill" VerticalOptions="Start" HorizontalOptions="Center" >
+				<controls:CircleImage.GestureRecognizers>
+					<TapGestureRecognizer  Command="{Binding TakePictureFromCameraCommand}" NumberOfTapsRequired="1"   />
+				</controls:CircleImage.GestureRecognizers>
+			</controls:CircleImage> 
+
+			<BoxView WidthRequest="500" BackgroundColor="#abc2bb" Color="#abc2bb" HeightRequest="1" Margin="0" HorizontalOptions="FillAndExpand" TranslationY="-5" />
+
+												
+
+			</StackLayout>
+
+		<Grid  TranslationY="20" VerticalOptions="Start" Margin="20,0,20,0" >
+			<Grid.RowDefinitions>
+				<RowDefinition Height="0" x:Name="TopNav" />
+				<RowDefinition Height="0" x:Name="PetImage" />
+
+				<RowDefinition Height="30" x:Name="Name" />
+				<RowDefinition Height="30" x:Name="Breed" />
+				<RowDefinition Height="30" x:Name="Birthday" />
+				<RowDefinition Height="*" />
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="60" />
+				<ColumnDefinition Width="*" />
+			</Grid.ColumnDefinitions>
+
+		
+
+
+
+
+				<Label Grid.Row="2" Grid.Column="0"  Text="Name" 		HeightRequest="30" VerticalOptions="Center" VerticalTextAlignment="Center" HorizontalOptions="Start" Font="MuseoSans-300" TextColor="#536a63" FontSize="12"   />
+				<Entry Grid.Row="2" Grid.Column="1"  Text="{Binding Profile.Name, Mode=TwoWay}" Placeholder="Enter Pet Name" PlaceholderColor="Silver" HorizontalOptions="Start"  WidthRequest="200" HeightRequest="30"   VerticalOptions="Center" FontFamily="MuseoSans-300" TextColor="Gray" FontSize="12"   />
+
+				<Label Grid.Row="3" Grid.Column="0"  Text="Breed" 					HeightRequest="20" VerticalOptions="Center" VerticalTextAlignment="Center" HorizontalOptions="Start" Font="MuseoSans-300" TextColor="#536a63" FontSize="12"   />
+
+				<StackLayout Grid.Row="3" Grid.Column="1"  Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Center" >
+					<Label  Text="{Binding BreedsString}" 	Margin="0,0,20,0"	WidthRequest="180"			HeightRequest="20" VerticalOptions="Center" VerticalTextAlignment="Center" HorizontalOptions="Start" Font="MuseoSans-300" TextColor="#536a63" FontSize="12"   >
+						<Label.GestureRecognizers>
+							<TapGestureRecognizer  Command="{Binding SelectBreedCommand}" NumberOfTapsRequired="1"   />
+						</Label.GestureRecognizers>
+					</Label> 
+
+
+
+						<Button  Command="{Binding SelectBreedCommand}" Margin="0,0,10,0"  BackgroundColor="Transparent" Image="ArrowNext17.png" WidthRequest="17" HeightRequest="17" VerticalOptions="Center" HorizontalOptions="End"       />
+				</StackLayout>
+
+					
+				<Label Grid.Row="4" Grid.Column="0"  Text="Birthday" 		HeightRequest="30" VerticalOptions="Center" VerticalTextAlignment="Center" HorizontalOptions="Start" Font="MuseoSans-300" TextColor="#536a63" FontSize="12"   />
+			
+				<Entry Grid.Row="4" Grid.Column="1"  Text="{Binding  Profile.Birthday, Mode=TwoWay}" WidthRequest="100" HeightRequest="30"  HorizontalOptions="FillAndExpand" />
+
+				<DatePicker Grid.Row="4" Grid.Column="1"  x:Name="ExpDate" VerticalOptions="CenterAndExpand" Date="{Binding Profile.Birthday}" Format="yyyy-MM-dd"   HorizontalOptions="FillAndExpand"  />
+
+
+		</Grid>   
+				<StackLayout x:Name="stackLoader" VerticalOptions="Center" TranslationY="-60" />
+
+		</StackLayout>
+				
+
+
+
+
+				</StackLayout>
+
+					
+		
+	</ContentPage.Content>
+</ContentPage>

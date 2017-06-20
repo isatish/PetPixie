@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:top="clr-namespace:Merial.PetPixie.Core.Views;assembly=Merial.PetPixie.Core"
+	xmlns:views="clr-namespace:Merial.PetPixie.Core.Views;assembly=Merial.PetPixie.Core"
+	x:Class="Merial.PetPixie.Core.Views.PictureFunPage"  		
+	xmlns:cv="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.CarouselView"
+	xmlns:local="clr-namespace:Merial.PetPixie.Core.Views;assembly=Merial.PetPixie.Core"
+	xmlns:res="clr-namespace:Merial.PetPixie.Core.Resources;assembly=Merial.PetPixie.Core"
+	Title="Settings" 
+	Padding="0, 0, 0, 0">
+	<ContentPage.Resources>
+	 	<ResourceDictionary>
+
+			<!-- Hat Template -->
+			<DataTemplate x:Key="HatTemplate">
+				<StackLayout Orientation="Vertical" VerticalOptions="Start"  HeightRequest="150"  BackgroundColor="White"   >
+					<StackLayout Orientation="Horizontal" VerticalOptions="Start"  HeightRequest="75" WidthRequest="300"  BackgroundColor="White"   >
+						<Button Image="thumb_hat_1.png" WidthRequest="75" HeightRequest="75" Clicked="Handle_Fun_Clicked"  />
+						<Button Image="thumb_hat_2.png" WidthRequest="75" HeightRequest="75" Clicked="Handle_Fun_Clicked"  />
+						<Button Image="thumb_hat_3.png" WidthRequest="75" HeightRequest="75" Clicked="Handle_Fun_Clicked"  />
+						<Button Image="thumb_hat_4.png" WidthRequest="75" HeightRequest="75" Clicked="Handle_Fun_Clicked"  />
+					</StackLayout>
+
+					<StackLayout Orientation="Horizontal" VerticalOptions="Start"  HeightRequest="75" WidthRequest="300"  BackgroundColor="White"   >
+						<Button Image="thumb_hat_5.png" WidthRequest="75" HeightRequest="75" Clicked="Handle_Fun_Clicked"  />
+						<Button Image="thumb_hat_6.png" WidthRequest="75" HeightRequest="75" Clicked="Handle_Fun_Clicked"  />
+						<Button Image="thumb_hat_7.png" WidthRequest="75" HeightRequest="75" Clicked="Handle_Fun_Clicked"  />
+						<Button Image="thumb_hat_8.png" WidthRequest="75" HeightRequest="75" Clicked="Handle_Fun_Clicked"  />
+					</StackLayout>		
+				</StackLayout>
+			</DataTemplate>
+			
+			<!-- Hair Template -->
+			<DataTemplate x:Key="HairTemplate">
+				<StackLayout Orientation="Vertical" VerticalOptions="Start"  HeightRequest="150"  BackgroundColor="White"   >
+					<StackLayout Orientation="Horizontal" VerticalOptions="Start"  HeightRequest="75" WidthRequest="300"  BackgroundColor="White"   >
+						<Button Image="thumb_hair_1.png" WidthRequest="75" HeightRequest="75" Clicked="Handle_Fun_Clicked"  />
+						<Button Image="thumb_hair_2.png" WidthRequest="75" HeightRequest="75" Clicked="Handle_Fun_Clicked"  />
+						<Button Image="thumb_hair_3.png" WidthRequest="75" HeightRequest="75" Clicked="Handle_Fun_Clicked"  />
+						<Button Image="thumb_hair_4.png" WidthRequest="75" HeightRequest="75" Clicked="Handle_Fun_Clicked"  />
+					</StackLayout>
+
+					<StackLayout Orientation="Horizontal" VerticalOptions="Start"  HeightRequest="75" WidthRequest="300"  BackgroundColor="White"   >
+						<Button Image="thumb_hair_5.png" WidthRequest="75" HeightRequest="75" Clicked="Handle_Fun_Clicked"  />
+						<Button Image="thumb_hair_6.png" WidthRequest="75" HeightRequest="75" Clicked="Handle_Fun_Clicked"  />
+						<Button Image="thumb_hair_7.png" WidthRequest="75" HeightRequest="75" Clicked="Handle_Fun_Clicked"  />
+						<Button Image="thumb_hair_8.png" WidthRequest="75" HeightRequest="75" Clicked="Handle_Fun_Clicked"  />
+					</StackLayout>		
+				</StackLayout>
+			</DataTemplate>
+
+			<!-- Accessories Template -->
+			<DataTemplate x:Key="AccessoriesTemplate">
+	          	<StackLayout Orientation="Vertical" VerticalOptions="Start"  HeightRequest="150"  BackgroundColor="White"   >
+					<StackLayout Orientation="Horizontal" VerticalOptions="Start"  HeightRequest="75" WidthRequest="300"  BackgroundColor="White"   >
+						<Button Image="thumb_accessories_1_actual.png" WidthRequest="75" HeightRequest="75" Clicked="Handle_Fun_Clicked" />
+						<Button Image="thumb_accessories_2_actual.png" WidthRequest="75" HeightRequest="75"  Clicked="Handle_Fun_Clicked"   />
+						<Button Image="thumb_accessories_3.png" WidthRequest="75" HeightRequest="75"  Clicked="Handle_Fun_Clicked"  />
+						<Button Image="thumb_accessories_4.png" WidthRequest="75" HeightRequest="75"  Clicked="Handle_Fun_Clicked"  />
+					</StackLayout>
+
+					<StackLayout Orientation="Horizontal" VerticalOptions="Start"  HeightRequest="75" WidthRequest="300"  BackgroundColor="White"   >
+						<Button Image="thumb_accessories_5.png" WidthRequest="75" HeightRequest="75"  Clicked="Handle_Fun_Clicked"  />
+						<Button Image="thumb_accessories_6.png" WidthRequest="75" HeightRequest="75"  Clicked="Handle_Fun_Clicked"  />
+						<Button Image="thumb_accessories_7.png" WidthRequest="75" HeightRequest="75"  Clicked="Handle_Fun_Clicked" />
+						<Button Image="thumb_accessories_8.png" WidthRequest="75" HeightRequest="75" Clicked="Handle_Fun_Clicked"  />
+					</StackLayout>		
+				</StackLayout>
+
+			</DataTemplate>
+
+					<!-- Glasses Template -->
+			<DataTemplate x:Key="GlassesTemplate">
+	        	<StackLayout Orientation="Vertical" VerticalOptions="Start"  HeightRequest="150"  BackgroundColor="White"   >
+					<StackLayout Orientation="Horizontal" VerticalOptions="Start"  HeightRequest="75" WidthRequest="300"  BackgroundColor="White"   >
+						<Button Image="thumb_glass_1.png" WidthRequest="75" HeightRequest="75"  Clicked="Handle_Fun_Clicked"  />
+						<Button Image="thumb_glass_2.png" WidthRequest="75" HeightRequest="75" Clicked="Handle_Fun_Clicked"  />
+						<Button Image="thumb_glass_3.png" WidthRequest="75" HeightRequest="75" Clicked="Handle_Fun_Clicked"  />
+						<Button Image="thumb_glass_4.png" WidthRequest="75" HeightRequest="75" Clicked="Handle_Fun_Clicked"  />
+					</StackLayout>
+
+					<StackLayout Orientation="Horizontal" VerticalOptions="Start"  HeightRequest="75" WidthRequest="300"  BackgroundColor="White"   >
+						<Button Image="thumb_glass_5.png" WidthRequest="75" HeightRequest="75" Clicked="Handle_Fun_Clicked"  />
+						<Button Image="thumb_glass_6.png" WidthRequest="75" HeightRequest="75" Clicked="Handle_Fun_Clicked"  />
+						<Button Image="thumb_glass_7.png" WidthRequest="75" HeightRequest="75" Clicked="Handle_Fun_Clicked"  />
+						<Button Image="thumb_glass_8.png" WidthRequest="75" HeightRequest="75" Clicked="Handle_Fun_Clicked"  />
+					</StackLayout>		
+				</StackLayout>
+			</DataTemplate>
+
+
+			
+
+			<!-- Clothes Template -->
+			<DataTemplate x:Key="ClothesTemplate">
+	        	<StackLayout Orientation="Vertical" VerticalOptions="Start"  HeightRequest="150"  BackgroundColor="White"   >
+					<StackLayout Orientation="Horizontal" VerticalOptions="Start"  HeightRequest="75" WidthRequest="300"  BackgroundColor="White"   >
+						<Button Image="thumb_clothes_1.png" WidthRequest="75" HeightRequest="75"  Clicked="Handle_Fun_Clicked"  />
+						<Button Image="thumb_clothes_2.png" WidthRequest="75" HeightRequest="75" Clicked="Handle_Fun_Clicked"  />
+						<Button Image="thumb_clothes_3.png" WidthRequest="75" HeightRequest="75" Clicked="Handle_Fun_Clicked"  />
+						<Button Image="thumb_clothes_4.png" WidthRequest="75" HeightRequest="75" Clicked="Handle_Fun_Clicked"  />
+					</StackLayout>
+
+					<StackLayout Orientation="Horizontal" VerticalOptions="Start"  HeightRequest="75" WidthRequest="300"  BackgroundColor="White"   >
+						<Button Image="thumb_clothes_5.png" WidthRequest="75" HeightRequest="75" Clicked="Handle_Fun_Clicked"  />
+						<Button Image="thumb_clothes_6.png" WidthRequest="75" HeightRequest="75" Clicked="Handle_Fun_Clicked"  />
+						<Button Image="thumb_clothes_7.png" WidthRequest="75" HeightRequest="75" Clicked="Handle_Fun_Clicked"  />
+						<Button Image="thumb_clothes_8.png" WidthRequest="75" HeightRequest="75" Clicked="Handle_Fun_Clicked"  />
+					</StackLayout>		
+				</StackLayout>
+			</DataTemplate>
+			
+			 <local:FunTemplateSelector x:Key="carouselDataTemplateSelector" HatTemplate="{StaticResource HatTemplate}"  GlassesTemplate="{StaticResource GlassesTemplate}"  HairTemplate="{StaticResource HairTemplate}"     AccessoriesTemplate="{StaticResource AccessoriesTemplate}" ClothesTemplate="{StaticResource ClothesTemplate}" />
+
+
+		</ResourceDictionary>
+    </ContentPage.Resources>
+
+
+	<StackLayout Orientation="Vertical" Padding="0" Margin="0" >
+		<top:TopNavBar x:Name="navBar" HeightRequest="50" TranslationY="20"  />
+		<StackLayout x:Name="MainContentsStack" Orientation="Vertical"  TranslationY="20" VerticalOptions="Start" HorizontalOptions="Start"   >
+
+				<Grid x:Name="gridFun" WidthRequest="320" HeightRequest="320" HorizontalOptions="Start" VerticalOptions="Start" >
+					<Image x:Name="imageOriginal" HorizontalOptions="Start" VerticalOptions="Start" Aspect="Fill"  WidthRequest="320" HeightRequest="320" />
+				</Grid>
+
+
+				<StackLayout  Padding="0" Margin="0" BackgroundColor="Gray" HeightRequest="60" WidthRequest="700" VerticalOptions="Start" HorizontalOptions="Start" >
+					<Grid VerticalOptions="End" HeightRequest="30" >
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="*" />
+							<ColumnDefinition Width="*" />
+							<ColumnDefinition Width="*" />
+						</Grid.ColumnDefinitions>
+
+									
+						<Button Grid.Column="0" HorizontalOptions="Center" VerticalOptions="End"  Image="hat_button.png" WidthRequest="25" HeightRequest="25" Clicked="Handle_ShowFunCarousel" />
+						<Button Grid.Column="1" HorizontalOptions="Center" VerticalOptions="End"  Image="text_button.png" WidthRequest="25" HeightRequest="25"  Clicked="Handle_ShowText"  />
+						<Button Grid.Column="2" HorizontalOptions="Center" VerticalOptions="End"  Image="edit_button.png" WidthRequest="25" HeightRequest="25"  Clicked="Handle_ShowEdit"   />
+
+					</Grid>
+				</StackLayout>
+
+				<!-- Add Text -->
+
+			<StackLayout x:Name="StackText" IsVisible="false" WidthRequest="200" HeightRequest="200" BackgroundColor="White" VerticalOptions="StartAndExpand" >
+				<Entry Placeholder="Enter your text and choose a color" PlaceholderColor="Gray" WidthRequest="300" HeightRequest="30" VerticalOptions="Start" />
+
+				<!-- Color Buttons -->
+				<StackLayout Orientation="Vertical" HorizontalOptions="Center" VerticalOptions="Start"  HeightRequest="150"  BackgroundColor="White" Margin="20,0,10,0"   >
+					<StackLayout Orientation="Horizontal" Spacing="5" VerticalOptions="Start"  HeightRequest="60" WidthRequest="300"  BackgroundColor="White"   >
+						<Button WidthRequest="90" HeightRequest="40" BackgroundColor="Red" />
+						<Button WidthRequest="90" HeightRequest="40" BackgroundColor="Green" />
+						<Button WidthRequest="90" HeightRequest="40" BackgroundColor="Blue" />
+					</StackLayout>
+
+					<StackLayout Orientation="Horizontal"  Spacing="5" VerticalOptions="Start"  HeightRequest="60" WidthRequest="300"  BackgroundColor="White"   >
+						<Button WidthRequest="90" HeightRequest="40" BackgroundColor="Yellow" />
+						<Button WidthRequest="90" HeightRequest="40" BackgroundColor="Fuchsia" />
+						<Button WidthRequest="90" HeightRequest="40" BackgroundColor="Olive" />
+					</StackLayout>		
+				</StackLayout>
+			</StackLayout>
+
+
+
+
+				<!-- Adjust image settings -->
+
+			
+			<StackLayout x:Name="StackEdit" IsVisible="false"  WidthRequest="200" HeightRequest="200" VerticalOptions="StartAndExpand" >
+				<StackLayout Orientation="Vertical">
+				<StackLayout x:Name="stackCached" Orientation="Vertical" WidthRequest="50" HeightRequest="50" BackgroundColor="Silver">
+
+				</StackLayout>
+				<Image WidthRequest="50" HeightRequest="50" x:Name="imageTest" />
+
+<!--				<ffimageloading:CachedImage WidthRequest="300" HeightRequest="300" 
+					DownsampleToViewSize="true"  Source="{Binding FunImageSource}">
+				</ffimageloading:CachedImage>
+-->					
+<!--					<ffimageloading:CachedImage HorizontalOptions="Center" VerticalOptions="Center"
+						LoadingPlaceholder="loading.png" ErrorPlaceholder="error.png" DownsampleToViewSize="true"
+						Aspect="AspectFit" HeightRequest="400" WidthRequest="400" Source="{Binding FunImageSource}">
+						<ffimageloading:CachedImage.Transformations>
+							<fftransformations:SepiaTransformation/>
+						</ffimageloading:CachedImage.Transformations>
+					</ffimageloading:CachedImage>-->
+
+					<Label Text="SepiaTransformation" HorizontalTextAlignment="Center"/>
+					
+					<Button Text="Load another image" Command="{Binding LoadAnotherCommand}"/>
+					
+				</StackLayout>
+				
+				<Grid RowSpacing="15" HeightRequest="200" VerticalOptions="StartAndExpand" >
+					<Grid.RowDefinitions>
+						<RowDefinition Height="25" />
+						<RowDefinition Height="25" />
+						<RowDefinition Height="25" />
+						<RowDefinition Height="125" />
+					</Grid.RowDefinitions>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="40" />
+						<ColumnDefinition Width="*" />
+					</Grid.ColumnDefinitions>
+
+					<Image Grid.Row="0" Grid.Column="0" Source="brightness.png" WidthRequest="20" HeightRequest="20" VerticalOptions="Center"  />
+					<Slider Grid.Row="0" Grid.Column="1" WidthRequest="250" VerticalOptions="Center" HorizontalOptions="Start"  />
+
+					<Image Grid.Row="1" Grid.Column="0" Source="contrast.png" WidthRequest="20" HeightRequest="20"  VerticalOptions="Center" />
+					<Slider Grid.Row="1" Grid.Column="1" WidthRequest="250" VerticalOptions="Center"  HorizontalOptions="Start" />
+
+					<Image Grid.Row="2" Grid.Column="0" Source="saturation.png" WidthRequest="20" HeightRequest="20" VerticalOptions="Center"  />
+					<Slider Grid.Row="2" Grid.Column="1" WidthRequest="250" VerticalOptions="Center"  HorizontalOptions="Start" />
+					
+				</Grid>
+
+			</StackLayout>
+			
+			<StackLayout Orientation="Vertical" x:Name="StackFunItems" HeightRequest="200" >
+				<!--Carousel View-->
+			    <cv:CarouselView 
+					
+			        x:Name="MyCarouselView" 
+					IsVisible="true" 
+			        HeightRequest="150"  BackgroundColor="Yellow"  
+					WidthRequest="400"
+			        HorizontalOptions="FillAndExpand" 
+			        VerticalOptions="End" 
+			        ItemTemplate="{StaticResource carouselDataTemplateSelector}"   />
+
+				<StackLayout x:Name="StackFunNavigation" IsVisible="true" Orientation="Horizontal" HeightRequest="50" BackgroundColor="White" WidthRequest="500" HorizontalOptions="FillAndExpand"   >
+					
+					<StackLayout Orientation="Horizontal"  VerticalOptions="Start"  HeightRequest="40" WidthRequest="250" BackgroundColor="White" HorizontalOptions="Center" Margin="30,0,20,0"   >
+						<Button HorizontalOptions="Center" VerticalOptions="Center"  Image="ic_fun_hat_w.png" WidthRequest="43" HeightRequest="29" BackgroundColor="White" Clicked="Handle_ShowHats"  />
+						<Button HorizontalOptions="Center" VerticalOptions="Center"  Image="ic_fun_glasses_w.png" WidthRequest="51" HeightRequest="29"  BackgroundColor="White"  Clicked="Handle_ShowHair"  />
+						<Button HorizontalOptions="Center" VerticalOptions="Center"  Image="ic_fun_accessories_w.png" WidthRequest="43" HeightRequest="29"  BackgroundColor="White"  Clicked="Handle_ShowAccessories"   />
+						<Button HorizontalOptions="Center" VerticalOptions="Center"  Image="ic_fun_clothes_w.png" WidthRequest="43" HeightRequest="29"  BackgroundColor="White"  Clicked="Handle_ShowClothes"   />
+						<Button HorizontalOptions="Center" VerticalOptions="Center"  Image="ic_fun_misc_w.png" WidthRequest="43" HeightRequest="29"  BackgroundColor="White"  />
+							 
+					</StackLayout>
+				</StackLayout>
+			</StackLayout>
+
+			</StackLayout>
+		</StackLayout>
+</ContentPage>
+
+
+
+
+

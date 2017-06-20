@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 	xmlns="http://xamarin.com/schemas/2014/forms" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+	xmlns:res="clr-namespace:Merial.PetPixie.Core.Resources;assembly=Merial.PetPixie.Core"
+	xmlns:views="clr-namespace:Merial.PetPixie.Core.Views;assembly=Merial.PetPixie.Core"
+	xmlns:fab="clr-namespace:FAB.Forms;assembly=FAB.Forms"
+		xmlns:controls="clr-namespace:Merial.PetPixie.Core.Controls;assembly=Merial.PetPixie.Core"
+		xmlns:imageCircle="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
+	xmlns:converters="clr-namespace:Merial.PetPixie.Core.Converters;assembly=Merial.PetPixie.Core"
+
+	x:Class="Merial.PetPixie.Core.Views.FeedItemPage" >
+	
+	<ContentPage.Resources>
+		<ResourceDictionary>
+			<converters:TimeAgoValueConverter x:Key="TimeAgoValueConverter" />
+		</ResourceDictionary>
+	</ContentPage.Resources>
+	
+    <Grid>
+			
+		<StackLayout Orientation="Vertical" >
+			<views:TopNavBar x:Name="navBar" HeightRequest="40" TranslationY="20"  />
+			<ScrollView>
+
+		
+				<Grid>
+				
+								<StackLayout Orientation="Vertical" VerticalOptions="Start"  TranslationY="60" >
+						
+
+                            
+
+									<!--Main Image-->
+									<Image HeightRequest="300" WidthRequest="300" VerticalOptions="Start"   Aspect="AspectFill" Source="{ Binding Feed.ImageSrcFeed }" />
+
+									<!--Content Below Image-->
+									<StackLayout Orientation="Vertical" Margin="10,0,20,0" >
+										
+										<Grid HorizontalOptions="FillAndExpand"  VerticalOptions="Start" >
+											<Grid.ColumnDefinitions>
+												<ColumnDefinition Width="*" />
+												<ColumnDefinition Width="30" />
+											</Grid.ColumnDefinitions>
+											<Grid.RowDefinitions>
+												<RowDefinition Height="*" />
+											</Grid.RowDefinitions>		
+											
+											<Label Grid.Column="0"  TextColor="Black" Text="{Binding FeedShortDescription }" FontSize="12" FontFamily="AdelleSans-Light"  HorizontalOptions="Start" HorizontalTextAlignment="Start"  VerticalOptions="Start" VerticalTextAlignment="Start"  />
+											<Grid Grid.Column="1"  BackgroundColor="Transparent" VerticalOptions="Start" HorizontalOptions="End"  WidthRequest="30" HeightRequest="30" >
+												<Button IsVisible="{Binding YouLiked}" Image="likered.png"  FontSize="24"   HeightRequest="30" WidthRequest="30" VerticalOptions="Start" HorizontalOptions="End" Command="{Binding LikeChangedCommand}" />
+												<Button IsVisible="{Binding YouNotLiked}"  Image="likegreen.png"  FontSize="24"   HeightRequest="30" WidthRequest="30" VerticalOptions="Start" HorizontalOptions="End" Command="{Binding LikeChangedCommand}" />
+												<Label  HorizontalOptions="Start" HorizontalTextAlignment="Center" FontAttributes="None"  Font="MuseoSans-300"  VerticalOptions="Center" VerticalTextAlignment="Center"  TextColor="White" Text="{Binding Feed.NbLikes}" FontSize="10" WidthRequest="30" HeightRequest="30"  >
+													<Label.GestureRecognizers>
+														<TapGestureRecognizer  Command="{Binding LikeChangedCommand}" NumberOfTapsRequired="1"   />
+													</Label.GestureRecognizers>
+												</Label> 	
+
+											</Grid>
+										</Grid>
+
+										<StackLayout WidthRequest="200" HeightRequest="30" Orientation="Horizontal" HorizontalOptions="Start" VerticalOptions="Center" >
+											<Button IsVisible="false" Text="(...)"  						FontSize="12" TextColor="#abc2bb"  HeightRequest="30" Margin="0" VerticalOptions="Center" HorizontalOptions="Start"  Command="{Binding DetailsCommand}" />												
+											<Button  Text="{ Binding HashTag0 }" 	FontSize="12" TextColor="#abc2bb"  HeightRequest="30" Margin="0" VerticalOptions="Center" HorizontalOptions="Start"   Command="{Binding GoTagCommand}" />
+											<Button  Text="{ Binding HashTag1 }" 	FontSize="12" TextColor="#abc2bb"  HeightRequest="30" Margin="0" VerticalOptions="Center" HorizontalOptions="Start"   Command="{Binding GoTag1Command}" />
+											<Button  Text="{ Binding HashTag2 }" 	FontSize="12" TextColor="#abc2bb"  HeightRequest="30" Margin="0" VerticalOptions="Center" HorizontalOptions="Start"   Command="{Binding GoTag2Command}" />
+											<Button  Text="{ Binding HashTag3 }" 	FontSize="12" TextColor="#abc2bb"  HeightRequest="30" Margin="0" VerticalOptions="Center" HorizontalOptions="Start"   Command="{Binding GoTag3Command}" />
+											<Button  Text="{ Binding HashTag4 }" 	FontSize="12" TextColor="#abc2bb"  HeightRequest="30" Margin="0" VerticalOptions="Center" HorizontalOptions="Start"   Command="{Binding GoTag4Command}" />
+
+										</StackLayout>
+
+
+
+										<!--LIKES-->
+										<StackLayout WidthRequest="200" HeightRequest="20" Orientation="Horizontal" HorizontalOptions="Start" VerticalOptions="Center" >
+											<Image  Source="likered.png" Aspect="AspectFit"	 WidthRequest="10" HeightRequest="10"  Margin="5" VerticalOptions="Center" HorizontalOptions="Start"   />												
+											<Label IsVisible="{Binding IsLiked}"  Text="{Binding FeedLikerNames}" FontSize="10"  TextColor="{StaticResource ComplementColor}" VerticalOptions="Center" VerticalTextAlignment="Center" HorizontalOptions="Start" HorizontalTextAlignment="Start" />
+											<Label IsVisible="{Binding IsNotLiked}"   Text="Be the first to like this" 	 FontSize="10" FontFamily="AdelleSans-Light"  TextColor="{StaticResource ComplementColor}"  HeightRequest="30" Margin="0" VerticalOptions="Center" VerticalTextAlignment="Center" HorizontalOptions="Start"  HorizontalTextAlignment="Start" >
+												<Label.GestureRecognizers>
+													<TapGestureRecognizer  Command="{Binding GoLikersCommand}" NumberOfTapsRequired="1"   />
+												</Label.GestureRecognizers>
+											</Label> 	
+										</StackLayout>
+
+
+
+
+
+										<!--COMMENTS-->
+
+										<Label IsVisible="{Binding HasComments}" Text="View all woofs" FontSize="10"  TextColor="{StaticResource ComplementColor}" VerticalOptions="Start" HorizontalOptions="Start" HorizontalTextAlignment="Start" >
+											<Label.GestureRecognizers>
+												<TapGestureRecognizer  Command="{Binding AddWoofCommand}" NumberOfTapsRequired="1"   />
+											</Label.GestureRecognizers>
+										</Label> 	
+
+										<ListView 
+											HeightRequest="50"
+											IsVisible="{Binding HasComments}"
+											SeparatorVisibility="None"
+											SeparatorColor="Silver"
+											IsPullToRefreshEnabled="false"
+											ItemsSource="{Binding Comments}"
+											BackgroundColor="White"
+											VerticalOptions="Start"
+											HasUnevenRows="true">
+									
+									
+											<ListView.ItemTemplate>
+												<DataTemplate>
+													<ViewCell>
+
+														<StackLayout Orientation="Horizontal">
+															<Label  HorizontalOptions="Start" HorizontalTextAlignment="Start" FontFamily="MuseoSans-300"  VerticalOptions="Center" VerticalTextAlignment="Center"  TextColor="{StaticResource AccentColor} " Text="{ Binding FromDisplayUsername }" FontSize="10"  >
+																<Label.GestureRecognizers>
+																	<TapGestureRecognizer  Command="{Binding ShowProfileCommand}" NumberOfTapsRequired="1"   />
+																</Label.GestureRecognizers>
+															</Label> 	
+																				
+
+															<Label	HorizontalOptions="Start" HorizontalTextAlignment="Start" FontFamily="MuseoSans-300"  VerticalOptions="Center" VerticalTextAlignment="Center"  TextColor="Black" Text="{ Binding Text }" FontSize="10"  />
+															<Label  HorizontalOptions="Start" HorizontalTextAlignment="Start" FontFamily="MuseoSans-300"  VerticalOptions="Center" VerticalTextAlignment="Center"  TextColor="{StaticResource AccentColor} " Text="{ Binding CreatedAgoDisplay }" FontSize="10"  />
+														</StackLayout>
+																
+													</ViewCell>
+												</DataTemplate>
+											</ListView.ItemTemplate>
+										
+										</ListView>
+
+
+
+										<Button Text="Add your Woof"  BackgroundColor="#abc2bb" FontSize="10" TextColor="White" WidthRequest="100" HeightRequest="20" Margin="0,20,0,40" VerticalOptions="Start" HorizontalOptions="Start" Command="{Binding AddWoofCommand}" />
+										
+										
+									</StackLayout>
+
+ 
+ 
+
+									
+
+
+
+								</StackLayout>
+
+		
+								<!--Content Above Image-->
+								<Grid VerticalOptions="Start" Margin="20,10,10,10" >
+									<Grid.ColumnDefinitions>
+										<ColumnDefinition Width="*" />
+										<ColumnDefinition Width="50" />
+									</Grid.ColumnDefinitions>
+									<Grid.RowDefinitions>
+										<RowDefinition Height="80" />
+									</Grid.RowDefinitions>
+
+									<StackLayout Orientation="Horizontal" >
+										<imageCircle:CircleImage Source="{Binding FeedItemTitleImageURL}" WidthRequest="45" HeightRequest="45"  BorderColor="White" BorderThickness="3" Aspect="AspectFill" VerticalOptions="Start" HorizontalOptions="Center"  />
+										<Label Text="{Binding FeedItemTitle}" HeightRequest="30" WidthRequest="160" TextColor="{StaticResource AccentColor}" FontSize="14" VerticalOptions="Center" VerticalTextAlignment="Center" />
+									</StackLayout>
+											
+									<StackLayout Orientation="Horizontal" Grid.Column="1" HorizontalOptions="End" WidthRequest="40" VerticalOptions="Start" BackgroundColor="Red" TranslationY="-20" HeightRequest="45" >
+										<Image WidthRequest="10" HeightRequest="10" Source="ic_clock.png" VerticalOptions="Center" />
+										<Label Text="{Binding CreatedAgoDisplay}" HorizontalOptions="StartAndExpand" FontSize="10" WidthRequest="40" VerticalOptions="Start" VerticalTextAlignment="Start" />
+									</StackLayout>
+ 
+								</Grid>
+
+							</Grid>
+
+			</ScrollView>
+
+		</StackLayout>
+
+ 	</Grid>   
+ 
+
+</ContentPage>

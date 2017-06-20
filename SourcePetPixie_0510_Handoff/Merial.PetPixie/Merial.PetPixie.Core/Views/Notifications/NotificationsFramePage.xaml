@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 	xmlns="http://xamarin.com/schemas/2014/forms" 
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		xmlns:res="clr-namespace:Merial.PetPixie.Core.Resources;assembly=Merial.PetPixie.Core"
+		xmlns:views="clr-namespace:Merial.PetPixie.Core.Views;assembly=Merial.PetPixie.Core"
+		xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+		xmlns:fab="clr-namespace:FAB.Forms;assembly=FAB.Forms"
+		xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
+		xmlns:b="clr-namespace:Merial.PetPixie.Core.Behaviors;assembly=Merial.PetPixie.Core" 
+		xmlns:c="clr-namespace:Merial.PetPixie.Core.Converters;assembly=Merial.PetPixie.Core" 
+		x:Class="Merial.PetPixie.Core.Views.NotificationsFramePage" BackgroundColor="#f0f0f0" >
+	
+		  <ContentPage.Resources>
+
+		<ResourceDictionary>
+			<c:TextChangedEventArgsConverter x:Key="TextChangedEventArgsConverter" />
+			<c:FocusedEventArgsConverter x:Key="FocusedEventArgsConverter" />
+			<c:ItemTappedEventArgsConverter x:Key="ItemTappedConverter" />
+		 
+			<DataTemplate x:Key="followsYouTemplate" >
+				<ViewCell>
+
+					<Grid BackgroundColor="White" Padding="10,0,10,0" VerticalOptions="Center" >
+						<Grid.RowDefinitions>
+							<RowDefinition Height="40" />
+						</Grid.RowDefinitions>
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="35" />
+							<ColumnDefinition Width="*" />
+							<ColumnDefinition Width="40" />
+						</Grid.ColumnDefinitions>
+
+					
+						<controls:CircleImage Source="{ Binding ProfileImageUrl }" Grid.Column="0"  BorderColor="Gray" BorderThickness="1" Aspect="AspectFill" VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="35" HeightRequest="35"  />
+						<StackLayout Orientation="Horizontal" Grid.Column="1" HeightRequest="40" >
+							<Label HorizontalOptions="Start" HorizontalTextAlignment="Start" HeightRequest="40"  Font="MuseoSans-300"  VerticalOptions="Center" VerticalTextAlignment="Center"  TextColor="{StaticResource AccentColor} " Text="{ Binding Profile.DisplayUsername }" FontSize="12"  />
+							<Label HorizontalOptions="Start" HorizontalTextAlignment="Start" HeightRequest="40"  Font="MuseoSans-300"  VerticalOptions="Center" VerticalTextAlignment="Center"  TextColor="Black" Text="{ Binding NotificationTitle}" FontSize="12"  />
+						</StackLayout>
+						<Image  Grid.Column="2" Source="newFollow.png"   HorizontalOptions="End"   WidthRequest="100" HeightRequest="50" VerticalOptions="Center" />
+
+					</Grid>
+							
+					
+				</ViewCell>
+			</DataTemplate>
+
+
+			<DataTemplate x:Key="likePhotoTemplate" >
+				<ViewCell>
+
+					<Grid BackgroundColor="White" Padding="10,0,10,0" VerticalOptions="Center" >
+						<Grid.RowDefinitions>
+							<RowDefinition Height="40" />
+						</Grid.RowDefinitions>
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="35" />
+							<ColumnDefinition Width="*" />
+							<ColumnDefinition Width="40" />
+						</Grid.ColumnDefinitions>
+
+					
+						<controls:CircleImage Source="{ Binding ProfileImageUrl }" Grid.Column="0"  BorderColor="Gray" BorderThickness="1" Aspect="AspectFill" VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="35" HeightRequest="35"  />
+						<StackLayout Orientation="Horizontal" Grid.Column="1" HeightRequest="40" >
+							<Label HorizontalOptions="Start" HorizontalTextAlignment="Start" HeightRequest="40"  Font="MuseoSans-300"  VerticalOptions="Center" VerticalTextAlignment="Center"  TextColor="{StaticResource AccentColor} " Text="{ Binding Profile.DisplayUsername }" FontSize="12"  />
+							<Label HorizontalOptions="Start" HorizontalTextAlignment="Start" HeightRequest="40"  Font="MuseoSans-300"  VerticalOptions="Center" VerticalTextAlignment="Center"  TextColor="Black" Text="{ Binding NotificationTitle}" FontSize="12"  />
+						</StackLayout>
+						<Image  Grid.Column="2" Source="{Binding MediaImageUrl}"   HorizontalOptions="End"   WidthRequest="100" HeightRequest="50" VerticalOptions="Center" />
+
+					</Grid>
+							
+					
+				</ViewCell>
+			</DataTemplate>
+
+
+			
+			<DataTemplate x:Key="reminderTemplate" >
+				<ViewCell>
+
+					<Grid BackgroundColor="White" Padding="10,0,10,0" VerticalOptions="Center" >
+						<Grid.RowDefinitions>
+							<RowDefinition Height="40" />
+						</Grid.RowDefinitions>
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="35" />
+							<ColumnDefinition Width="*" />
+						</Grid.ColumnDefinitions>
+
+					
+						<controls:CircleImage Source="{ Binding ProfileImageUrl }" Grid.Column="0"  BorderColor="Gray" BorderThickness="1" Aspect="AspectFill" VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="35" HeightRequest="35"  />
+						<Label Grid.Column="1" HorizontalOptions="Start" HorizontalTextAlignment="Start" HeightRequest="40"  Font="MuseoSans-300"  VerticalOptions="Center" VerticalTextAlignment="Center"  TextColor="Black" Text="{ Binding NotificationTitle}" FontSize="12"  />
+
+					</Grid>
+							
+					
+				</ViewCell>
+			</DataTemplate>
+			
+			<DataTemplate x:Key="notificationDefaultTemplate">
+				<ViewCell>
+					<Grid BackgroundColor="White" Padding="10,0,10,0" VerticalOptions="Center" >
+						<Grid.RowDefinitions>
+							<RowDefinition Height="40" />
+						</Grid.RowDefinitions>
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="35" />
+							<ColumnDefinition Width="*" />
+							<ColumnDefinition Width="40" />
+						</Grid.ColumnDefinitions>
+
+					
+						<controls:CircleImage Source="{ Binding ProfileImageUrl }" Grid.Column="0"  BorderColor="Gray" BorderThickness="1" Aspect="AspectFill" VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="35" HeightRequest="35"  />
+						<StackLayout Orientation="Horizontal" Grid.Column="1" HeightRequest="40" >
+							<Label HorizontalOptions="Start" HorizontalTextAlignment="Start" HeightRequest="40"  Font="MuseoSans-300"  VerticalOptions="Center" VerticalTextAlignment="Center"  TextColor="{StaticResource AccentColor} " Text="{ Binding Profile.DisplayUsername }" FontSize="12"  />
+							<Label HorizontalOptions="Start" HorizontalTextAlignment="Start" HeightRequest="40"  Font="MuseoSans-300"  VerticalOptions="Center" VerticalTextAlignment="Center"  TextColor="Black" Text="{ Binding NotificationTitle}" FontSize="12"  />
+						</StackLayout>
+						<Image  Grid.Column="2" Source="{Binding MediaImageUrl}"   HorizontalOptions="End"   WidthRequest="100" HeightRequest="50" VerticalOptions="Center" />
+
+					</Grid>
+				</ViewCell>
+			</DataTemplate>
+
+
+
+
+
+
+			<views:NotificationsTemplateSelector x:Key="notificationsTemplateSelector" LikePhotoTemplate="{StaticResource likePhotoTemplate}" ReminderTemplate="{StaticResource reminderTemplate}" FollowYouTemplate="{StaticResource followsYouTemplate}" NotificationDefaultTemplate="{StaticResource notificationDefaultTemplate}" />
+		</ResourceDictionary>
+		  </ContentPage.Resources>
+
+		
+	<ContentPage.Content >
+
+		<Grid  TranslationY="20"  >
+			<Grid.RowDefinitions>
+				<RowDefinition Height="40" />
+				<RowDefinition Height="30" />
+				<RowDefinition Height="*" />
+			</Grid.RowDefinitions>
+
+			<views:TopNavBar Grid.Row="0" x:Name="navBar" HeightRequest="40" />
+			<Label Grid.Row="1" HeightRequest="30" TextColor="Black" Text="Previous notifications"  FontSize="10" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
+			 
+
+			<ListView x:Name="listView"
+					Grid.Row="2"
+					VerticalOptions="Start"
+					ItemsSource="{Binding Notifications}" 
+					ItemTemplate="{StaticResource notificationsTemplateSelector}" 
+					HasUnevenRows="true"
+					HorizontalOptions="Center"
+					BackgroundColor="White"
+					SeparatorVisibility="None" 
+					 />
+
+
+
+ 		</Grid>   
+
+		
+	</ContentPage.Content>
+</ContentPage>

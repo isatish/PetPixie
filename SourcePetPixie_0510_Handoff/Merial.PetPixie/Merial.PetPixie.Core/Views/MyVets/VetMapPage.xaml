@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 	xmlns="http://xamarin.com/schemas/2014/forms" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+	xmlns:res="clr-namespace:Merial.PetPixie.Core.Resources;assembly=Merial.PetPixie.Core"
+	xmlns:views="clr-namespace:Merial.PetPixie.Core.Views;assembly=Merial.PetPixie.Core"
+	xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+	xmlns:b="clr-namespace:Merial.PetPixie.Core.Behaviors;assembly=Merial.PetPixie.Core" 
+	xmlns:c="clr-namespace:Merial.PetPixie.Core.Converters;assembly=Merial.PetPixie.Core" 
+	xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
+	x:Class="Merial.PetPixie.Core.Views.VetMapPage" >
+
+	<ContentPage.Resources>
+		<ResourceDictionary>
+			<c:ItemTappedEventArgsConverter x:Key="ItemTappedConverter" />
+		</ResourceDictionary>
+	</ContentPage.Resources>
+	
+	<ContentPage.Content>
+
+		<Grid  TranslationY="20" BackgroundColor="Transparent" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"  >
+			<Grid.RowDefinitions>
+				<RowDefinition Height="40" />
+				<RowDefinition Height="40" />
+				<RowDefinition Height="300" />
+				<RowDefinition Height="1000" />
+			</Grid.RowDefinitions>
+
+			<views:TopNavBar Grid.Row="0" x:Name="navBar" HeightRequest="40" />
+
+			<Grid Grid.Row="1"  Grid.RowSpan="3"  BackgroundColor="White" Padding="0" >
+
+				<ContentView x:Name="ContentMap" WidthRequest="600" HeightRequest="600" />
+
+				<views:CustomMap  IsVisible="false" WidthRequest="400"  HeightRequest="500"    x:Name="MapVets"  IsShowingUser="false"    MapType="Street" />
+
+				<Entry x:Name="EntrySearch"  VerticalOptions="Start"  Margin="10,20,10,0" Placeholder="Search by name or location" BackgroundColor="White" HeightRequest="40" WidthRequest="200"  />
+
+			</Grid>
+
+			<ScrollView x:Name="scrollVets" Grid.Row="3" Grid.RowSpan="2"  HeightRequest="1600" >
+				<StackLayout x:Name="stackVets" Orientation="Vertical" HorizontalOptions="Start" BackgroundColor="Transparent" >
+					<StackLayout  HeightRequest="100" WidthRequest="500" BackgroundColor="Transparent" />
+			              <StackLayout   WidthRequest="500" BackgroundColor="White" >
+                                                 <Label x:Name="LabelHeader" BackgroundColor="Silver" HorizontalOptions="FillAndExpand" HeightRequest="60" FontSize="10" Text="List results*" TextColor="Black"  HorizontalTextAlignment="Center" VerticalTextAlignment="Center"  VerticalOptions="Center"  />
+                                                 <ListView  HeightRequest="1200" BackgroundColor="White"
+                                                               IsPullToRefreshEnabled="false"
+                                                               TranslationY="-20"
+                                                               x:Name="listItems"
+                                                               SeparatorVisibility="None" 
+                                                               SeparatorColor="Silver"
+                                                               ItemsSource="{Binding VetSearchResults}"
+                                                               RowHeight="60"
+                                                               VerticalOptions="Start"
+                                                                      HasUnevenRows="false">
+                                   
+                                                     <ListView.Behaviors>
+                                                              <b:EventToCommandBehavior EventName="ItemTapped" Command="{Binding VetSelectedCommand}" EventArgsConverter="{StaticResource ItemTappedConverter}" />
+                                                 </ListView.Behaviors>
+                                          
+                                                        <ListView.ItemTemplate>
+                                                               <DataTemplate>
+                                                                      <ViewCell>
+
+                                                                             <Grid BackgroundColor="White" Padding="20,0,10,0" VerticalOptions="End" >
+                                                                                    <Grid.RowDefinitions>
+                                                                                           <RowDefinition Height="30" />
+                                                                                    </Grid.RowDefinitions>
+                                                                                    <Grid.ColumnDefinitions>
+                                                                                           <ColumnDefinition Width="50" />
+                                                                                           <ColumnDefinition Width="*" />
+                                                                                           <ColumnDefinition Width="40" />
+                                                                                    </Grid.ColumnDefinitions>
+                                                                             
+                                                                                    <controls:CircleImage Grid.Column="0" Source="VetProfileImage.png"  WidthRequest="25" HeightRequest="25" BorderColor="Gray" BorderThickness="2" Aspect="AspectFill" VerticalOptions="Center" HorizontalOptions="Center" />
+                                                                                    <StackLayout Grid.Column="1"  Orientation="Vertical" VerticalOptions="Start">
+                                                                                           <Label    HorizontalOptions="Start" HorizontalTextAlignment="Start" Font="MuseoSans-300"  VerticalOptions="Center" VerticalTextAlignment="Center"  TextColor="{StaticResource AccentColor} " Text="{ Binding Name }" FontSize="10"  />
+                                                                                           <Label    HorizontalOptions="Start" HorizontalTextAlignment="Start" Font="MuseoSans-300"  VerticalOptions="Center" VerticalTextAlignment="Center"  TextColor="Black" Text="{ Binding Address }" FontSize="10"  />
+                                                                                           <Label    HorizontalOptions="Start" HorizontalTextAlignment="Start" Font="MuseoSans-300"  VerticalOptions="Center" VerticalTextAlignment="Center"  TextColor="Black" Text="{ Binding UserRating }" FontSize="10"  />
+
+                                                                                    </StackLayout>
+
+                                                                             </Grid>
+                                                                      
+                                                                      </ViewCell>
+                                                               </DataTemplate>
+                                                        </ListView.ItemTemplate>
+                                                 
+                                                 </ListView>
+                                                  <Label HeightRequest="30" FontSize="10" Text="*not a comprehensive list" TextColor="Black" HorizontalOptions="Center" HorizontalTextAlignment="Center" />
+			              </StackLayout>
+			       </StackLayout>
+			</ScrollView>
+			
+
+		</Grid>
+	</ContentPage.Content>
+</ContentPage>

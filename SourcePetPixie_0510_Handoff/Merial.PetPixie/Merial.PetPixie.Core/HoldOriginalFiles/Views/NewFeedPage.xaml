@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 	xmlns="http://xamarin.com/schemas/2014/forms" 
+				xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+				xmlns:res="clr-namespace:Merial.PetPixie.Core.Resources;assembly=Merial.PetPixie.Core"
+				x:Class="Merial.PetPixie.Core.Views.NewFeedPage" >
+	<ContentPage.Content>
+
+		<Grid>
+			<StackLayout Orientation="Vertical" >
+				<Label Text="Test Feed" TextColor="Olive" FontSize="39" WidthRequest="100" HeightRequest="200" />
+
+									<ListView 
+						Grid.Row="2"
+						SeparatorVisibility="Default" 
+						SeparatorColor="#DFDFDF"
+						ItemsSource="{Binding Items}"
+						RowHeight="540"
+						HasUnevenRows="false">
+
+						<ListView.ItemTemplate>
+							<DataTemplate>
+								<ViewCell>
+								<StackLayout Orientation="Vertical">
+									<Label  VerticalOptions="Start" VerticalTextAlignment="Start" BackgroundColor="Yellow" TextColor="Purple"
+										Text="{ Binding FeedShortDescription }" FontSize="12"
+						/>
+
+						<Image WidthRequest="400" HeightRequest="400" Aspect="AspectFit" Source="{ Binding Feed.ImageSrcFeed }" />
+									
+						<Label  VerticalOptions="Start" VerticalTextAlignment="Start" BackgroundColor="White" TextColor="Purple"
+										Text="{ Binding Feed.ImageSrcFeed }" FontSize="12"
+						/>
+
+								</StackLayout>
+									<!--<views:FeedItemTemplate/>-->
+								</ViewCell>
+							</DataTemplate>
+						</ListView.ItemTemplate>
+					</ListView>
+
+	    <Label 	Text="{res:Translate MainPageTitle}" 
+	           	VerticalOptions="Center"
+	           	HorizontalOptions="Center" 
+				Style="{StaticResource labelStyle}"
+	           	StyleId="MainPageTitleLbl" />		
+
+			</StackLayout>
+	  </Grid>
+
+		
+	</ContentPage.Content>
+</ContentPage>
